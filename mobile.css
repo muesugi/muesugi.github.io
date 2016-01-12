@@ -1,0 +1,22 @@
+.landing{
+    width:100%;
+    margin:0px;
+}
+#photo{
+	width:100%;
+	height:auto;
+	padding:0px;
+}
+
+#mob-menu-icon{
+	margin-top:10px;
+	display: block;
+	padding-right:5%;
+	text-align: right;
+}
+.menu{
+	display:block; /*disable flex here*/
+}
+.menu-item{
+	display:none;
+}

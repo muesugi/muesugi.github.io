@@ -9,21 +9,40 @@
 
   <link rel="stylesheet" href="custom.css">
   <link rel="stylesheet" href="index.css">
+
   <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">
   <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/jquery.sidr/2.0.0/jquery.sidr.js"></script>
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.sidr/2.0.0/stylesheets/jquery.sidr.dark.min.css">
   <script src="custom.js"></script>
+  <noscript>
+	<link rel="stylesheet" href="mobile.min.css" />
+	</noscript>	
+	<script>
+		var ADAPT_CONFIG = {
+		  dynamic: true,
+		  range: [
+		    '0px    to 760px  = mobile.css'
+		  ]
+		};
+	</script>
+  <script src="adapt.min.js"></script>
+  
 </head>
 
-<body onload="landing_photo_resize();">
+<body onload="">
 <div class="menu" id="menubar">
   <a href="#"> <img class="menu" id="logo" src="images/logo.png"/></a>
    <div> </div>
-    <div> </div>
-  <a id="about-link" href="index.html#about">About</a>
-  <a id="resume-link" href="resume.html">Resume</a>
-  <a id="portfolio-link" href="portfolio.html">Portfolio</a>
-  <a id="contact-link" href="index.html#contact">Contact</a>
+   <div> </div>
+   <div id="sidr"><!-- actual menu content-->
+	  <a class="menu-item" id="about-link" href="index.html#about">About</a>
+	  <a class="menu-item" id="resume-link" href="resume.html">Resume</a>
+	  <a class="menu-item" id="portfolio-link" href="portfolio.html">Portfolio</a>
+	  <a class="menu-item" id="contact-link" href="index.html#contact">Contact</a>
+	</div>
+  <div id="mob-menu-icon"><a id="simple-menu" href="#sidr"><i class="fa fa-bars fa-2x"></i></a></div>
   <div> </div>
  </div>
   <div class="landing">

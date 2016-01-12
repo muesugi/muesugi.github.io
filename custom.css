@@ -32,7 +32,9 @@ body {
 	text-decoration: none; 
 	color:black;
 }
-
+#mob-menu-icon{
+	display: none;
+}
 /*footer*/
 #contact{
 	width:100%;

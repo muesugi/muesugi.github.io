@@ -2,6 +2,7 @@
 	font-family: 'Arvo', serif;
 	font-size:28px;
 	height:70vh;
+	width:100%;
 
 	padding-top:30vh;
 	text-align: right;
@@ -16,7 +17,6 @@
 #photo{
 	padding-top:10vh; /*for menu bar*/
 	height:90vh;
-	display:inline-block;
 }
 
 #about{
