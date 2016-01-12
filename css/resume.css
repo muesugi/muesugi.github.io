@@ -1,0 +1,11 @@
+#cvlisting{
+	padding-top:20vh;
+}
+
+/*entry attribute styling classes*/
+.date_str{}
+.date_start_num{}
+.date_end_num{}
+.company{} 
+.position{}
+.role{}
