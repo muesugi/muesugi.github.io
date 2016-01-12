@@ -13,40 +13,40 @@ body {
 }
 .menu{	
 	position:fixed;
-	top:0px;
-	left:0px;
 	height:60px;
 	padding-bottom: 1%;
-	font-size: 40px;
-	line-height: 40px;
+	font-size: 24px;
+	line-height: 60px;
+	vertical-align: center;
 	color:black;
+
+	/*equidistant spacing*/
+	display: flex;
+ 	justify-content: space-between;
 }
-.menu-item{
-	float:left;
-	display:inline;
-	padding-right:10%;
+
+.menu a {
+
+	font-family: 'Arvo', serif; /*change this?*/
+	text-decoration: none; 
+	color:black;
 }
 .landing{
 	font-family: 'Arvo', serif;
 	font-size:28px;
 	height:80vh;
-	width:50%;
 
-	/*background-size: cover; 
-	background-repeat: no-repeat;
-	background-position: center;*/
 	padding-top:30vh;
 	text-align: right;
 	padding-right:5%;
-	float:left;
 	background-image: url("images/subtle_white_mini_waves.png");
-	/*background: url("images/IMG_0120.jpg") 0% 50%;*/
+
+	float:left;
 }
 #title{
 	font-size:42px;
 }
 #photo{
-	width:45%;
 	padding-top:10vh; /*for menu bar*/
 	height:100vh;
 	display:inline-block;
