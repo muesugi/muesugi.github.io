@@ -46,6 +46,10 @@ body {
 #title{
 	font-size:42px;
 }
+.social-icons img{
+	width:40px;
+	padding-right:20px;
+}
 #photo{
 	padding-top:10vh; /*for menu bar*/
 	height:100vh;
