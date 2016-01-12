@@ -1,3 +1,58 @@
-body{
-	background-image: url("subtle_white_mini_waves.png");
+body {
+  padding:0; margin:0;
+}
+#logo{
+	background-size:contain;
+	height:51.25px;
+	margin:1%;
+}
+#menubar{
+	width:100%;
+	border-bottom:solid black 1px;
+	background-color:#88382D;
+}
+.menu{	
+	position:fixed;
+	top:0px;
+	left:0px;
+	height:60px;
+	padding-bottom: 1%;
+	font-size: 40px;
+	line-height: 40px;
+	color:black;
+}
+.menu-item{
+	float:left;
+	display:inline;
+	padding-right:10%;
+}
+.landing{
+	font-family: 'Arvo', serif;
+	font-size:28px;
+	height:80vh;
+	width:50%;
+
+	/*background-size: cover; 
+	background-repeat: no-repeat;
+	background-position: center;*/
+	padding-top:30vh;
+	text-align: right;
+	padding-right:5%;
+	float:left;
+	background-image: url("images/subtle_white_mini_waves.png");
+	/*background: url("images/IMG_0120.jpg") 0% 50%;*/
+}
+#title{
+	font-size:42px;
+}
+#photo{
+	width:45%;
+	padding-top:10vh; /*for menu bar*/
+	height:100vh;
+	display:inline-block;
+}
+
+#about{
+	height:85vh;
+
 }
