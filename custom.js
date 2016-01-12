@@ -21,12 +21,18 @@ function landing_photo_resize(){
 }
 
 function create_sidr(){
-	content_divs = $("#sidr").html();
-
 	var $ul = $("<ul>");
-	$("#sidr").children().each(function(){
+	$(".menu-items").each(function(){
 	    var $li = $("<li>").append($(this));
 	    $ul.append($li);
 	});
 	$("#sidr").append($ul);
+}
+
+$("#sidr").click(function(event){
+	$.sidr('close', 'sidr');
+})
+function on_sidr_open(){
+	//change size of landing, photo, menu
+
 }
