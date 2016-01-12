@@ -1,6 +1,7 @@
 body {
   padding:0; margin:0;
 }
+/*header*/
 #logo{
 	background-size:contain;
 	height:51.25px;
@@ -31,42 +32,19 @@ body {
 	text-decoration: none; 
 	color:black;
 }
-.landing{
-	font-family: 'Arvo', serif;
-	font-size:28px;
-	height:70vh;
 
-	padding-top:30vh;
-	text-align: right;
-	padding-right:5%;
-	background-image: url("images/subtle_white_mini_waves.png");
-
-	float:left;
-}
-#title{
-	font-size:42px;
+/*footer*/
+#contact{
+	width:100%;
+	background-color:#2d2d2d;
 }
 .social-icons{
 	text-align: center;
 	padding-left:5%; /*cancel out the extra 5% padding on the right*/
-	padding-top:5vh;
-	height: 15vh;
+	padding-top:2vh;
+	height: 12vh;
 }
 .social-icons i{
 	color: #88382D;
 	padding-right: 5%;
-}
-#photo{
-	padding-top:10vh; /*for menu bar*/
-	height:90vh;
-	display:inline-block;
-}
-
-#about{
-	height:100vh;
-}
-
-#contact{
-	width:100%;
-	background-color:#2d2d2d;
 }
