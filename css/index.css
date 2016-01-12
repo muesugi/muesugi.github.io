@@ -7,7 +7,7 @@
 	padding-top:30vh;
 	text-align: right;
 	padding-right:5%;
-	background-image: url("images/subtle_white_mini_waves.png");
+	background-image: url("../images/subtle_white_mini_waves.png");
 
 	float:left;
 }
@@ -21,4 +21,7 @@
 
 #about{
 	height:100vh;
+}
+#contact{
+	position:relative;
 }
