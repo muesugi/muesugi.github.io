@@ -1,9 +1,10 @@
 window.addEventListener('resize', function(event){
 	landing_photo_resize();
 });
+/*
 $(document).ready(function() {
   	landing_photo_resize();
-});
+});*/
 
 function landing_photo_resize(){
 	if (window.innerWidth <= 760){ /*mobile*/
