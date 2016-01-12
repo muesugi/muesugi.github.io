@@ -21,12 +21,19 @@ function landing_photo_resize(){
 }
 
 function create_sidr(){
-	var $ul = $("<ul>");
-	$(".menu-items").each(function(){
-	    var $li = $("<li>").append($(this));
-	    $ul.append($li);
+	var ulist = "<ul>";
+	$("#menubar").find(".spacer").remove();
+	new_spacer = "<div class='spacer'></div>";
+
+	$("#menubar").append(new_spacer + new_spacer);
+
+	$(".menu-item").each(function(){
+	    ulist += "<li>"+$(this).prop('outerHTML')+"</li>";
+	    $("#menubar").append($(this));
 	});
-	$("#sidr").append($ul);
+
+	$("#menubar").append(new_spacer);
+	$("#sidr").html(ulist + "</ul>");
 }
 
 $("#sidr").click(function(event){
