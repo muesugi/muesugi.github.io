@@ -34,7 +34,7 @@ body {
 .landing{
 	font-family: 'Arvo', serif;
 	font-size:28px;
-	height:80vh;
+	height:70vh;
 
 	padding-top:30vh;
 	text-align: right;
@@ -46,17 +46,27 @@ body {
 #title{
 	font-size:42px;
 }
-.social-icons img{
-	width:40px;
-	padding-right:20px;
+.social-icons{
+	text-align: center;
+	padding-left:5%; /*cancel out the extra 5% padding on the right*/
+	padding-top:5vh;
+	height: 15vh;
+}
+.social-icons i{
+	color: #88382D;
+	padding-right: 5%;
 }
 #photo{
 	padding-top:10vh; /*for menu bar*/
-	height:100vh;
+	height:90vh;
 	display:inline-block;
 }
 
 #about{
-	height:85vh;
+	height:100vh;
+}
 
+#contact{
+	width:100%;
+	background-color:#2d2d2d;
 }
