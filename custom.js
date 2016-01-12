@@ -1,5 +1,9 @@
 window.addEventListener('resize', function(event){
 	landing_photo_resize();
+	if (window.innerWidth > 760){ /*not mobile*/
+		$.sidr('close', 'sidr');
+	}
+
 });
 
 $(document).ready(function() {
@@ -34,11 +38,11 @@ function create_sidr(){
 
 	$("#menubar").append(new_spacer);
 	$("#sidr").html(ulist + "</ul>");
-}
 
-$("#sidr").click(function(event){
-	$.sidr('close', 'sidr');
-})
+	document.body.addEventListener('click', function(event){ //close sidr once anything (menu or body) is clicked
+		jQuery.sidr('close', 'sidr');
+	})
+}
 function on_sidr_open(){
 	//change size of landing, photo, menu
 
