@@ -1,20 +1,87 @@
-function entry(dstr, dsn, den, c, p, rs){
+//basic type definitions
+function entry(dstr, dsn, den, i, c, p, loc, rs){
 	dstr = dstr || "Present";
 	dsn = dsn || 2016;
 	den = den || 2016;
 	c = c || "";
 	p = p || "";
+	loc = loc || "";
 	rs = rs || []; //roles is a list of strings
 
-	new_entry = new Object({date_str: dstr, date_start_num: dsn, date_end_num: den, company: c, position: p, roles: rs});
+	new_entry = new Object({date_str: dstr, date_start_num: dsn, date_end_num: den, id: i, company: c, position: p, location: loc, roles: rs});
 	return new_entry;
 }
 
+function award(dstr, dnum, o, t, n, deets){
+	//no defaults
+	//type and details are the  only optional args
+	//dnum is the award date
+
+	//org: the organization who gives the honor/award
+	//title: the title of the award
+	// name: winner, runner-up, etc
+	new_award = new Object({date_str: dstr, date_num: dnum, org: o, title: t, name: n})
+	if (deets){
+		new_award.details = deets;
+	}
+	return new_award;
+}
+function today(){
+	//returns today's date in number (YYYYMMDD) format
+	this_day = new Date();
+	function leading_0(n){
+		if (n < 10){
+			console.log("0" + n.toString());
+			return "0" + n.toString();
+		}
+		else { return n.toString(); }
+	}
+
+	return this_day.getFullYear().toString() + leading_0(this_day.getMonth()) + leading_0(this_day.getDate());
+}
+
 //define all entries here
-entries = [
-entry("2015 - 2016", 2015, 2016, "Brown WebServices", "Web Developer Intern", ["Helped to create and support many sites", "Used Drupal CMS"]),
-entry("Summer 2012", 20120405, 20120605, "Smthing", "sat around", ["ate chips"])
+academic_entries = [
+entry("2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate Student"),
+entry("2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
+entry("2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
+entry("2002 - 2008", 200209, 200806, "261", "PS 261", "Elementary School"),
 ];
+extra_entries = [
+entry("2015 - 2016", 2015, 2016, "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", ["Helped to create and support many sites", "Used Drupal CMS"]),
+entry("Jul - Aug 2013", 20130708, 20130830, "gwc", "Girls Who Code", "Student", "New York, NY", 
+	["Selected to participate in a computer programming workshop for teen girls", 
+	"Learned new skills and languages through various projects, 20 field trips, and 30+ speakers", 
+	"Created projects from the idea to the product, and presented work with pitches and demos",
+	"Built a sisterhood with other girls as part of a national movement"]),
+entry("Feb 2014 - Jun 2015", 201402, 201506, "bhsecgwc", "Bard High School Early College Queens Girls Who Code Club", "Co-founder, Co-leader/Curriculum Director (Sept 2014 - Jun 2015)", "Long Island City, NY",
+	["Helped members with curriculum using knowledge gained in the GWC summer program", 
+	"Worked with two outside computer programmers to teach all interested students to code in a supportive, collaborative environment"]),
+entry("Sept 2013 - Jun 2014", 201309, 201406, "pixelaca", "Pixel Academy", "Intern", "Brooklyn, NY", 
+	["Helped instructors teach kids different ways to be creative with technology (coding, games, 3D-design, etc) both one-on-one and through group workshops",
+	"Worked on personal project under the instructors’ guidance"]),
+entry("Sept 2012 - Jun 2015", 201209, 201506, "gwn", "Girls Write Now", "Mentee", "New York, NY", 
+	["Met with mentor once a week and established a constructive relationship",
+	"Wrote fiction and memoir pieces individually between meetings",
+	"Explored new fields of writing at group workshops held once a month",
+	"Used feedback and criticism from others to improve"]),
+entry("Apr 2005 - Jun 2015", 200504, 201506, "tachibana", "Tachibana Japanese Dance Group", "Dancer", "New York Branch, NY", 
+	["Learned the art of traditional Japanese dance while coordinating with other dancers",
+	"Performed 4-5 times a year at the annual recital, New Year’s dance ritual, and other events at elderly homes and cultural venues in New York"]),
+entry("Oct 2012 - Jun 2015", 201210, 201506, "bhsecgov", "Bard High School Early College Queens Student Government", "Minute-taker (all), Elected Advisory Representative (Sept 2013 - Jun 2015)", 
+	["Listened and responded to others’ opinions", "Recorded ideas and oppositions in a clear, concise way",
+	"Created the minute-taker role for organization and school community awareness"]),
+];
+honors = [
+award("2015", 201502, "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
+award("2015", 201506, "Bard High School Early College Queens", "Computer Science Award", "Winner"),
+award("2015", 201506, "Bard High School Early College Queens", "Spanish Language Award", "Winner"),
+award("Feb 2015", 201502, "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant writing"),
+award("2014", 2014, "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
+award("Feb 2013", 201302, "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
+award("Sept 2013", 201309, "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony"),
+
+]
 
 var timeline_paper;
 var extra_paper;
@@ -22,26 +89,49 @@ var academic_paper;
 var timeline_start_year;
 var timeline_end_year;
 
-function cv_entries(){
+
+function cv_entries(entries){
 	//traverse entries to display correctly
 	cur_html = "<table>";
 	for (var e = 0; e < entries.length; e++){
 		cur_entry = entries[e];
 		keys = Object.keys(cur_entry);
 		//cur_html = "<div class='entry'>";
-		cur_html += "<tr>";
+		cur_html += "<tr id='"+cur_entry["id"]+"'>";
+		/*cur_html += "<td><div class='date_str'>"+cur_entry["date_str"]+"</div></td>";
+		cur_html += "<td><div class='company'>"+cur_entry["company"]+"</div>";
+		cur_html += "<div class='position'>"+cur_entry["position"]+"</div>";
+		cur_html += "<div class='location'>"+cur_entry["location"]+"</div>";
+		cur_html += "<ul>";
+		if (cur_entry.hasOwnProperty("roles")){
+			cur_roles = cur_entry["roles"];
+			console.log(cur_roles);
+			for (var r = 0; r < cur_roles.length; r++){
+				cur_html += "<li class='role'>"+cur_roles[r]+"</li>";
+			}
+			cur_html += "</ul>";
+		}
+		cur_html += "</td></tr>";
+
+		$("#"+cur_entry["id"]+".company").css("color", Raphael.hsb2rgb(cur_entry["color"]));
+		
+		*/
 		for (var k = 0; k < keys.length; k++){
 			cur_key = keys[k];
 			if (cur_key.indexOf("date") >= 0){
 				if (cur_key == "date_str"){
-					cur_html += "<td><div class='date_str'>"+cur_entry[cur_key]+"</div></td><td>";
+					cur_html += "<td><div class='date_str'>"+cur_entry["date_str"]+"</div></td><td>";
 				}
 				else{}
 			}
-			else if (cur_key != "roles"){
-				cur_html += "<div class='"+cur_key+"'>"+cur_entry[cur_key]+"</div>";
+			else if (cur_key == "color"){
+				//$("#"+cur_entry["id"]).css("color", cur_entry["color"]);
+
+				style = $('<style> #'+cur_entry["id"]+' .company { color: '+cur_entry["color"]+'; }</style>');
+				$('html > head').append(style);
 			}
-			else{
+			else if (cur_key == "id"){} //dont print 
+			else if (cur_key == "roles"){
 				cur_html += "<ul>";
 				cur_roles = cur_entry.roles;
 				for (var r = 0; r < cur_roles.length; r++){
@@ -49,11 +139,16 @@ function cv_entries(){
 				}
 				cur_html += "</ul>";
 			}
+			else{
+				cur_html += "<div class='"+cur_key+"'>"+cur_entry[cur_key]+"</div>";
+			}
+			
 		}
 		//cur_html += "</div>";
 		cur_html += "</td></tr>";
 	}
 	cur_html += "</table>";
+	console.log(cur_html);
 	$('#cvlisting').append(cur_html);
 }
 
@@ -90,31 +185,49 @@ function graph_entries(loe, upward, paper){
 	year_width = total_width/(timeline_end_year-timeline_start_year+1);
 
 	for (var e = 0; e < loe.length; e++){
-		full_date_start = loe[e]["date_start_num"] || timeline_start_year; //duration defaults to the whole timeline 
-		full_date_end = loe[e]["date_end_num"] || new Date().getFullYear();
+		cur_entry = loe[e];
+
+		full_date_start = cur_entry["date_start_num"] || timeline_start_year; //duration defaults to the whole timeline 
+		full_date_end = cur_entry["date_end_num"] || new Date().getFullYear();
 
 		//use parse_date to separate years, months, days as applicable
 		start_date_obj = parse_date(full_date_start); 
 		end_date_obj = parse_date(full_date_end);
-
 		start_xpos = position_from_date(year_width, start_date_obj);
+
 		end_xpos = position_from_date(year_width, end_date_obj);
 		//mid_xpos = (end_xpos + start_xpos)/2;
 		path_width = end_xpos - start_xpos;
+		console.log(path_width);
+		if (upward){ ypos = 200; direction = 1;} else{ ypos = 0; direction = 0;}
 
-		if (upward){ ypos = 180; } else{ ypos = 0;}
+		height = path_width/10;
 		//path_str = "M"+ start_xpos_str + " 100 "+"T" +end_xpos_str + " 100"; //+ start_xpos_str + " 100 ";
-		path_str = "M"+ start_xpos+ " "+ypos+" A"+(path_width/2)+" 20 0 0 0 "+end_xpos+" "+ypos;
+		path_str = "M"+ start_xpos+ " "+ypos+" A"+(path_width/2)+" "+height+" 0 0 "+direction+" "+end_xpos+" "+ypos;
 		//path_str = "M"+ start_xpos+ " 100 "+(path_width/4)+" 20 0 0 0 "+end_xpos+" 100";
-		console.log(path_str);
 
 		color_hue = 360*Math.random();
 		fill_color = Raphael.hsb(color_hue,  1, .75);
+		cur_entry["color"] = fill_color;
 
 		new_path = paper.path(path_str).attr({fill: fill_color}); 
-		if (upward){
-			new_path.transform("r180");
-		}
+		
+	}
+
+}
+function graph_awards(loa, upward, paper){
+	total_width = window.innerWidth; //change this to update automatically up to a certain device width.
+	year_width = total_width/(timeline_end_year-timeline_start_year+1);
+
+	for (var a = 0; a < loa.length; a++){
+		cur_award = loa[a];
+
+		xpos = position_from_date(year_width, parse_date(cur_award.date_num));
+		mag = 30;
+		if (upward){ start_ypos = 200; mag = -1*mag; } else{ start_ypos = 0;}
+		path_str = "M"+xpos+" "+start_ypos+"v"+mag;
+
+		paper.path(path_str).attr("stroke-width", 3);
 	}
 
 }
@@ -125,7 +238,6 @@ function position_from_date(year_width, date_obj){
 	day_width = month_width/30; //may not be necessary; assuming 30 day month for simplicity
 
 	position = year_width*(date_obj["year"] - window.timeline_start_year); //move to correct yearbox
-	console.log(window.timeline_start_year);
 	if (date_obj.hasOwnProperty("month")){
 		position += month_width*(date_obj["month"]); //move to correct month
 		if (date_obj.hasOwnProperty("day")){
@@ -157,6 +269,14 @@ function parse_date(number){
 	return date;
 }
 
+function entry_arr_sort(arr){
+	//sort by end date
+	arr.sort(function(a, b){
+	 return parse_date(a.date_end_num).year - parse_date(b.date_end_num).year;
+	})
+	return arr;
+}
+
 function start(){
 	//set defaults for globals:
 	//define all entries here
@@ -167,12 +287,14 @@ function start(){
 	timeline_start_year = 2006;
 	timeline_end_year = new Date().getFullYear(); //default is current year
 
-	console.log(timeline_start_year);
+	create_timeline();
+	graph_entries(extra_entries, true, extra_paper);
+	graph_entries(academic_entries, false, academic_paper);
+	graph_awards(honors, true, extra_paper);
 
-
-	cv_entries(); create_timeline();
-	graph_entries(entries, true, extra_paper);
-	graph_entries(entries, false, academic_paper);
+	cv_entries(entry_arr_sort(academic_entries)); 
+	cv_entries(entry_arr_sort(extra_entries)); 
+	cv_entries(honors); 
 }
 window.addEventListener('resize', function(event){
 	create_timeline(); //timeline should always have the same total width as the window. // change this for mobile maybe. 
