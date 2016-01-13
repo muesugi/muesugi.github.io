@@ -13,17 +13,15 @@ function entry(dstr, dsn, den, i, c, p, loc, rs){
 }
 
 function award(dstr, dnum, o, t, n, deets){
-	//no defaults
-	//type and details are the  only optional args
+	n = n || "";
+	deets = deets || [];
 	//dnum is the award date
 
 	//org: the organization who gives the honor/award
 	//title: the title of the award
 	// name: winner, runner-up, etc
-	new_award = new Object({date_str: dstr, date_num: dnum, org: o, title: t, name: n})
-	if (deets){
-		new_award.details = deets;
-	}
+	new_award = new Object({date_str: dstr, date_num: dnum, org: o, title: t, name: n, details: deets})
+	
 	return new_award;
 }
 function today(){
@@ -45,7 +43,7 @@ academic_entries = [
 entry("2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate Student"),
 entry("2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
 entry("2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
-entry("2002 - 2008", 200209, 200806, "261", "PS 261", "Elementary School"),
+entry("2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
 ];
 extra_entries = [
 entry("2015 - 2016", 2015, 2016, "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", ["Helped to create and support many sites", "Used Drupal CMS"]),
@@ -68,9 +66,39 @@ entry("Sept 2012 - Jun 2015", 201209, 201506, "gwn", "Girls Write Now", "Mentee"
 entry("Apr 2005 - Jun 2015", 200504, 201506, "tachibana", "Tachibana Japanese Dance Group", "Dancer", "New York Branch, NY", 
 	["Learned the art of traditional Japanese dance while coordinating with other dancers",
 	"Performed 4-5 times a year at the annual recital, New Year’s dance ritual, and other events at elderly homes and cultural venues in New York"]),
-entry("Oct 2012 - Jun 2015", 201210, 201506, "bhsecgov", "Bard High School Early College Queens Student Government", "Minute-taker (all), Elected Advisory Representative (Sept 2013 - Jun 2015)", 
+entry("Oct 2012 - Jun 2015", 201210, 201506, "bhsecgov", "Bard High School Early College Queens Student Government", "Minute-taker (all), Elected Advisory Representative (Sept 2013 - Jun 2015)", "Long Island City, NY",
 	["Listened and responded to others’ opinions", "Recorded ideas and oppositions in a clear, concise way",
 	"Created the minute-taker role for organization and school community awareness"]),
+entry("Oct 2012 - Jun 2015", 201210, 201506, "bhsecpeertutor", "Bard High School Early College Queens Peer Tutoring", "Biology (Fall 2012), Writing/English (all), Math (all) peer tutor", "Long Island City, NY",
+	["Helped fellow students with homework, test preparation and more"]),
+entry("Feb 2012 - Dec 2013, Sept 2014 - Feb 2015", 201202, 201502, "bhseclibrary", "Bard High School Early College Queens Library", "Intern","Long Island City, NY",
+	["Helped students at the desk by checking books in and out, helping with homework, and directing students to the right section of the library",
+	"Recommended, ordered, and catalogued new books",
+	"Familiarized myself with library software"]),
+entry("Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Member", "Long Island City, NY",
+	["Recruited to this eight-member team by a classmate", 
+	"Discussed and solved real-world problem sets", 
+	"Participated in the state and national TEAMS Competitions"]),
+entry("Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
+	["Discussed neuroscience knowledge with other representative and professor during weekly meetings", 
+	"Independently studied neuroscience information material and books to prepare for January 31 competition"]),
+entry("Sept 2011 - Jun 2013", 201109, 201306, "bhsecqa", "Bard High School Early College Queens Queer-Straight Alliance", "Member (2011-2012), Co-leader (2012-13)","Long Island City, NY",
+	["Cooperated and exchanged ideas with other leaders",
+	"Planned events and meetings including workshops, discussions, and school community outreach"]),
+entry("Sept 2014 - Feb 2015", 201409, 201502, "jtranslation", "Private Translation", "", 
+	["Worked for an independent filmmaker to translate raw footage in Japanese to English"]),
+entry("Summers of 2010, 2011, 2012, 2013, and 2015", 201006, 201508, "upaf","Uno Port Art Films", "Assistant to Directors (2011 - Present)", "Okayama, Japan",
+	["Participated in this annual mainly-outdoor non-profit film festival in Japan that shows cutting-edge films from around the world", 
+	"Translated (English-Japanese, Japanese-English) and subtitled (using Final Cut Pro) a total of 5 films individually, while co-translating and co-subtitling 24 films",
+	"Took charge of ticketing in the box office, sales of merchandise (T-shirts, bags), and records"]),
+entry("Jul - Aug 2014", 20140721, 20140809, "obras", "Obras Sociales de Santo Hermano Pedro","Volunteer with Proyecto Nutricional", "Antigua Guatemala, Guatemala",
+	["Cared for hospitalized babies and children by bottle feeding, carrying, and playing with them",
+	"Spoke to staff, parents and children exclusively in Spanish to communicate"]),
+entry("Dec 2010 - Jun 2013", 201012, 201306, "ktutoring", "Private Tutoring", "", "Brooklyn, NY",
+	["Taught English, reading comprehension, and math for homework and in preparation for NY standardized tests",
+	"Worked with neighborhood children, most of whom needed tutoring to advance to the next grade level"]),
+entry("Dec 2012 - Jun 2013", 201212, 201306, "starlearning", "Goddard Community Center, Star Learning Center", "Volunteer Tutor", "New York, NY",
+	["Taught English and math to a 2nd grader at community center"]),
 ];
 honors = [
 award("2015", 201502, "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
@@ -80,7 +108,11 @@ award("Feb 2015", 201502, "The Dana Foundation", "National Design a Brain Experi
 award("2014", 2014, "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
 award("Feb 2013", 201302, "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
 award("Sept 2013", 201309, "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony"),
-
+award("2015", 201506, "Milken Scholars", "Scholar"),
+award("2015", 201506, "Design Automation Conference", "P.O. Pistilli Scholarship Awardee"),
+award("2016", 201606, "Kim and Harold Louie Family Foundation", "Scholar"),
+award("2015", 201506, "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award"),
+award("2015", 201506, "Cumberland Farms", "Scholar"),
 ]
 
 var timeline_paper;
@@ -88,7 +120,6 @@ var extra_paper;
 var academic_paper;
 var timeline_start_year;
 var timeline_end_year;
-
 
 function cv_entries(entries){
 	//traverse entries to display correctly
@@ -155,8 +186,8 @@ function cv_entries(entries){
 function create_timeline(end_year){
 	timeline_end_year = end_year || timeline_end_year;
 	
-	$("#timeline").html(""); //empty/clear canvas first
-	timeline_paper = Raphael(document.getElementById('timeline'), "100%", "50");
+	/*$("#timeline").html(""); //empty/clear canvas first
+	timeline_paper = Raphael(document.getElementById('timeline'), "100%", "50");*/
 
 	total_width = window.innerWidth; //change this to update automatically up to a certain device width.
 	year_width = total_width/(timeline_end_year-timeline_start_year+1);
@@ -206,11 +237,13 @@ function graph_entries(loe, upward, paper){
 		path_str = "M"+ start_xpos+ " "+ypos+" A"+(path_width/2)+" "+height+" 0 0 "+direction+" "+end_xpos+" "+ypos;
 		//path_str = "M"+ start_xpos+ " 100 "+(path_width/4)+" 20 0 0 0 "+end_xpos+" 100";
 
-		color_hue = 360*Math.random();
-		fill_color = Raphael.hsb(color_hue,  1, .75);
-		cur_entry["color"] = fill_color;
-
-		new_path = paper.path(path_str).attr({fill: fill_color}); 
+		if (!cur_entry.hasOwnProperty("color")){
+			color_hue = 360*Math.random();
+			fill_color = Raphael.hsb(color_hue,  1, .75);
+			cur_entry["color"] = fill_color;
+		}
+	
+		new_path = paper.path(path_str).attr({fill: cur_entry["color"]}); 
 		
 	}
 
@@ -272,18 +305,31 @@ function parse_date(number){
 function entry_arr_sort(arr){
 	//sort by end date
 	arr.sort(function(a, b){
-	 return parse_date(a.date_end_num).year - parse_date(b.date_end_num).year;
+	 return parse_date(b.date_end_num).year - parse_date(a.date_end_num).year;
+	})
+	return arr;
+}
+function award_arr_sort(arr){
+	//sort by end date
+	arr.sort(function(a, b){
+	 return parse_date(b.date_num).year - parse_date(a.date_num).year;
 	})
 	return arr;
 }
 
-function start(){
-	//set defaults for globals:
-	//define all entries here
+function defaults(){
+	$("#timeline").html(""); //empty/clear canvas first
+	$("#extracontainer").html("");
+	$("#academiccontainer").html("");
 	timeline_paper = Raphael(document.getElementById('timeline'), "100%", "50");
 	extra_paper = Raphael(document.getElementById('extracontainer'), "100%", "200");
 	academic_paper = Raphael(document.getElementById('academiccontainer'), "100%", "200");
+}
 
+function start(){
+	//set defaults for globals:
+	defaults();
+	//define all entries here
 	timeline_start_year = 2006;
 	timeline_end_year = new Date().getFullYear(); //default is current year
 
@@ -294,10 +340,13 @@ function start(){
 
 	cv_entries(entry_arr_sort(academic_entries)); 
 	cv_entries(entry_arr_sort(extra_entries)); 
-	cv_entries(honors); 
+	cv_entries(award_arr_sort(honors)); 
 }
 window.addEventListener('resize', function(event){
+	defaults();
 	create_timeline(); //timeline should always have the same total width as the window. // change this for mobile maybe. 
-
+	graph_entries(extra_entries, true, extra_paper);
+	graph_entries(academic_entries, false, academic_paper);
+	graph_awards(honors, true, extra_paper);
 });
 

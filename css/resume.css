@@ -27,3 +27,8 @@ body{
 } 
 .position{}
 .role{}
+
+/*award styling*/
+.title{
+	font-weight:700;
+}
