@@ -108,7 +108,10 @@ function graph_entries(loe, upward, paper){
 		//path_str = "M"+ start_xpos+ " 100 "+(path_width/4)+" 20 0 0 0 "+end_xpos+" 100";
 		console.log(path_str);
 
-		new_path = paper.path(path_str).attr({fill: "red"}); 
+		color_hue = 360*Math.random();
+		fill_color = Raphael.hsb(color_hue,  1, .75);
+
+		new_path = paper.path(path_str).attr({fill: fill_color}); 
 		if (upward){
 			new_path.transform("r180");
 		}
