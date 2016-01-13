@@ -1,16 +1,14 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 }
+#timeline{
+}
 .yearbox {
-	padding-top:120px;
 	float:left;
 }
 
-
-
 #cvlisting {
 	float:none;
-	padding-top:120px;
 	margin-left: 20px;
 }
 #cvlisting td {
