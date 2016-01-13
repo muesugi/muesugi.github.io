@@ -7,9 +7,8 @@ svg {
 .menu{
 	z-index: 1;
 }
-#timeline{
-}
-.yearbox {
+
+#timeline .yearbox {
 	float:left;
 }
 
@@ -20,6 +19,9 @@ svg {
 #cvlisting td {
 	vertical-align:top;
 }
+/*hide specific id entries*/
+#ice { display:none;}
+#ps261 { display:none;}
 
 
 /*entry attribute styling classes*/

@@ -29,7 +29,6 @@ function today(){
 	this_day = new Date();
 	function leading_0(n){
 		if (n < 10){
-			console.log("0" + n.toString());
 			return "0" + n.toString();
 		}
 		else { return n.toString(); }
@@ -126,14 +125,14 @@ var academic_paper;
 var timeline_start_year;
 var timeline_end_year;
 
-function cv_entries(entries){
+function cv_entries(entries, type){
 	//traverse entries to display correctly
 	cur_html = "<table>";
 	for (var e = 0; e < entries.length; e++){
 		cur_entry = entries[e];
 		keys = Object.keys(cur_entry);
 		//cur_html = "<div class='entry'>";
-		cur_html += "<tr id='"+cur_entry["id"]+"'>";
+		cur_html += "<tr class="+type+" id='"+cur_entry["id"]+"'>";
 		/*cur_html += "<td><div class='date_str'>"+cur_entry["date_str"]+"</div></td>";
 		cur_html += "<td><div class='company'>"+cur_entry["company"]+"</div>";
 		cur_html += "<div class='position'>"+cur_entry["position"]+"</div>";
@@ -184,7 +183,6 @@ function cv_entries(entries){
 		cur_html += "</td></tr>";
 	}
 	cur_html += "</table>";
-	console.log(cur_html);
 	$('#cvlisting').append(cur_html);
 }
 
@@ -234,7 +232,6 @@ function graph_entries(loe, upward, paper){
 		end_xpos = position_from_date(year_width, end_date_obj);
 		//mid_xpos = (end_xpos + start_xpos)/2;
 		path_width = end_xpos - start_xpos;
-		console.log(path_width);
 		if (upward){ ypos = 200; direction = 1;} else{ ypos = 0; direction = 0;}
 
 		height = path_width/10;
@@ -387,16 +384,33 @@ function start(){
 	graph_awards(honors, true, extra_paper);
 	today_line([timeline_paper,extra_paper,academic_paper]);
 
-	cv_entries(entry_sort_year(academic_entries)); 
-	cv_entries(entry_sort_year(extra_entries)); 
-	cv_entries(award_arr_sort(honors)); 
+	cv_entries(entry_sort_year(academic_entries), "entry"); 
+	cv_entries(entry_sort_year(extra_entries), "entry"); 
+	cv_entries(award_arr_sort(honors), "award"); 
+	mobile_friendly();
 }
 window.addEventListener('resize', function(event){
 	defaults();
 	create_timeline(); //timeline should always have the same total width as the window. // change this for mobile maybe. 
-	graph_entries(extra_entries, true, extra_paper);
+	graph_entries(entry_sort_duration(extra_entries), true, extra_paper);
 	graph_entries(academic_entries, false, academic_paper);
 	graph_awards(honors, true, extra_paper);
 	today_line([timeline_paper,extra_paper,academic_paper]);
+	mobile_friendly();
 });
 
+function mobile_friendly(){
+	if (window.innerWidth < 760){//mobile
+		$(".role").addClass("hidden"); //hide all lis
+		$(".details").addClass("hidden"); //hide all award details
+		//make tds clickable
+		$('.entry').on('click', function(event){
+			clicked_id = $(this).attr('id');
+			$("#"+clicked_id + " td .role").toggleClass("hidden");
+		});
+		$('.award').on('click', function(event){
+			clicked_id = $(this).attr('id');
+			$("#"+clicked_id + " td .details").toggleClass("hidden");
+		});
+	}
+}
