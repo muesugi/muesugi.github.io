@@ -7,6 +7,13 @@ svg {
 .menu{
 	z-index: 1;
 }
+.not-menu{
+	padding-top:60px;
+}
+.anchor{
+	margin-top:-60px;
+	padding-top:60px;
+}
 
 #timeline .yearbox {
 	float:left;

@@ -12,7 +12,7 @@ function entry(dstr, dsn, den, i, c, p, loc, rs){
 	return new_entry;
 }
 
-function award(dstr, dnum, o, t, n, deets){
+function award(dstr, dnum, i, o, t, n, deets){
 	n = n || "";
 	deets = deets || [];
 	//dnum is the award date
@@ -20,7 +20,7 @@ function award(dstr, dnum, o, t, n, deets){
 	//org: the organization who gives the honor/award
 	//title: the title of the award
 	// name: winner, runner-up, etc
-	new_award = new Object({date_str: dstr, date_num: dnum, org: o, title: t, name: n, details: deets})
+	new_award = new Object({date_str: dstr, date_num: dnum, id: i, org: o, title: t, name: n, details: deets})
 	
 	return new_award;
 }
@@ -105,18 +105,18 @@ entry("Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Tr
 	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"])
 ];
 honors = [
-award("2015", 201502, "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
-award("2015", 201506, "Bard High School Early College Queens", "Computer Science Award", "Winner"),
-award("2015", 201506, "Bard High School Early College Queens", "Spanish Language Award", "Winner"),
-award("Feb 2015", 201502, "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant writing"),
-award("2014", 2014, "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
-award("Feb 2013", 201302, "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
-award("Sept 2013", 201309, "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony"),
-award("2015", 201506, "Milken Scholars", "Scholar"),
-award("2015", 201506, "Design Automation Conference", "P.O. Pistilli Scholarship Awardee"),
-award("2016", 201606, "Kim and Harold Louie Family Foundation", "Scholar"),
-award("2015", 201506, "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award"),
-award("2015", 201506, "Cumberland Farms", "Scholar"),
+award("2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
+award("2015", 201506, "bhseccs", "Bard High School Early College Queens", "Computer Science Award", "Winner"),
+award("2015", 201506, "bhsecspanish", "Bard High School Early College Queens", "Spanish Language Award", "Winner"),
+award("Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant writing"),
+award("2014", 2014, "mariewanek", "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
+award("Feb 2013", 201302, "scholastic", "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
+award("Sept 2013", 201309,"bhsecstudentlife", "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony"),
+award("2015", 201506, "milken", "Milken Scholars", "Scholar"),
+award("2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Scholarship Awardee"),
+award("2016", 201606, "kimandharold", "Kim and Harold Louie Family Foundation", "Scholar"),
+award("2015", 201506, "penguinwriting", "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award"),
+award("2015", 201506,"cumberland", "Cumberland Farms", "Scholar"),
 ]
 
 var timeline_paper;
@@ -132,7 +132,7 @@ function cv_entries(entries, type){
 		cur_entry = entries[e];
 		keys = Object.keys(cur_entry);
 		//cur_html = "<div class='entry'>";
-		cur_html += "<tr class="+type+" id='"+cur_entry["id"]+"'>";
+		cur_html += "<tr class='"+type+" anchor' id='"+cur_entry["id"]+"'>";
 		/*cur_html += "<td><div class='date_str'>"+cur_entry["date_str"]+"</div></td>";
 		cur_html += "<td><div class='company'>"+cur_entry["company"]+"</div>";
 		cur_html += "<div class='position'>"+cur_entry["position"]+"</div>";
@@ -247,9 +247,22 @@ function graph_entries(loe, upward, paper){
 	
 		new_path = paper.path(path_str).attr({fill: cur_entry["color"]}); 
 		
+		new_path.node.onclick = graph_click_function(cur_entry);
+		//binding function has to be called separately bc all bindings depend on cur_entry 
 	}
-
 }
+function graph_click_function(entry_obj){
+	click_func = function (){
+		console.log("#"+entry_obj["id"]);
+		$("html, body").animate({ 
+				scrollTop: parseInt( $("#"+entry_obj["id"]).offset().top ) - 60 - window.innerHeight*0.02
+			});
+
+		//window.location.hash = "#"+entry_obj["id"];
+	}
+	return click_func; //ready to be called later
+}
+
 function graph_awards(loa, upward, paper){
 	total_width = window.innerWidth; //change this to update automatically up to a certain device width.
 	year_width = total_width/(timeline_end_year-timeline_start_year+1);
@@ -414,3 +427,5 @@ function mobile_friendly(){
 		});
 	}
 }
+
+
