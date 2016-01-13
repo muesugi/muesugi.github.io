@@ -13,9 +13,11 @@
 
   <link rel="stylesheet" href="../css/font-awesome-4.5.0/css/font-awesome.css">
   <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="http://cdn.jsdelivr.net/jquery.sidr/2.0.0/jquery.sidr.js"></script>
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.sidr/2.0.0/stylesheets/jquery.sidr.dark.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <script src="../js/custom/custom.js"></script>
   <script src="../js/custom/resume.js"></script>
   <noscript>
@@ -34,7 +36,7 @@
   
 </head>
 
-<body onload="generate_entries();">
+<body onload="start();">
 <div class="menu" id="menubar">
   <a href="#"> <img class="menu" id="logo" src="../images/logo.png"/></a>
    <div class="spacer"> </div>
@@ -49,7 +51,14 @@
   <div id="mob-menu-icon"><a id="simple-menu" href="#sidr"><i class="fa fa-bars fa-2x"></i></a></div>
   <div class="spacer"> </div>
  </div>
- <div id="cvlisting">odified/?</div>
+ <!-- specific to resume.html -->
+ <div id="graphlisting">
+  <div id="extracontainer"></div>
+  <div id="timeline"></div>
+  <div id="academiccontainer"></div>
+ </div>
+ <div id="cvlisting"></div>
+ <!-- /specific to resume.html -->
   <div id="contact">
   	<div class="social-icons">
   		<a href="mailto:moie_uesugi@brown.edu"><i class="fa fa-envelope-o fa-4x"></i></a>

@@ -1,11 +1,31 @@
-#cvlisting{
-	padding-top:20vh;
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+.yearbox {
+	padding-top:120px;
+	float:left;
 }
 
+
+
+#cvlisting {
+	float:none;
+	padding-top:120px;
+	margin-left: 20px;
+}
+#cvlisting td {
+	vertical-align:top;
+}
+
+
 /*entry attribute styling classes*/
-.date_str{}
+.date_str{
+	padding-right: 5%; /*separates table rows*/
+}
 .date_start_num{}
 .date_end_num{}
-.company{} 
+.company{
+	font-weight:700;
+} 
 .position{}
 .role{}
