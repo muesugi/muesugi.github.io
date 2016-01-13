@@ -302,7 +302,36 @@ function parse_date(number){
 	return date;
 }
 
-function entry_arr_sort(arr){
+function entry_sort_duration(arr){
+	//sort by end date
+	arr.sort(function(b, a){
+		a_duration_year = parse_date(a.date_end_num).year - parse_date(a.date_start_num).year;
+		b_duration_year = parse_date(b.date_end_num).year - parse_date(b.date_start_num).year;
+
+		if (a_duration_year < b_duration_year){
+			return -1;
+		}
+		else if (a_duration_year > b_duration_year){
+			return 1;
+		}
+		else{
+			a_duration_month = parse_date(a.date_end_num).month - parse_date(a.date_start_num).month;
+			b_duration_month = parse_date(b.date_end_num).month - parse_date(b.date_start_num).month;
+			if (a_duration_month < b_duration_month){ return -1; }
+			else if (a_duration_month > b_duration_month){ return 1; }
+			else{
+				a_duration_day = parse_date(a.date_end_num).day - parse_date(a.date_start_num).day;
+				b_duration_day = parse_date(b.date_end_num).day - parse_date(b.date_start_num).day;
+				if (a_duration_day < b_duration_day){ return -1; }
+				else if (a_duration_day > b_duration_day){ return 1; }
+				else { return 0; }
+			}
+
+		}
+	})
+	return arr;
+}
+function entry_sort_year(arr){
 	//sort by end date
 	arr.sort(function(a, b){
 	 return parse_date(b.date_end_num).year - parse_date(a.date_end_num).year;
@@ -334,12 +363,13 @@ function start(){
 	timeline_end_year = new Date().getFullYear(); //default is current year
 
 	create_timeline();
-	graph_entries(extra_entries, true, extra_paper);
+
+	graph_entries(entry_sort_duration(extra_entries), true, extra_paper);
 	graph_entries(academic_entries, false, academic_paper);
 	graph_awards(honors, true, extra_paper);
 
-	cv_entries(entry_arr_sort(academic_entries)); 
-	cv_entries(entry_arr_sort(extra_entries)); 
+	cv_entries(entry_sort_year(academic_entries)); 
+	cv_entries(entry_sort_year(extra_entries)); 
 	cv_entries(award_arr_sort(honors)); 
 }
 window.addEventListener('resize', function(event){
