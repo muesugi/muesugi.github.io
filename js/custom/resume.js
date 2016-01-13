@@ -46,7 +46,9 @@ entry("2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Educatio
 entry("2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
 ];
 extra_entries = [
-entry("2015 - 2016", 2015, 2016, "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", ["Helped to create and support many sites", "Used Drupal CMS"]),
+entry("Sept 2015 - Present", 201509, today(), "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", 
+	["Use HTML/CSS/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
+	"Work with a team of interns and staff to collaboratively solve problems, and tackle new fields such as design"]),
 entry("Jul - Aug 2013", 20130708, 20130830, "gwc", "Girls Who Code", "Student", "New York, NY", 
 	["Selected to participate in a computer programming workshop for teen girls", 
 	"Learned new skills and languages through various projects, 20 field trips, and 30+ speakers", 
@@ -99,6 +101,9 @@ entry("Dec 2010 - Jun 2013", 201012, 201306, "ktutoring", "Private Tutoring", ""
 	"Worked with neighborhood children, most of whom needed tutoring to advance to the next grade level"]),
 entry("Dec 2012 - Jun 2013", 201212, 201306, "starlearning", "Goddard Community Center, Star Learning Center", "Volunteer Tutor", "New York, NY",
 	["Taught English and math to a 2nd grader at community center"]),
+entry("Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Translation", "Publicity Chair, Copy-Editor, Editor", "Providence, RI",
+	["Use Facebook, the website, and email to promote the journal and get new editors as well as submissions", 
+	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"])
 ];
 honors = [
 award("2015", 201502, "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
@@ -239,7 +244,7 @@ function graph_entries(loe, upward, paper){
 
 		if (!cur_entry.hasOwnProperty("color")){
 			color_hue = 360*Math.random();
-			fill_color = Raphael.hsb(color_hue,  1, .75);
+			fill_color = Raphael.hsb(color_hue,  .8, .8);
 			cur_entry["color"] = fill_color;
 		}
 	
@@ -345,16 +350,29 @@ function award_arr_sort(arr){
 	})
 	return arr;
 }
+function today_line(book){ //a list of papers
+	today_obj = parse_date(today());
+	total_width = window.innerWidth;
+	year_width = total_width/(timeline_end_year-timeline_start_year+1);
 
+	if (today_obj.year <= timeline_end_year){ //present day included in timeline
+		line_xpos = position_from_date(year_width, today_obj);
+
+		for (var p = 0; p < book.length; p++){
+			paper = book[p];
+			paper.path("M"+line_xpos+" 0v"+paper.height).attr("stroke", "#88382D");
+			paper.rect(line_xpos+1, 0, total_width - (line_xpos + 1), paper.height).attr({"fill": "white", "fill-opacity": ".8", "stroke": "none"});
+		}
+	}
+}
 function defaults(){
 	$("#timeline").html(""); //empty/clear canvas first
 	$("#extracontainer").html("");
 	$("#academiccontainer").html("");
 	timeline_paper = Raphael(document.getElementById('timeline'), "100%", "20");
 	extra_paper = Raphael(document.getElementById('extracontainer'), "100%", "200");
-	academic_paper = Raphael(document.getElementById('academiccontainer'), "100%", "200");
+	academic_paper = Raphael(document.getElementById('academiccontainer'), "100%", "70");
 }
-
 function start(){
 	//set defaults for globals:
 	defaults();
@@ -367,6 +385,7 @@ function start(){
 	graph_entries(entry_sort_duration(extra_entries), true, extra_paper);
 	graph_entries(academic_entries, false, academic_paper);
 	graph_awards(honors, true, extra_paper);
+	today_line([timeline_paper,extra_paper,academic_paper]);
 
 	cv_entries(entry_sort_year(academic_entries)); 
 	cv_entries(entry_sort_year(extra_entries)); 
@@ -378,5 +397,6 @@ window.addEventListener('resize', function(event){
 	graph_entries(extra_entries, true, extra_paper);
 	graph_entries(academic_entries, false, academic_paper);
 	graph_awards(honors, true, extra_paper);
+	today_line([timeline_paper,extra_paper,academic_paper]);
 });
 
