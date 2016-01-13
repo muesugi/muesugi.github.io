@@ -1,6 +1,12 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 }
+svg {
+	display: block; /*gets rid of pesky space between divs containing svgs*/
+}
+.menu{
+	z-index: 1;
+}
 #timeline{
 }
 .yearbox {

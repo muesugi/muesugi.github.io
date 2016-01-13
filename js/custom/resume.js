@@ -191,13 +191,13 @@ function create_timeline(end_year){
 
 	total_width = window.innerWidth; //change this to update automatically up to a certain device width.
 	year_width = total_width/(timeline_end_year-timeline_start_year+1);
-	height = 50;
+	height = 30;
 
 	var time_st = timeline_paper.set();
 	i_year = timeline_start_year;
 	i_xpos = 0;
 	while(i_year <= timeline_end_year){
-		new_year = timeline_paper.rect(i_xpos, 0, year_width, height);
+		new_year = timeline_paper.rect(i_xpos, 0, year_width, height).attr("fill", "#D3D3D3");
 
 		new_year_text = timeline_paper.text(i_xpos, 0, i_year.toString());
 		text_xpos = i_xpos + (year_width - new_year_text.getBBox().width)/2;
@@ -350,7 +350,7 @@ function defaults(){
 	$("#timeline").html(""); //empty/clear canvas first
 	$("#extracontainer").html("");
 	$("#academiccontainer").html("");
-	timeline_paper = Raphael(document.getElementById('timeline'), "100%", "50");
+	timeline_paper = Raphael(document.getElementById('timeline'), "100%", "20");
 	extra_paper = Raphael(document.getElementById('extracontainer'), "100%", "200");
 	academic_paper = Raphael(document.getElementById('academiccontainer'), "100%", "200");
 }
