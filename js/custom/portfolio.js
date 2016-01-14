@@ -37,21 +37,40 @@ function display_projects(id, lop){
 	content_html = "";
 	for (var p = 0; p < lop.length; p++){
 		cur_proj = lop[p];
-		content_html += "<div class='project'><a href='"+cur_proj["link"]+"''><img class='project-image' src='../images/"+cur_proj["image"]+"' /></a>";
-		content_html += "<div class='project-title'>"+cur_proj["title"]
-			+"</div><div class='project-subtitle'>"+cur_proj["subtitle"]+"</div>";
+		content_html += "<div class='project'>";
+		if (cur_proj["image"]){ //has valid image link
+			content_html += "<a href='"+cur_proj["link"]+"''><img class='project-image' src='../images/"+cur_proj["image"]+"' /></a>";
+			content_html += "<div class='project-title'>"+cur_proj["title"]+"</div>";
+		}
+		else{//add link to title instead
+			content_html += "<a href='"+cur_proj["link"]+"''><div class='project-title'>"+cur_proj["title"]+"</div></a>";
+		}
+		content_html += "<div class='project-subtitle'>"+cur_proj["subtitle"]+"</div>";
+			console.log(cur_proj["text"]);
 		content_html += "<div class='project-text'>"+cur_proj["text"]+"</div></div>";
 	}
 	$("#"+id).html(content_html);
+
+	projects_per_line(2);
+}
+function projects_per_line(ppl){ //ppl = projects_per_line
+	project_width = window.innerWidth/ppl;
+	$('.project').width(project_width - 80); //20 accounts for padding
+	$('.project-image').width(project_width - 60); //+20 accounts for margin
 }
 function mobile_friendly(){
 	if (window.innerWidth < 760){//mobile
-		$(".project-text").addClass("hidden"); //hide all text
-
+		projects_per_line(1);
+		$(".project-text").addClass("hidden"); //hide all text 
+		$(".project .project-title").addClass("clickable"); 
 		$('.project').on('click', function(event){
 			clicked = $(this).find(".project-text");
 			console.log($(this).find(".project-text"));
 			clicked.toggleClass("hidden");
 		});
+	}
+	else{
+		$(".project .project-title").removeClass("clickable"); 
+		projects_per_line(2);
 	}
 }
