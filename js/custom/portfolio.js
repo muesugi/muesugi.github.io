@@ -3,8 +3,10 @@ window.addEventListener('resize', function(event){
 });
 
 var cs_projects = [];
+var cs_projects_per_line;
 var hum_projects = [];
-var other_projects = [];
+var hum_projects_per_line;
+//var other_projects = [];
 
 
 function add_project(tipe, t, subt, img_nm, yr, txt, lnk){
@@ -32,7 +34,7 @@ function insert(new_project, sorted_lop){ //scope of entire projects list isnt t
 	sorted_lop.splice(iter_proj, 0, new_project);
 }
 
-function display_projects(id, lop){	
+function display_projects(id, lop, ppl){	
 	//display array of projects in div with id id.
 	content_html = "";
 	for (var p = 0; p < lop.length; p++){
@@ -46,31 +48,45 @@ function display_projects(id, lop){
 			content_html += "<a href='"+cur_proj["link"]+"''><div class='project-title'>"+cur_proj["title"]+"</div></a>";
 		}
 		content_html += "<div class='project-subtitle'>"+cur_proj["subtitle"]+"</div>";
-			console.log(cur_proj["text"]);
 		content_html += "<div class='project-text'>"+cur_proj["text"]+"</div></div>";
 	}
 	$("#"+id).html(content_html);
 
-	projects_per_line(2);
+	project_list = id.replace("-", "_");
+	if (window[project_list + "_per_line"] == undefined){
+		window[project_list + "_per_line"] = ppl;
+	}
+
+	projects_per_line(id, window[project_list + "_per_line"]);
 }
-function projects_per_line(ppl){ //ppl = projects_per_line
-	project_width = window.innerWidth/ppl;
-	$('.project').width(project_width - 80); //20 accounts for padding
-	$('.project-image').width(project_width - 60); //+20 accounts for margin
+function projects_per_line(id, ppl){ //ppl = projects_per_line
+	//id -> projects in what div?
+	//set cs_projects_per_line and/or hum_projects_per_line	
+	ppl = ppl || window[id.replace("-", "_") + "_per_line"]; //optional
+
+	console.log(id, ppl);
+	project_width = $("#"+id).innerWidth()/ppl;
+	console.log(id, project_width);
+	project_ignore_width = 40;//accounts for .project padding and margins
+	image_ignore_width = project_ignore_width - 20;
+	$("#"+id+' .project').width(project_width - project_ignore_width);
+	$("#"+id+' .project-image').width(project_width - image_ignore_width);
 }
+
 function mobile_friendly(){
 	if (window.innerWidth < 760){//mobile
-		projects_per_line(1);
+		projects_per_line("cs-projects", 1);
+		projects_per_line("hum-projects", 1);
 		$(".project-text").addClass("hidden"); //hide all text 
 		$(".project .project-title").addClass("clickable"); 
 		$('.project').on('click', function(event){
 			clicked = $(this).find(".project-text");
-			console.log($(this).find(".project-text"));
 			clicked.toggleClass("hidden");
 		});
 	}
 	else{
 		$(".project .project-title").removeClass("clickable"); 
-		projects_per_line(2);
+		projects_per_line("cs-projects");
+		projects_per_line("hum-projects");
 	}
 }

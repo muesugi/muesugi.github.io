@@ -4,7 +4,7 @@
 #content{ 
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
-	padding: 85px 20px 0px 20px;
+	padding: 85px 50px;
 
 }
 /*project section headings*/
@@ -39,6 +39,7 @@
 }
 .project-subtitle{
 	display: inline-block;
+	font-style: italic;
 }
 .project-image{
 	width: 320px;
