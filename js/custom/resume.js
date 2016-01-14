@@ -127,7 +127,7 @@ var timeline_end_year;
 
 function cv_entries(entries, type){
 	//traverse entries to display correctly
-	cur_html = "<table>";
+	cur_html = "<table id='table-"+type+"'>";
 	for (var e = 0; e < entries.length; e++){
 		cur_entry = entries[e];
 		keys = Object.keys(cur_entry);
@@ -392,8 +392,8 @@ function start(){
 	graph_awards(honors, true, extra_paper);
 	today_line([timeline_paper,extra_paper,academic_paper]);
 
-	cv_entries(entry_sort_year(academic_entries), "entry"); 
-	cv_entries(entry_sort_year(extra_entries), "entry"); 
+	cv_entries(entry_sort_year(academic_entries), "academic_entry"); 
+	cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
 	cv_entries(award_arr_sort(honors), "award"); 
 	mobile_friendly();
 }
@@ -412,7 +412,11 @@ function mobile_friendly(){
 		$(".role").addClass("hidden"); //hide all lis
 		$(".details").addClass("hidden"); //hide all award details
 		//make tds clickable
-		$('.entry').on('click', function(event){
+		$('.academic_entry').on('click', function(event){
+			clicked_id = $(this).attr('id');
+			$("#"+clicked_id + " td .role").toggleClass("hidden");
+		});
+		$('.extra_entry').on('click', function(event){
 			clicked_id = $(this).attr('id');
 			$("#"+clicked_id + " td .role").toggleClass("hidden");
 		});
