@@ -8,7 +8,6 @@ var hum_projects = [];
 var hum_projects_per_line;
 //var other_projects = [];
 
-
 function add_project(tipe, t, subt, img_nm, yr, txt, lnk){
 	tipe = tipe || "cs"; //type options are cs, hum, and other
 	t = t || ""; //project title
@@ -48,7 +47,18 @@ function display_projects(id, lop, ppl){
 			content_html += "<a href='"+cur_proj["link"]+"''><div class='project-title'>"+cur_proj["title"]+"</div></a>";
 		}
 		content_html += "<div class='project-subtitle'>"+cur_proj["subtitle"]+"</div>";
-		content_html += "<div class='project-text'>"+cur_proj["text"]+"</div></div>";
+
+		text = cur_proj["text"];
+		cut_index = text.indexOf(" ", 250);
+		shown_text = text.substr(0, cut_index); //250 char count limit
+		hidden_text = text.substr(cut_index);
+		content_html += "<div class='project-text'>"+shown_text;
+
+		if (hidden_text.length > 0){
+			content_html += "<div class='project-button' onclick='toggle_hidden_text(this);'>Read More</div>";
+			content_html += "<div class='project-hidden-text hidden'>"+hidden_text+"</div><div class='project-button hidden' onclick='toggle_hidden_text(this);'>Hide</div>";
+		}
+		content_html += "</div></div>";
 	}
 	$("#"+id).html(content_html);
 
@@ -89,4 +99,10 @@ function mobile_friendly(){
 		projects_per_line("cs-projects");
 		projects_per_line("hum-projects");
 	}
+}
+
+
+function toggle_hidden_text(clicked){
+	console.log(clicked);
+	$($(clicked).parent()).children().not("br, a").toggleClass('hidden');
 }
