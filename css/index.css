@@ -17,9 +17,18 @@
 #photo{
 	padding-top:10vh; /*for menu bar*/
 	height:90vh;
+
 }
+/*#about::before{
+	display: block; 
+	content: " ";   
+	margin-top: -62px; 
+	height: 62px; 
+	visibility: hidden; 
+}*/
 #about{
-	height:100vh;
+	display:inline-block;
+	height:70vh;
 }
 #contact{
 	position:relative;
