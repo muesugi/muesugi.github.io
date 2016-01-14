@@ -39,7 +39,7 @@ function today(){
 
 //define all entries here
 academic_entries = [
-entry("2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate Student"),
+entry("2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate School"),
 entry("2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
 entry("2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
 entry("2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),

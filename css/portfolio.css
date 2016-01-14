@@ -4,16 +4,18 @@
 #content{ 
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
-	padding: 85px 50px 0px 50px;
+	padding-top: 85px;
+
 }
 /*project section headings*/
 #content div::before{
 	display:block;
 	font-weight: 600;
 	font-size: 1.3em;
+	font-family: 'Arvo', serif;
 }
 #cs-projects::before{ content: "Computer Science"; }
-#hum-projects::before{ content: "Humanities"; }
+#hum-projects::before{ content: "Humanities and Other"; }
 #other-projects::before{ content: "Other"; }
 
 /*project object styling*/
