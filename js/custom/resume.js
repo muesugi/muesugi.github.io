@@ -230,7 +230,7 @@ function graph_entries(loe, upward, paper){
 		start_xpos = position_from_date(year_width, start_date_obj);
 
 		end_xpos = position_from_date(year_width, end_date_obj);
-		//mid_xpos = (end_xpos + start_xpos)/2;
+		mid_xpos = (end_xpos + start_xpos)/2;
 		path_width = end_xpos - start_xpos;
 		if (upward){ ypos = 200; direction = 1;} else{ ypos = 0; direction = 0;}
 
@@ -244,18 +244,36 @@ function graph_entries(loe, upward, paper){
 			fill_color = Raphael.hsl(color_hue,  40, 50);
 			cur_entry["color"] = fill_color;
 		}
-	
+
 		new_path = paper.path(path_str).attr({fill: cur_entry["color"]}); 
 		
-		new_path.node.onclick = graph_click_function(cur_entry);
+		new_path.node.onclick = graph_click(cur_entry);
 		//binding function has to be called separately bc all bindings depend on cur_entry 
+
+		if (upward){ text_ypos = ypos - height - 10; } 
+		else{ text_ypos = ypos + height + 10;}
+		path_text = paper.text(mid_xpos, text_ypos, cur_entry["company"]);
+		path_text.hide();//start hidden
+		
+		new_path.hover(
+			graph_hover_show(path_text),
+			graph_hover_hide(path_text));
 	}
 }
-function graph_click_function(entry_obj){
+function graph_click(entry_obj){
 	click_func = function (){scrollTo(entry_obj["id"])};
 	return click_func; //ready to be called later
 	//scrollTo is in custom.js
 }
+function graph_hover_show(path_text_obj){
+	hover_show_func = function (){path_text_obj.show()};
+	return hover_show_func;
+}
+function graph_hover_hide(path_text_obj){
+	hover_hide_func = function (){path_text_obj.hide()};
+	return hover_hide_func;
+}
+
 
 function graph_awards(loa, upward, paper){
 	total_width = window.innerWidth; //change this to update automatically up to a certain device width.
@@ -263,14 +281,23 @@ function graph_awards(loa, upward, paper){
 
 	for (var a = 0; a < loa.length; a++){
 		cur_award = loa[a];
-
+		console.log(cur_award);
 		xpos = position_from_date(year_width, parse_date(cur_award.date_num));
 		mag = 30;
 		if (upward){ start_ypos = 200; mag = -1*mag; } else{ start_ypos = 0;}
 		path_str = "M"+xpos+" "+start_ypos+"v"+mag;
 
 		new_path = paper.path(path_str).attr("stroke-width", 3);
-		new_path.node.onclick = graph_click_function(cur_award);
+		new_path.node.onclick = graph_click(cur_award);
+
+		if (upward){ text_ypos = start_ypos - 30 - 10; } 
+		else{ text_ypos = start_ypos + 30 + 10;}
+		path_text = paper.text(xpos, text_ypos, cur_award["org"]+"\n"+cur_award["title"]);
+		
+		path_text.hide();
+		new_path.hover(
+			graph_hover_show(path_text),
+			graph_hover_hide(path_text));
 	}
 
 }
