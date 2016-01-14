@@ -234,14 +234,14 @@ function graph_entries(loe, upward, paper){
 		path_width = end_xpos - start_xpos;
 		if (upward){ ypos = 200; direction = 1;} else{ ypos = 0; direction = 0;}
 
-		height = path_width/10;
+		height = path_width/10 + 10*Math.random();
 		//path_str = "M"+ start_xpos_str + " 100 "+"T" +end_xpos_str + " 100"; //+ start_xpos_str + " 100 ";
 		path_str = "M"+ start_xpos+ " "+ypos+" A"+(path_width/2)+" "+height+" 0 0 "+direction+" "+end_xpos+" "+ypos;
 		//path_str = "M"+ start_xpos+ " 100 "+(path_width/4)+" 20 0 0 0 "+end_xpos+" 100";
 
 		if (!cur_entry.hasOwnProperty("color")){
 			color_hue = 360*Math.random();
-			fill_color = Raphael.hsb(color_hue,  .8, .8);
+			fill_color = Raphael.hsl(color_hue,  40, 50);
 			cur_entry["color"] = fill_color;
 		}
 	
@@ -252,15 +252,9 @@ function graph_entries(loe, upward, paper){
 	}
 }
 function graph_click_function(entry_obj){
-	click_func = function (){
-		console.log("#"+entry_obj["id"]);
-		$("html, body").animate({ 
-				scrollTop: parseInt( $("#"+entry_obj["id"]).offset().top ) - 60 - window.innerHeight*0.02
-			});
-
-		//window.location.hash = "#"+entry_obj["id"];
-	}
+	click_func = function (){scrollTo(entry_obj["id"])};
 	return click_func; //ready to be called later
+	//scrollTo is in custom.js
 }
 
 function graph_awards(loa, upward, paper){
@@ -275,7 +269,8 @@ function graph_awards(loa, upward, paper){
 		if (upward){ start_ypos = 200; mag = -1*mag; } else{ start_ypos = 0;}
 		path_str = "M"+xpos+" "+start_ypos+"v"+mag;
 
-		paper.path(path_str).attr("stroke-width", 3);
+		new_path = paper.path(path_str).attr("stroke-width", 3);
+		new_path.node.onclick = graph_click_function(cur_award);
 	}
 
 }

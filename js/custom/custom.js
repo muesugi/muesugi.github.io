@@ -33,5 +33,11 @@ function create_sidr(){
 }
 function on_sidr_open(){
 	//change size of landing, photo, menu
+}
 
+function scrollTo(id){
+	console.log("#"+id);
+	$("html, body").animate({ 
+		scrollTop: parseInt( $("#"+id).offset().top ) - 60 - window.innerHeight*0.02
+	});
 }
