@@ -1,8 +1,13 @@
+function fit_sizing(id){
+	//set about size to vh - menu height - contact height
+	new_height = window.innerHeight - $("#menubar").outerHeight() - $("#contact").outerHeight();
+	$("#"+id).css("height", new_height.toString());
+}
+
 window.addEventListener('resize', function(event){
 	if (window.innerWidth > 760){ /*not mobile*/
 		$.sidr('close', 'sidr');
 	}
-
 });
 
 $(document).ready(function() {

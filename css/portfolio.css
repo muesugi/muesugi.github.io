@@ -1,0 +1,45 @@
+#menu{
+	bottom:0px;
+}
+#content{ 
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	padding: 85px 50px 0px 50px;
+}
+/*project section headings*/
+#content div::before{
+	display:block;
+	font-weight: 600;
+	font-size: 1.3em;
+}
+#cs-projects::before{ content: "Computer Science"; }
+#hum-projects::before{ content: "Humanities"; }
+#other-projects::before{ content: "Other"; }
+
+/*project object styling*/
+.project {
+	vertical-align:top;
+	background-image:url("../images/subtle_white_mini_waves.png");
+	display: inline-block;
+	padding: 0px 10px 20px 10px;
+	margin: 10px;
+	width:260px;
+}
+.project-title{
+	font-weight: 700;
+	font-size: 1.2em;
+}
+.project-subtitle{
+	display: inline-block;
+}
+.project-image{
+	width: 280px;
+	margin-left:-10px;
+	display: inline-block;
+
+}
+.project-text{
+	padding-left:10px;
+	text-align: left;
+}
+

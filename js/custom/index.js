@@ -1,6 +1,6 @@
 window.addEventListener('resize', function(event){
 	landing_photo_resize();
-	about_sizing();
+	fit_sizing("about");
 });
 /*
 $(document).ready(function() {
@@ -15,9 +15,4 @@ function landing_photo_resize(){
 	else{ /*not mobile*/
 	  $(".landing").width(window.innerWidth - $("#photo").width()- 0.05*window.innerWidth);
 	}
-}
-function about_sizing(){
-	//set about size to vh - menu height - contact height
-	new_height = window.innerHeight - $("#menubar").outerHeight() - $("#contact").outerHeight();
-	$("#about").css("height", new_height.toString());
 }
