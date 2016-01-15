@@ -114,7 +114,7 @@ function go_to_page_hovers(){
 }
 
 function toggle_hidden_text(clicked){
-	$($(clicked).parent()).children().not("br, a").toggleClass('hidden');
+	$($(clicked).parent()).children().not("br, a, #wip").toggleClass('hidden');
 }
 
 

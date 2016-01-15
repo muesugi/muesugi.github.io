@@ -50,9 +50,8 @@ body {
 }
 .social-icons{
 	text-align: center;
-	padding-left:5%; /*cancel out the extra 5% padding on the right*/
-	padding-top:2vh;
-	height: 12vh;
+	padding:.5em 0px .5em 5%; /*cancel out the extra 5% padding on the right*/
+	height: 4em;/*as defined by font awesome f-4x*/
 }
 .social-icons i{
 	color: #88382D;
