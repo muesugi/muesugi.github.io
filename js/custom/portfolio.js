@@ -87,9 +87,14 @@ function mobile_friendly(){
 		projects_per_line("cs-projects", 1);
 		projects_per_line("hum-projects", 1);
 		$(".project-text").addClass("hidden"); //hide all text 
-		$(".project .project-title").addClass("clickable"); 
-		$('.project').on('click', function(event){
-			clicked = $(this).find(".project-text");
+		$(".project-title").hover( function(){	
+			$(this).siblings('.project-subtitle').andSelf().toggleClass('underline'); 
+		}); 
+		$(".project-subtitle").hover( function(){	
+			$(this).siblings('.project-title').andSelf().toggleClass('underline'); 
+		}); 
+		$('.project-title,.project-subtitle').on('click', function(event){
+			clicked = $(this).siblings(".project-text");
 			clicked.toggleClass("hidden");
 		});
 	}

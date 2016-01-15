@@ -19,7 +19,9 @@
 #cs-projects::before{ content: "Computer Science"; }
 #hum-projects::before{ content: "Humanities and Other"; }
 #other-projects::before{ content: "Other"; }
-
+.underline{
+	text-decoration: underline;
+}
 .clickable:hover{
 	text-decoration: underline;
 }
