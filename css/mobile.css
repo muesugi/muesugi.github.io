@@ -1,0 +1,34 @@
+/* all pages (mobile additions to custom.css) */
+#mob-menu-icon{
+	margin-top:10px;
+	display: block;
+	padding-right:5%;
+	text-align: right;
+}
+.menu{
+	display:block; /*disable flex here*/
+}
+.menu-item{
+	display:none;
+}
+
+/* index.html (mobile additions to index.css) */
+.landing{
+    width:100%;
+    margin:0px;
+}
+#photo{
+	width:100%;
+	height:auto;
+	padding:0px;
+}
+/* resume.html (mobile additions to resume.css) */
+.role{ /*bullet points for entries*/
+	display: list-item;
+}
+.details{ /*details for awards*/
+	display: block;
+}
+.hidden{
+	display:none;
+}

@@ -1,0 +1,89 @@
+#menu{
+	bottom:0px;
+}
+#content{ 
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	padding: 85px 50px;
+
+}
+/*project section headings*/
+#content div::before{
+	display:block;
+	font-weight: 600;
+	font-size: 1.3em;
+	font-family: 'Arvo', serif;
+	padding-top: 5vh;
+	padding-bottom: 2.5vh;
+}
+#cs-projects::before{ content: "Computer Science and Other Sciences"; }
+#hum-projects::before{ content: "Humanities and Other Writing"; }
+#other-projects::before{ content: "Other"; }
+.underline{
+	text-decoration: underline;
+}
+.clickable:hover{
+	text-decoration: underline;
+}
+.project-button:hover{
+	text-decoration: underline;
+}
+#content a {color:black; text-decoration: none;}
+#content a:hover{
+	text-decoration: underline;
+}
+/*project object styling*/
+.project {
+	vertical-align:top;
+	background-image:url("../images/subtle_white_mini_waves.png");
+	display: inline-block;
+	padding: 0px 10px 20px 10px;
+	margin: 10px;
+	width:300px;
+}
+.project-title{
+	font-weight: 700;
+	font-size: 1.2em;
+}
+.project-subtitle{
+	display: inline-block;
+	font-style: italic;
+	padding-bottom: 1em;
+	padding-top: .5em;
+}
+.project-image{
+	width: 320px;
+	margin-left:-10px;
+	display: inline-block;
+	border:solid gray 1px;
+}
+.image-tint {
+	position: absolute;
+	cursor: pointer;
+	display: block;
+	margin: -1px -1px -1px -11px; /*account for project-image margin and border*/
+	background-color: rgba(255,255,255,0.8);
+	text-align: center;
+}
+.project-text{
+	padding-left:10px;
+	text-align: left;
+}
+#wip{/*work in progress tag*/
+	text-align: center;
+	font-weight: 600;
+	margin:0px;
+}
+.ellipse{
+	display:inline;
+}
+.project-button{
+	text-align: right;
+	font-size: .75em;
+}
+.project-hidden-text{
+	display:inline;
+}
+.hidden{
+	display:none;
+}
