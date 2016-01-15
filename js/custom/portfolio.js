@@ -50,14 +50,15 @@ function display_projects(id, lop, ppl){
 
 		text = cur_proj["text"];
 		cut_index = text.indexOf(" ", 250);
-		shown_text = text.substr(0, cut_index); //250 char count limit
-		hidden_text = text.substr(cut_index);
-		content_html += "<div class='project-text'>"+shown_text;
+		if (text.length > 250){
+			shown_text = text.substr(0, cut_index); //break at the first space after 250 char mark
+			hidden_text = text.substr(cut_index);
+			content_html += "<div class='project-text'>"+shown_text;
 
-		if (hidden_text.length > 0){
 			content_html += "<div class='project-button' onclick='toggle_hidden_text(this);'>Read More</div>";
 			content_html += "<div class='project-hidden-text hidden'>"+hidden_text+"</div><div class='project-button hidden' onclick='toggle_hidden_text(this);'>Hide</div>";
 		}
+		else {content_html += "<div class='project-text'>"+text;}
 		content_html += "</div></div>";
 	}
 	$("#"+id).html(content_html);
@@ -93,14 +94,14 @@ function mobile_friendly(){
 		});
 	}
 	else{
+		$(".project-text").removeClass("hidden"); 
 		$(".project .project-title").removeClass("clickable"); 
-		projects_per_line("cs-projects");
+		$('.project').off('click');
+		projects_per_line("cs-projects"); //stored previous values
 		projects_per_line("hum-projects");
 	}
 }
-function add_event_listeners(){
-	mobile_friendly();
-
+function go_to_page_hovers(){
 	$("a").has('.project-image').on({
 		mouseenter: function(){
 			if ($(this).children('.image-tint').length == 0){
@@ -108,7 +109,7 @@ function add_event_listeners(){
 			}
 			else{toggle_tint($(this));}
 		},
-		mouseleave: function(){ console.log("mouseleave", $(this));toggle_tint($(this));}
+		mouseleave: function(){ toggle_tint($(this));}
 	});
 }
 
