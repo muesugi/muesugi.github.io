@@ -1,7 +1,7 @@
 function fit_sizing(id){
 	//set about size to vh - menu height - contact height
-	new_height = window.innerHeight - $("#menubar").outerHeight() - $("#contact").outerHeight();
-	$("#"+id).css("height", new_height.toString());
+	new_height = window.innerHeight - $("#menubar").outerHeight() - $("#contact").outerHeight() - 120;
+	$("#"+id).css("height", new_height);
 }
 
 window.addEventListener('resize', function(event){

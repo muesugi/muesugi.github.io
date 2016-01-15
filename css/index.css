@@ -27,9 +27,16 @@
 	visibility: hidden; 
 }*/
 #about{
+	font-family: 'Open Sans', sans-serif;
 	display:inline-block;
 	height:70vh;
+	padding: 20px;
 }
-#contact{
-	position:relative;
+.about-line{
+	padding: 10px 25px 0px 25px; 
 }
+.keyword{
+	color: #A84A5C;
+}
+.inline{ display:inline; }
+.italics{ font-style: italic; }

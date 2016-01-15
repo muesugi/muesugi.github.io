@@ -60,3 +60,24 @@ body {
 .hidden{
 	display: none;
 }
+
+#contact{
+	position:relative;
+	color: #FDFDFD;
+}
+#contact #credits{
+	font-family: 'Open Sans', sans-serif;
+	font-size: .78em;
+	text-align: right;
+	position:absolute;
+	right:20px;
+	bottom:15px;
+	width: 200px;
+}
+#contact #credits a {
+	color:inherit;
+	text-decoration: underline;
+} 
+#contact #credits a:hover {
+	text-decoration: none;
+} 
