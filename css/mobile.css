@@ -16,12 +16,16 @@
 .landing{
     width:100%;
     margin:0px;
-    padding-top:10px;
+    padding-top:10vh;
+    height:auto;
 }
 #photo{
 	width:100%;
 	height:auto;
 	padding:0px;
+}
+.about-line:last-child {
+	padding-bottom: 30px;
 }
 /* resume.html (mobile additions to resume.css) */
 .role{ /*bullet points for entries*/
@@ -35,5 +39,10 @@
 }
 #contact{
 	position: relative;
-	bottom:0px;
+}
+#download{
+	/*padding-bottom:80px;*/
+}
+.nav-button{
+	z-index: 20;
 }
