@@ -430,17 +430,17 @@ function start(){
 	$("#to-download-button").on('click',function(){ scrollTo("download");
 	});
 
-	top_offset = 100;
-	download_offset = 800;
+	top_offset = 200;
+	download_offset = 700;
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() < top_offset) { //before top offset
         	fade_out_if_visible("to-top-button");
-        	//fade_in_if_hidden("to-download-button");
+        	fade_in_if_hidden("to-download-button");
         }
         //after download offset mark
         else if (jQuery(this).scrollTop() > ($(document).height() - download_offset)){
         	fade_out_if_visible("to-download-button");
-        	//fade_in_if_hidden("to-top-button");
+        	fade_in_if_hidden("to-top-button");
         }
       	//between two marks
         else{ 
