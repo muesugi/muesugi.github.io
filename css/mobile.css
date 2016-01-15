@@ -16,6 +16,7 @@
 .landing{
     width:100%;
     margin:0px;
+    padding-top:10px;
 }
 #photo{
 	width:100%;
@@ -31,4 +32,8 @@
 }
 .hidden{
 	display:none;
+}
+#contact{
+	position: relative;
+	bottom:0px;
 }
