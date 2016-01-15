@@ -281,7 +281,6 @@ function graph_awards(loa, upward, paper){
 
 	for (var a = 0; a < loa.length; a++){
 		cur_award = loa[a];
-		console.log(cur_award);
 		xpos = position_from_date(year_width, parse_date(cur_award.date_num));
 		mag = 30;
 		if (upward){ start_ypos = 200; mag = -1*mag; } else{ start_ypos = 0;}
