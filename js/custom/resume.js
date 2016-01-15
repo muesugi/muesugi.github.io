@@ -477,7 +477,7 @@ window.addEventListener('resize', function(event){
 });
 
 function mobile_friendly(){
-	if (window.innerWidth < 760){//mobile
+	if (window.innerWidth < 770){//mobile
 		$(".role").addClass("hidden"); //hide all lis
 		$(".details").addClass("hidden"); //hide all award details
 		//make tds clickable

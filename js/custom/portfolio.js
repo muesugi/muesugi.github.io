@@ -94,7 +94,7 @@ function projects_per_line(id, ppl){ //ppl = projects_per_line
 }
 
 function mobile_friendly(){
-	if (window.innerWidth < 760){//mobile
+	if (window.innerWidth < 770){//mobile
 		projects_per_line("cs-projects", 1);
 		projects_per_line("hum-projects", 1);
 		$(".project-text").addClass("hidden"); //hide all text 

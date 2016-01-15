@@ -5,7 +5,7 @@ function fit_sizing(id){
 }
 
 window.addEventListener('resize', function(event){
-	if (window.innerWidth > 760){ /*not mobile*/
+	if (window.innerWidth > 770){ /*not mobile*/
 		$.sidr('close', 'sidr');
 	}
 });
