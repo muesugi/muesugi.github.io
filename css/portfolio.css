@@ -17,7 +17,7 @@
 	padding-bottom: 2.5vh;
 }
 #cs-projects::before{ content: "Computer Science"; }
-#hum-projects::before{ content: "Humanities and Other"; }
+#hum-projects::before{ content: "Humanities and Other Writing"; }
 #other-projects::before{ content: "Other"; }
 .underline{
 	text-decoration: underline;
@@ -28,7 +28,10 @@
 .project-button:hover{
 	text-decoration: underline;
 }
-a {color:black;}
+a {color:black; text-decoration: none;}
+a:hover{
+	text-decoration: underline;
+}
 /*project object styling*/
 .project {
 	vertical-align:top;
