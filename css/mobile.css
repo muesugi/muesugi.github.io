@@ -40,8 +40,8 @@
 #contact{
 	position: relative;
 }
-#download{
-	/*padding-bottom:80px;*/
+#download #download-longer{
+	display:none;
 }
 .nav-button{
 	z-index: 20;

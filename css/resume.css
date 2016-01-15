@@ -19,6 +19,7 @@ svg {
 #timeline .yearbox {
 	float:left;
 }
+/*
 #download-ref{
 	color:#88382D;
 }
@@ -29,7 +30,7 @@ svg {
 }
 #download-ref:hover{
 	text-decoration: none;
-}
+}*/
 #nav-button-container{
 	position:fixed;
 	right:10px;
@@ -98,6 +99,9 @@ table::before{
 	text-align: center;
 }
 #download {width: 100%; text-align: center;}
+#download #download-longer{
+	display:inline;
+}
 #cvlisting {
 	float:none;
 	margin-left: 20px;

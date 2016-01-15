@@ -493,6 +493,10 @@ function mobile_friendly(){
 			clicked_id = $(this).attr('id');
 			$("#"+clicked_id + " td .details").toggleClass("hidden");
 		});
+
+	}
+	else{
+		$("#download")
 	}
 }
 
