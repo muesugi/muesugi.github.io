@@ -8,6 +8,7 @@ $(document).ready(function() {
 });*/
 
 function landing_photo_resize(){
+	console.log("landing_photo_resize");
 	if (window.innerWidth <= 760){ /*mobile*/
 		$(".landing").width(window.innerWidth - 0.05*window.innerWidth);
 		$(".landing").css("padding-right", "5%");
