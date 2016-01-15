@@ -30,6 +30,17 @@
 		    '0px    to 760px  = mobile.css'
 		  ]
 		};
+
+    function landing_photo_resize(photo_width){
+      console.log("landing_photo_resize");
+      if (window.innerWidth <= 760){ /*mobile*/
+        $(".landing").width(window.innerWidth - 0.05*window.innerWidth);
+        $(".landing").css("padding-right", "5%");
+      } 
+      else{ /*not mobile*/
+        $(".landing").width(window.innerWidth - photo_width - 0.05*window.innerWidth);
+      }
+    }
 	</script>
   <script src="js/plugins/adapt.min.js"></script>
   <script src="js/plugins/jquery.waitforimages.min.js"></script>
@@ -59,19 +70,7 @@
   <script>
 
   $("#photo").waitForImages(function(){
-   function landing_photo_resize(){
-      console.log("landing_photo_resize");
-      if (window.innerWidth <= 760){ /*mobile*/
-        console.log(window.innerWidth);
-        $(".landing").width(window.innerWidth - 0.05*window.innerWidth);
-        $(".landing").css("padding-right", "5%");
-      } 
-      else{ /*not mobile*/
-        console.log($("#photo").width());
-        $(".landing").width(window.innerWidth - $('#photo').width() - 0.05*window.innerWidth);
-      }
-    }
-    landing_photo_resize(); 
+    landing_photo_resize($("#photo").width()); 
   });
 
   </script>
@@ -87,7 +86,7 @@
   fit_sizing('about'); 
   
   window.addEventListener('resize', function(event){
-    landing_photo_resize();
+    landing_photo_resize($("#photo").width()); 
     fit_sizing("about");
   });
   </script>
