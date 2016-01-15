@@ -73,6 +73,9 @@ a:hover{
 	font-weight: 600;
 	margin:0px;
 }
+.ellipse{
+	display:inline;
+}
 .project-button{
 	text-align: right;
 	font-size: .75em;

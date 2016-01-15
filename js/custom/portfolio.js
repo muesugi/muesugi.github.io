@@ -53,10 +53,10 @@ function display_projects(id, lop, ppl){
 		if (text.length > 250){
 			shown_text = text.substr(0, cut_index); //break at the first space after 250 char mark
 			hidden_text = text.substr(cut_index);
-			content_html += "<div class='project-text'>"+shown_text+ " ...";
+			content_html += "<div class='project-text'>"+shown_text+"<div class='ellipse'> ...</div>";
 
-			content_html += "<div class='project-button' onclick='show_hidden_text(this);'>Read More</div>";
-			content_html += "<div class='project-hidden-text hidden'>"+hidden_text+"</div><div class='project-button hidden' onclick='hide_hidden_text(this);'>Hide</div>";
+			content_html += "<div class='project-button' onclick='toggle_hidden_text(this);'>Read More</div>";
+			content_html += "<div class='project-hidden-text hidden'>"+hidden_text+"</div><div class='project-button hidden' onclick='toggle_hidden_text(this);'>Hide</div>";
 		}
 		else {content_html += "<div class='project-text'>"+text;}
 		content_html += "</div></div>";
@@ -120,27 +120,6 @@ function go_to_page_hovers(){
 
 function toggle_hidden_text(clicked){
 	$($(clicked).parent()).children().not("br, a, #wip").toggleClass('hidden');
-}
-
-function show_hidden_text(clicked){
-	parent_text_ref = $(clicked).parent();
-	console.log(parent_text_ref);
-	//change text only, not child elements
-	txt_filterer = function(){  return this.nodeType == 3; } 
-	text_to_modify = parent_text_ref.contents().filter(txt_filterer)[0];
-	text_to_modify.nodeValue = text_to_modify.nodeValue.slice(0, -3);
-
-	toggle_hidden_text(clicked);
-}
-function hide_hidden_text(clicked){
-	parent_text_ref = $(clicked).parent();
-	console.log(parent_text_ref);
-	//change text only, not child elements
-	txt_filterer = function(){  return this.nodeType == 3; } 
-	text_to_modify = parent_text_ref.contents().filter(txt_filterer)[0];
-	text_to_modify.nodeValue = text_to_modify.nodeValue + " ...";
-
-	toggle_hidden_text(clicked);
 }
 
 function make_tint(hovered){
