@@ -32,7 +32,7 @@
 		};
 	</script>
   <script src="js/plugins/adapt.min.js"></script>
-  <script src="js/plugins/imagesloaded.pkgd.min.js"></script>
+  <script src="js/plugins/jquery.waitforimages.min.js"></script>
 </head>
 
 <body>
@@ -55,7 +55,7 @@
   	<p id="subtitle">Computer Science and Comparative Literature Student at Brown University, <br>
   	Crocheter, Rambler, Learner.</p>
   </div>
-  <img id="photo"/>
+  <img id="photo" src="images/Moie Uesugi - JACL photo.jpg"/>
   <script>
   function landing_photo_resize(){
     console.log("landing_photo_resize");
@@ -70,9 +70,10 @@
     }
   }
 
-  $("#photo").imagesLoaded(function(){
+  $("#photo").waitForImages(function(){
     landing_photo_resize(); 
-  }),attr('src',"images/Moie Uesugi - JACL photo.jpg");
+  });
+
   </script>
 
   <!--&mdash;-->
