@@ -16,7 +16,7 @@
 	padding-top: 5vh;
 	padding-bottom: 2.5vh;
 }
-#cs-projects::before{ content: "Computer Science"; }
+#cs-projects::before{ content: "Computer Science and Other Sciences"; }
 #hum-projects::before{ content: "Humanities and Other Writing"; }
 #other-projects::before{ content: "Other"; }
 .underline{
