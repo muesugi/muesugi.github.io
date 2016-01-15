@@ -38,13 +38,15 @@ function display_projects(id, lop, ppl){
 	content_html = "";
 	for (var p = 0; p < lop.length; p++){
 		cur_proj = lop[p];
-		content_html += "<div class='project'>";
+		content_html += "<div class='project' ";
 		if (cur_proj["image"]){ //has valid image link
+			content_html += "style='visibility:hidden'>";
 			text_char_count = 250;
 			content_html += "<a href='"+cur_proj["link"]+"''><img class='project-image' src='images/"+cur_proj["image"]+"' /></a>";
 			content_html += "<div class='project-title'>"+cur_proj["title"]+"</div>";
 		}
 		else{//add link to title instead
+			content_html += ">";
 			text_char_count = 500;
 			content_html += "<a href='"+cur_proj["link"]+"''><div class='project-title'>"+cur_proj["title"]+"</div></a>";
 		}
@@ -62,8 +64,15 @@ function display_projects(id, lop, ppl){
 		}
 		else {content_html += "<div class='project-text'>"+text;}
 		content_html += "</div></div>";
+
+		$("#"+id).html(content_html);
+
+		if (cur_proj["image"]){
+			$(".project-image").on('load', function(){
+				$(this).parents('.project').css("visibility","visible");
+			})
+		}
 	}
-	$("#"+id).html(content_html);
 
 	project_list = id.replace("-", "_");
 	if (window[project_list + "_per_line"] == undefined){
