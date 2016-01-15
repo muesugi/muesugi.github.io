@@ -6,5 +6,10 @@ Resume.html
 - make extra canvas a little taller, tachibana tag sometimes gets cut off.
 - Go through/clean up honors
 
+Portfolio.html
+- add actual links to project
+— add upinn?
+- add seminar research project?
+
 Credits.html
  - fix link styling (ew blue now)
