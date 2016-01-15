@@ -65,8 +65,8 @@
       $(".landing").css("padding-right", "5%");
     } 
     else{ /*not mobile*/
-      console.log($("#photo").width());
-      $(".landing").width(window.innerWidth - $("#photo").width()- 0.05*window.innerWidth);
+      console.log($("img#photo").width());
+      $(".landing").width(window.innerWidth - $("img#photo").width()- 0.05*window.innerWidth);
       $(".landing").css("padding-right", "5%");
     }
   }
