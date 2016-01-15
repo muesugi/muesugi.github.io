@@ -30,6 +30,27 @@ svg {
 #download-ref:hover{
 	text-decoration: none;
 }
+#nav-button-container{
+	position:fixed;
+	right:10px;
+	bottom:10px;
+}
+.nav-button{
+	background-color:#88382D;
+	border-radius: 50px;
+	text-align: center;
+	font-size: .75em;`
+	display: block;
+	padding:10px;
+	margin-top: 20px;
+}
+#to-top-button{
+	padding-bottom:20px;
+	opacity: 0;
+}
+#to-download-button{
+	padding-top:20px;
+}
 
 #cvtitle{
 	font-size: 1em;

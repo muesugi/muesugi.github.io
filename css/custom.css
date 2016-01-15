@@ -57,3 +57,6 @@ body {
 	color: #88382D;
 	padding-right: 5%;
 }
+.hidden{
+	display: none;
+}

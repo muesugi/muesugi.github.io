@@ -423,7 +423,50 @@ function start(){
 	cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
 	cv_entries(award_arr_sort(honors), "award"); 
 	mobile_friendly();
+
+	$("#to-top-button").on('click',function(){
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+	});
+	$("#to-download-button").on('click',function(){ scrollTo("download");
+	});
+
+	top_offset = 100;
+	download_offset = 800;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() < top_offset) { //before top offset
+        	fade_out_if_visible("to-top-button");
+        	//fade_in_if_hidden("to-download-button");
+        }
+        //after download offset mark
+        else if (jQuery(this).scrollTop() > ($(document).height() - download_offset)){
+        	fade_out_if_visible("to-download-button");
+        	//fade_in_if_hidden("to-top-button");
+        }
+      	//between two marks
+        else{ 
+        	fade_in_if_hidden("to-download-button");
+        	fade_in_if_hidden("to-top-button");
+   		 }
+    });
 }
+
+function fade_in_if_hidden(id){
+	/*if ($("#"+id).is(':hidden')){
+		$("#"+id).css('visibility','visible').hide().fadeIn("slow");
+	}*/
+	if ($("#"+id).css('opacity') == 0){ //hidden
+		$("#"+id).fadeTo('slow', 1);
+	}
+}
+function fade_out_if_visible(id){
+	/*if ($("#"+id).is(':visible')){
+		$("#"+id).css('visibility','visible').hide().fadeOut("slow");
+	}*/
+	if ($("#"+id).css('opacity') == 1){ //shown
+		$("#"+id).fadeTo('slow', 0);
+	}
+}
+
 window.addEventListener('resize', function(event){
 	defaults();
 	create_timeline(); //timeline should always have the same total width as the window. // change this for mobile maybe. 
