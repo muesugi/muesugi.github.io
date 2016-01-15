@@ -57,20 +57,20 @@
   </div>
   <img id="photo" src="images/Moie Uesugi - JACL photo.jpg"/>
   <script>
-  function landing_photo_resize(){
-    console.log("landing_photo_resize");
-    if (window.innerWidth <= 760){ /*mobile*/
-      console.log(window.innerWidth);
-      $(".landing").width(window.innerWidth - 0.05*window.innerWidth);
-      $(".landing").css("padding-right", "5%");
-    } 
-    else{ /*not mobile*/
-      console.log($("#photo").width());
-      $(".landing").width(window.innerWidth - $('#photo').width() - 0.05*window.innerWidth);
-    }
-  }
 
   $("#photo").waitForImages(function(){
+   function landing_photo_resize(){
+      console.log("landing_photo_resize");
+      if (window.innerWidth <= 760){ /*mobile*/
+        console.log(window.innerWidth);
+        $(".landing").width(window.innerWidth - 0.05*window.innerWidth);
+        $(".landing").css("padding-right", "5%");
+      } 
+      else{ /*not mobile*/
+        console.log($("#photo").width());
+        $(".landing").width(window.innerWidth - $('#photo').width() - 0.05*window.innerWidth);
+      }
+    }
     landing_photo_resize(); 
   });
 
