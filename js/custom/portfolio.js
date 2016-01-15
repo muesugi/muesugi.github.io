@@ -41,7 +41,7 @@ function display_projects(id, lop, ppl){
 		content_html += "<div class='project'>";
 		if (cur_proj["image"]){ //has valid image link
 			text_char_count = 250;
-			content_html += "<a href='"+cur_proj["link"]+"''><img class='project-image' src='../images/"+cur_proj["image"]+"' /></a>";
+			content_html += "<a href='"+cur_proj["link"]+"''><img class='project-image' src='images/"+cur_proj["image"]+"' /></a>";
 			content_html += "<div class='project-title'>"+cur_proj["title"]+"</div>";
 		}
 		else{//add link to title instead
