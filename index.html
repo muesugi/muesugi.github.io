@@ -69,7 +69,7 @@
   <img id="photo" src="images/Moie Uesugi - JACL photo.jpg"/>
   <script>
 
-  $("#photo").waitForImages(function(){
+  $("#photo").on('load',function(){
     landing_photo_resize($("#photo").width()); 
   });
 
