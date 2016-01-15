@@ -56,6 +56,14 @@
   	Crocheter, Rambler, Learner.</p>
   </div>
   <img id="photo" src="images/Moie Uesugi - JACL photo.jpg"/>
+
+  <!--&mdash;-->
+  <div id="about"><h2 class='inline'>Hi, I’m Moie </h2> (<div class='inline italics'>Mo-yay!</div>), <br>
+    <div class='about-line'>a first year student at Brown University studying <span class='keyword'>Computer Science</span> and <span class='keyword'>Comparative Literature</span>. </div>
+    <div class='about-line'> I'm a born-and-bred New Yorker, learner, and creator. Because of that, a lot of the <a class='keyword' href="resume.html">work, activities, and achievements</a>, as well as <a class='keyword' href='portfolio.html'>projects</a>, that you'll find on this site will have to do with learning, helping others learn, and creating bridges across people and interests. </div>
+
+    <div class='about-line'>If you have any questions or comments, definitely let me know! You can reach me through <a class='keyword' href="mailto:moie_uesugi@brown.edu">email</a> or just poke around my brain some more on my <a class='keyword' href="https://www.linkedin.com/in/moieu">LinkedIn</a> or <a class='keyword' href="https://github.com/muesugi">GitHub</a> accounts.</div>
+  </div>
   <script> 
   function landing_photo_resize(){
     console.log("landing_photo_resize");
@@ -65,26 +73,19 @@
       $(".landing").css("padding-right", "5%");
     } 
     else{ /*not mobile*/
-      console.log($("img#photo").width());
-      $(".landing").width(window.innerWidth - $("img#photo").width()- 0.05*window.innerWidth);
-      $(".landing").css("padding-right", "5%");
+      console.log($("#photo").width());
+      $(".landing").width(window.innerWidth - $('#photo').width() - 0.05*window.innerWidth);
     }
   }
 
   landing_photo_resize(); 
+  fit_sizing('about'); 
+  
   window.addEventListener('resize', function(event){
     landing_photo_resize();
     fit_sizing("about");
   });
   </script>
-  <!--&mdash;-->
-  <div id="about"><h2 class='inline'>Hi, I’m Moie </h2> (<div class='inline italics'>Mo-yay!</div>), <br>
-    <div class='about-line'>a first year student at Brown University studying <span class='keyword'>Computer Science</span> and <span class='keyword'>Comparative Literature</span>. </div>
-    <div class='about-line'> I'm a born-and-bred New Yorker, learner, and creator. Because of that, a lot of the <a class='keyword' href="resume.html">work, activities, and achievements</a>, as well as <a class='keyword' href='portfolio.html'>projects</a>, that you'll find on this site will have to do with learning, helping others learn, and creating bridges across people and interests. </div>
-
-    <div class='about-line'>If you have any questions or comments, definitely let me know! You can reach me through <a class='keyword' href="mailto:moie_uesugi@brown.edu">email</a> or just poke around my brain some more on my <a class='keyword' href="https://www.linkedin.com/in/moieu">LinkedIn</a> or <a class='keyword' href="https://github.com/muesugi">GitHub</a> accounts.</div>
-  </div>
-  <script> fit_sizing('about'); </script>
   <div id="contact">
   	<div class="social-icons">
   		<a href="mailto:moie_uesugi@brown.edu"><i class="fa fa-envelope-o fa-4x"></i></a>
