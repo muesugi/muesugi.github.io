@@ -40,17 +40,19 @@ function display_projects(id, lop, ppl){
 		cur_proj = lop[p];
 		content_html += "<div class='project'>";
 		if (cur_proj["image"]){ //has valid image link
+			text_char_count = 250;
 			content_html += "<a href='"+cur_proj["link"]+"''><img class='project-image' src='../images/"+cur_proj["image"]+"' /></a>";
 			content_html += "<div class='project-title'>"+cur_proj["title"]+"</div>";
 		}
 		else{//add link to title instead
+			text_char_count = 500;
 			content_html += "<a href='"+cur_proj["link"]+"''><div class='project-title'>"+cur_proj["title"]+"</div></a>";
 		}
 		content_html += "<div class='project-subtitle'>"+cur_proj["subtitle"]+"</div>";
 
 		text = cur_proj["text"];
-		cut_index = text.indexOf(" ", 250);
-		if (text.length > 250){
+		cut_index = text.indexOf(" ", text_char_count);
+		if (text.length > text_char_count){
 			shown_text = text.substr(0, cut_index); //break at the first space after 250 char mark
 			hidden_text = text.substr(cut_index);
 			content_html += "<div class='project-text'>"+shown_text+"<div class='ellipse'> ...</div>";
