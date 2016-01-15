@@ -23,7 +23,10 @@
 .clickable:hover{
 	text-decoration: underline;
 }
-
+.project-button:hover{
+	text-decoration: underline;
+}
+a {color:black;}
 /*project object styling*/
 .project {
 	vertical-align:top;
@@ -40,12 +43,21 @@
 .project-subtitle{
 	display: inline-block;
 	font-style: italic;
+	padding-bottom: 1em;
 }
 .project-image{
 	width: 320px;
 	margin-left:-10px;
 	display: inline-block;
-	border:solid gray 0.1em;
+	border:solid gray 1px;
+}
+.image-tint {
+	position: absolute;
+	cursor: pointer;
+	display: block;
+	margin: -1px -1px -1px -11px; /*account for project-image margin and border*/
+	background-color: rgba(255,255,255,0.8);
+	text-align: center;
 }
 .project-text{
 	padding-left:10px;

@@ -74,9 +74,7 @@ function projects_per_line(id, ppl){ //ppl = projects_per_line
 	//set cs_projects_per_line and/or hum_projects_per_line	
 	ppl = ppl || window[id.replace("-", "_") + "_per_line"]; //optional
 
-	console.log(id, ppl);
 	project_width = $("#"+id).innerWidth()/ppl;
-	console.log(id, project_width);
 	project_ignore_width = 40;//accounts for .project padding and margins
 	image_ignore_width = project_ignore_width - 20;
 	$("#"+id+' .project').width(project_width - project_ignore_width);
@@ -100,9 +98,33 @@ function mobile_friendly(){
 		projects_per_line("hum-projects");
 	}
 }
+function add_event_listeners(){
+	mobile_friendly();
 
+	$("a").has('.project-image').on({
+		mouseenter: function(){
+			if ($(this).children('.image-tint').length == 0){
+				make_tint($(this));
+			}
+			else{toggle_tint($(this));}
+		},
+		mouseleave: function(){ console.log("mouseleave", $(this));toggle_tint($(this));}
+	});
+}
 
 function toggle_hidden_text(clicked){
-	console.log(clicked);
 	$($(clicked).parent()).children().not("br, a").toggleClass('hidden');
+}
+
+
+function make_tint(hovered){
+	$(hovered).prepend("<div class='image-tint'>Go To Page</div>");
+	contained_img = $(hovered).children("img");
+    $('.image-tint').css({"padding-top": (contained_img.height() + 1 + 2)*.47, "height": (contained_img.height() + 1 + 2)*.53,"width": (contained_img.width() + 1 + 2)});
+
+}
+function toggle_tint(hovered){
+	$($(hovered).children('.image-tint')).toggleClass('hidden');
+	contained_img = $(hovered).children("img");
+    $('.image-tint').css({"padding-top": (contained_img.height() + 1 + 2)*.47, "height": (contained_img.height() + 1 + 2)*.53,"width": (contained_img.width() + 1 + 2)});
 }

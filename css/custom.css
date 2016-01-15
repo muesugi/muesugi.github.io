@@ -11,6 +11,7 @@ body {
 	width:100%;
 	border-bottom:solid black 1px;
 	background-color:#88382D;
+	z-index: 10;
 }
 .menu{	
 	position:fixed;
