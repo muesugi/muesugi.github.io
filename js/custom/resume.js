@@ -234,7 +234,7 @@ function graph_entries(loe, upward, paper){
 		path_width = end_xpos - start_xpos;
 		if (upward){ ypos = paper.height; direction = 1;} else{ ypos = 0; direction = 0;}
 
-		height = path_width/10 + 10;//*Math.random();
+		height = path_width/10 + 10*Math.random();
 		console.log(path_width/10 + 10, cur_entry["id"]);
 		//path_str = "M"+ start_xpos_str + " 100 "+"T" +end_xpos_str + " 100"; //+ start_xpos_str + " 100 ";
 		path_str = "M"+ start_xpos+ " "+ypos+" A"+(path_width/2)+" "+height+" 0 0 "+direction+" "+end_xpos+" "+ypos;

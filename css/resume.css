@@ -16,8 +16,11 @@ svg {
 	padding-top:60px;
 }
 #graph-intro{
-	padding:100px 20px 20px 20px;
+	padding:100px 20px 0 20px;
 
+}
+#graphlisting{
+	padding: 40px 0px;
 }
 #timeline .yearbox {
 	float:left;
