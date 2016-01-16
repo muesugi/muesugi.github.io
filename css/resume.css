@@ -65,7 +65,7 @@ svg {
 table::before{
 	font-size: 1.02em;
 	font-weight:700;
-
+	margin-left: 20px;
 	display:inline-block;
 }
 #table-academic_entry::before{ 
@@ -73,7 +73,6 @@ table::before{
 }
 #table-extra_entry::before{ 
 	content:"Extracurricular Activities, Volunteer and Work Experience";
-	width:100vw;
 }
 #table-extra_entry{ 
 	display:inline;
@@ -81,32 +80,11 @@ table::before{
 #table-award::before{
 	content:"Honors";
 }
-
-#download a {
-	line-height: 1;
-	text-decoration:none;
-	display: inline-block;
-	padding: 8px 12px;
-	background-color:#88382D;
-	color: #2d2d2d;
-	border:#88382D;
-	width: 100px;
-	margin:20px;
-
-	cursor:pointer;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	text-align: center;
-}
-#download {width: 100%; text-align: center;}
-#download #download-longer{
-	display:inline;
-}
 #cvlisting {
 	float:none;
-	margin-left: 20px;
 }
 #cvlisting td {
+	padding-left:20px;
 	vertical-align:top;
 }
 /*hide specific id entries*/
@@ -129,4 +107,25 @@ table::before{
 /*award styling*/
 .title{
 	font-weight:700;
+}
+/*download button*/
+#download a {
+	line-height: 1;
+	text-decoration:none;
+	display: inline-block;
+	padding: 8px 12px;
+	background-color:#88382D;
+	color: #2d2d2d;
+	border:#88382D;
+	width: 100px;
+	margin:20px;
+
+	cursor:pointer;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-align: center;
+}
+#download {width: 100%; text-align: center;}
+#download #download-longer{
+	display:inline;
 }
