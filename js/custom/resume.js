@@ -232,9 +232,10 @@ function graph_entries(loe, upward, paper){
 		end_xpos = position_from_date(year_width, end_date_obj);
 		mid_xpos = (end_xpos + start_xpos)/2;
 		path_width = end_xpos - start_xpos;
-		if (upward){ ypos = 200; direction = 1;} else{ ypos = 0; direction = 0;}
+		if (upward){ ypos = paper.height; direction = 1;} else{ ypos = 0; direction = 0;}
 
-		height = path_width/10 + 10*Math.random();
+		height = path_width/10 + 10;//*Math.random();
+		console.log(path_width/10 + 10, cur_entry["id"]);
 		//path_str = "M"+ start_xpos_str + " 100 "+"T" +end_xpos_str + " 100"; //+ start_xpos_str + " 100 ";
 		path_str = "M"+ start_xpos+ " "+ypos+" A"+(path_width/2)+" "+height+" 0 0 "+direction+" "+end_xpos+" "+ypos;
 		//path_str = "M"+ start_xpos+ " 100 "+(path_width/4)+" 20 0 0 0 "+end_xpos+" 100";
@@ -283,7 +284,7 @@ function graph_awards(loa, upward, paper){
 		cur_award = loa[a];
 		xpos = position_from_date(year_width, parse_date(cur_award.date_num));
 		mag = 30;
-		if (upward){ start_ypos = 200; mag = -1*mag; } else{ start_ypos = 0;}
+		if (upward){ start_ypos = paper.height; mag = -1*mag; } else{ start_ypos = 0;}
 		path_str = "M"+xpos+" "+start_ypos+"v"+mag;
 
 		new_path = paper.path(path_str).attr("stroke-width", 3);
@@ -391,8 +392,16 @@ function today_line(book){ //a list of papers
 
 		for (var p = 0; p < book.length; p++){
 			paper = book[p];
-			paper.path("M"+line_xpos+" 0v"+paper.height).attr("stroke", "#88382D");
+			
 			paper.rect(line_xpos+1, 0, total_width - (line_xpos + 1), paper.height).attr({"fill": "white", "fill-opacity": ".8", "stroke": "none"});
+
+			if (p + 1 == book.length){ //last iteration
+				p_line = paper.path("M"+line_xpos+" 0v"+(paper.height - 12.5)).attr("stroke", "#88382D");
+				paper.text(line_xpos, paper.height - 5, "Today").attr({"fill": "#88382D", "font-family": "Open Sans"});
+			}
+			else{
+				p_line = paper.path("M"+line_xpos+" 0v"+paper.height).attr("stroke", "#88382D");
+			}
 		}
 	}
 }
@@ -401,17 +410,31 @@ function defaults(){
 	$("#extracontainer").html("");
 	$("#academiccontainer").html("");
 	timeline_paper = Raphael(document.getElementById('timeline'), "100%", "20");
-	extra_paper = Raphael(document.getElementById('extracontainer'), "100%", "200");
-	academic_paper = Raphael(document.getElementById('academiccontainer'), "100%", "70");
+
+	year_width = window.innerWidth/(timeline_end_year-timeline_start_year+1);
+	//height based on tachibana being the longest/tallest extra entry
+	extra_tallest_end = position_from_date(year_width, parse_date(201506));
+	extra_tallest_start = position_from_date(year_width, parse_date(200504));
+	extra_height = 30 + (extra_tallest_end - extra_tallest_start)/10;
+	console.log("extra_height", year_width);
+
+	extra_paper = Raphael(document.getElementById('extracontainer'), "100%", extra_height);
+	//height based on ps261 being the longest/tallest acadmic entry
+	aca_tallest_end = position_from_date(year_width, parse_date(200806));
+	aca_tallest_start = position_from_date(year_width, parse_date(200209));
+	aca_height = 20 + (aca_tallest_end - aca_tallest_start)/10;
+	academic_paper = Raphael(document.getElementById('academiccontainer'), "100%", aca_height);
 }
 function start(){
-	//set defaults for globals:
-	defaults();
 	//define all entries here
 	timeline_start_year = 2006;
 	timeline_end_year = new Date().getFullYear(); //default is current year
 
+	//set defaults for globals:
+	defaults();
+
 	create_timeline();
+
 
 	graph_entries(entry_sort_duration(extra_entries), true, extra_paper);
 	graph_entries(academic_entries, false, academic_paper);
