@@ -2,8 +2,6 @@ Index.html
 
 Resume.html
 - Add languages
-- Go through/clean up honors
-- add links to entries
 
 Portfolio.html
 - add actual links to project

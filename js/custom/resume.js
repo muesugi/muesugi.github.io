@@ -49,7 +49,7 @@ entry([],"2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
 ];
 extra_entries = [
 entry(["learn", "cs", "women"],"Jul - Aug 2013", 20130708, 20130830, "gwc", "Girls Who Code", "Student", "New York, NY", 
-	["Selected to participate in a computer programming workshop for teen girls", 
+	["Selected to participate in a full-time intensive (8 hours a day for 8 weeks) computer programming workshop for teen girls", 
 	"Learned new skills and languages through various projects, 20 field trips, and 30+ speakers", 
 	"Created projects from the idea to the product, and presented work with pitches and demos",
 	"Built a sisterhood with other girls as part of a national movement"], "http://girlswhocode.com/"),
@@ -79,7 +79,7 @@ entry(["hum"], "Feb 2012 - Dec 2013, Sept 2014 - Feb 2015", 201202, 201502, "bhs
 entry(["club","cs"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Team Member", "Long Island City, NY",
 	["Recruited to this eight-member team by a classmate", 
 	"Discussed and solved real-world problem sets", 
-	"Participated in the state and national TEAMS Competitions"]),
+	"Participated in the state and national TEAMS Competitions in Texas"]),
 entry(["neuro", "club"], "Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
 	["Discussed neuroscience knowledge with other representative and professor during weekly meetings", 
 	"Independently studied neuroscience information material and books to prepare for January 31 competition"],"http://www.dana.org/nycbrainbee/"),
@@ -92,9 +92,12 @@ entry(["prof","hum","lang"], "Summers of 2010, 2011, 2012, 2013, and 2015", 2010
 	["Participated in this annual mainly-outdoor non-profit film festival in Japan that shows cutting-edge films from around the world", 
 	"Translated (English-Japanese, Japanese-English) and subtitled (using Final Cut Pro) a total of 5 films individually, while co-translating and co-subtitling 24 films",
 	"Took charge of ticketing in the box office, sales of merchandise (T-shirts, bags), and records"], "http://unoportartfilms.org/en/"),
-entry(["vol"], "Jul - Aug 2014", 20140721, 20140809, "obras", "Obras Sociales de Santo Hermano Pedro","Volunteer with Proyecto Nutricional", "Antigua Guatemala, Guatemala",
-	["Cared for hospitalized babies and children by bottle feeding, carrying, and playing with them",
+entry(["vol", "lang"], "Jul - Aug 2014", 20140721, 20140809, "obras", "Obras Sociales de Santo Hermano Pedro","Volunteer with Proyecto Nutricional", "Antigua Guatemala, Guatemala",
+	["Cared for hospitalized babies and children (suffering from malnoutrition, Down Syndrome, and/or awaiting cleft palate surgery) by bottle feeding, carrying, and making them laugh",
 	"Spoke to staff, parents and children exclusively in Spanish to communicate"]),
+entry(["learn","lang"], "Jun - Aug 2014", 20140630, 20140808, "antiguena", "Spanish Academy Antigueña", "Student","Antigua Guatemala, Guatemala", 
+	["Created a curriculum to study Spanish grammar and Guatemalan culture daily with native Guatemalan teachers",
+	"Arranged a homestay with a Guatemalan family in Antigua Guatemala through this school"]),
 entry(["prof", "teach"], "Dec 2010 - Jun 2013", 201012, 201306, "ktutoring", "Private Tutoring", "", "Brooklyn, NY",
 	["Taught English, reading comprehension, and math for homework and in preparation for NY standardized tests",
 	"Worked with neighborhood children, most of whom needed tutoring to advance to the next grade level"]),
@@ -105,10 +108,13 @@ entry(["cs","prof"],"Sept 2015 - Present", 201509, today(), "brownweb", "Brown W
 	"Work with a team of interns and staff to collaboratively solve problems, and tackle new fields such as design"], "http://www.brown.edu/information-technology/webservices/about/internships-web-services"),
 entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Translation", "Publicity Chair, Copy-Editor, Editor", "Providence, RI",
 	["Use Facebook, the website, and email to promote the journal and get new editors as well as submissions", 
-	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"], "https://www.facebook.com/aldusjournal/?fref=ts"),
+	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal based on review of both the original work and the translation"], "https://www.facebook.com/aldusjournal/?fref=ts"),
 entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownjus", "Brown University US-Japan Education and Family Research Lab", "US Team Research Assistant, Japan Team Research Assistant", "Providence, RI",
 	["Transcribe and analyze transcripts taken from interviews of Japanese and US mothers on their beliefs about their children and their futures, especially as related to education", 
-	"Meet weekly for case analysis meets with each team to discuss individual mothers and how their beliefs may connect to greater systems in the world or specific to either country of interest"], "https://www.facebook.com/USJapanEducationLab")
+	"Meet weekly for case analysis meets with each team to discuss individual mothers and how their beliefs may connect to greater systems in the world or specific to either country of interest"], "https://www.facebook.com/USJapanEducationLab"),
+entry(["club","vol"], "Oct 2015 - Present", 201510, today(), "brownfrn", "Brown University Food Recovery Network", "Brown University Campus Chapter Representative", "Providence, RI",
+	["Pick up unsold food from Brown eateries to donate to nearby RI shelters such as the Crossroads Rhode Island homeless shelter and the McAuley House",
+	"Contribute to a culture of food waste awareness and help the chapter reach its current poundage (around 7000 - 9000 lbs) of food saved per semester"]),
 ];
 honors = [
 award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspirations in Computing New York City", "Winner", "", "https://www.aspirations.org/"),
@@ -133,8 +139,7 @@ var academic_paper;
 var timeline_start_year;
 var timeline_end_year;
 
-var tag_hash = 
-{"cs":"Computer Science", 
+var tag_hash = {"cs":"Computer Science", 
 	"hum": "Humanities", 
 	"learn": "Learning", 
 	"teach": "Teaching", 
@@ -607,9 +612,7 @@ window.addEventListener('resize', function(event){
 });
 
 function mobile_friendly(){
-	child_hoverers = ".position,.location,.org,.name";
-
-	console.log(child_hoverers);
+	child_hoverers = ".position,.location,.name";
 	if (window.innerWidth < 770){//mobile
 		//hide all lis, award details, and tag icons
 		$(".role, .details, .td-tags").addClass("hidden"); 
