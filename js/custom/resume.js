@@ -498,6 +498,8 @@ function start(){
 	cv_entries(award_arr_sort(honors), "award"); 
 	mobile_friendly();
 
+	//event listeners
+
 	$("#to-top-button").on('click',function(){
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 	});
@@ -523,8 +525,20 @@ function start(){
    		 }
     });
 
-	$(".cv-icon").hover(function(){
+	$(".cv-icon").hover(function(event){
 		$(this).next(".icon-text").toggleClass('hidden');
+	})
+
+	$(".cv-icon").on('click',function(event){
+		icon_tag = $(this).attr('class').substring(8);
+		$("option#"+icon_tag).attr('selected','selected');
+		$("#filter-select").select2("destroy");
+		$("#filter-select").append("<option value='1'>Text</option>");
+		$("#filter-select").select2(
+			{placeholder: "Filter Experiences and Honors",
+	    	allowClear: true,
+	    	tokenSeparators: [",", " "]}
+	    );
 	})
 
 }
