@@ -103,7 +103,10 @@ entry(["vol","teach"], "Dec 2012 - Jun 2013", 201212, 201306, "starlearning", "G
 	["Taught English and math to a 2nd grader at community center"]),
 entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Translation", "Publicity Chair, Copy-Editor, Editor", "Providence, RI",
 	["Use Facebook, the website, and email to promote the journal and get new editors as well as submissions", 
-	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"])
+	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"]),
+entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownjus", "Brown University US-Japan Education and Family Research Lab", "US Team Member, Japan Team Member", "Providence, RI",
+	["Transcribe and analyze transcripts taken from interviews of Japanese and US mothers on their beliefs about their children and their futures, especially as related to education", 
+	"Meet weekly for case analysis meets with each team to discuss individual mothers and families"])
 ];
 honors = [
 award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),

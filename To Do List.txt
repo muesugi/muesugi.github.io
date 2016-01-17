@@ -1,10 +1,9 @@
 Index.html
-- fix landing sizing bug or something like it
 
 Resume.html
-- add some kind of short tag for the graphic cv on top of it
-- make extra canvas a little taller, tachibana tag sometimes gets cut off.
+- Add languages
 - Go through/clean up honors
+- add links to entries
 
 Portfolio.html
 - add actual links to project
