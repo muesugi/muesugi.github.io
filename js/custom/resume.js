@@ -13,7 +13,7 @@ function entry(tgs,dstr, dsn, den, i, c, p, loc, rs){
 	return new_entry;
 }
 
-function award(dstr, dnum, i, o, t, n, deets){
+function award(tgs, dstr, dnum, i, o, t, n, deets){
 	n = n || "";
 	deets = deets || [];
 	//dnum is the award date
@@ -21,7 +21,7 @@ function award(dstr, dnum, i, o, t, n, deets){
 	//org: the organization who gives the honor/award
 	//title: the title of the award
 	// name: winner, runner-up, etc
-	new_award = new Object({date_str: dstr, date_num: dnum, id: i, org: o, title: t, name: n, details: deets})
+	new_award = new Object({tags: tgs, date_str: dstr, date_num: dnum, id: i, org: o, title: t, name: n, details: deets})
 	
 	return new_award;
 }
@@ -40,10 +40,10 @@ function today(){
 
 //define all entries here
 academic_entries = [
-entry(["learn", "cs", "hum"],"2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate School"),
-entry(["learn"],"2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
-entry(["learn"],"2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
-entry(["learn"],"2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
+entry([],"2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate School"),
+entry([],"2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
+entry([],"2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
+entry([],"2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
 ];
 extra_entries = [
 entry(["cs","prof"],"Sept 2015 - Present", 201509, today(), "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", 
@@ -81,7 +81,7 @@ entry(["club","cs"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard 
 	["Recruited to this eight-member team by a classmate", 
 	"Discussed and solved real-world problem sets", 
 	"Participated in the state and national TEAMS Competitions"]),
-entry(["club"], "Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
+entry(["neuro", "club"], "Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
 	["Discussed neuroscience knowledge with other representative and professor during weekly meetings", 
 	"Independently studied neuroscience information material and books to prepare for January 31 competition"]),
 entry(["club"], "Sept 2011 - Jun 2013", 201109, 201306, "bhsecqa", "Bard High School Early College Queens Queer-Straight Alliance", "Member (2011-2012), Co-leader (2012-13)","Long Island City, NY",
@@ -106,18 +106,18 @@ entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownaldu
 	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"])
 ];
 honors = [
-award("2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
-award("2015", 201506, "bhseccs", "Bard High School Early College Queens", "Computer Science Award", "Winner"),
-award("2015", 201506, "bhsecspanish", "Bard High School Early College Queens", "Spanish Language Award", "Winner"),
-award("Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant writing"),
-award("2014", 2014, "mariewanek", "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
-award("Feb 2013", 201302, "scholastic", "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
-award("Sept 2013", 201309,"bhsecstudentlife", "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony"),
-award("2015", 201506, "milken", "Milken Scholars", "Scholar"),
-award("2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Scholarship Awardee"),
-award("2016", 201606, "kimandharold", "Kim and Harold Louie Family Foundation", "Scholar"),
-award("2015", 201506, "penguinwriting", "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award"),
-award("2015", 201506,"cumberland", "Cumberland Farms", "Scholar"),
+award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
+award(["cs"], "2015", 201506, "bhseccs", "Bard High School Early College Queens", "Computer Science Award", "Winner"),
+award(["lang"], "2015", 201506, "bhsecspanish", "Bard High School Early College Queens", "Spanish Language Award", "Winner"),
+award(["neuro"], "Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant writing"),
+award(["hum"], "2014", 2014, "mariewanek", "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
+award(["hum"], "Feb 2013", 201302, "scholastic", "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
+award(["club"], "Sept 2013", 201309,"bhsecstudentlife", "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony"),
+award(["vol"], "2015", 201506, "milken", "Milken Scholars", "Scholar"),
+award(["cs"], "2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Scholarship Awardee"),
+award(["vol","club"], "2016", 201606, "kimandharold", "Kim and Harold Louie Family Foundation", "Scholar"),
+award(["hum"], "2015", 201506, "penguinwriting", "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award"),
+award(["vol","club"], "2015", 201506,"cumberland", "Cumberland Farms", "Scholar"),
 ]
 
 var timeline_paper;
@@ -134,7 +134,8 @@ var tag_hash =
 	"club": "Clubs",
 	"lang": "Language", 
 	"prof": "Professional",
-	"vol": "Volunteer"};
+	"vol": "Volunteer",
+	"neuro": "Neurobiology"};
 
 
 function cv_entries(entries, type){
@@ -166,13 +167,16 @@ function cv_entries(entries, type){
 		for (var k = 0; k < keys.length; k++){
 			cur_key = keys[k];
 			if (cur_key == "tags"){
-				tag_arr = cur_entry["tags"];
-				cur_html += "<td class='td-tags'>";
-				for (var t = 0; t < tag_arr.length; t++){
-					cur_html += "<div class='cv-icon "+tag_arr[t]+"'> </div>";
-					cur_html += "<div class='icon-text hidden'>"+tag_hash[tag_arr[t]]+" </div>";
+				if (type == "academic_entry"){} //dont allow filter within academic
+				else{
+					tag_arr = cur_entry["tags"];
+					cur_html += "<td class='td-tags'>";
+					for (var t = 0; t < tag_arr.length; t++){
+						cur_html += "<div class='cv-icon "+tag_arr[t]+"'> </div>";
+						cur_html += "<div class='icon-text hidden'>"+tag_hash[tag_arr[t]]+" </div>";
+					}
+					cur_html += "</td>";
 				}
-				cur_html += "</td>";
 			}
 			else if (cur_key.indexOf("date") >= 0){
 				if (cur_key == "date_str"){
@@ -485,9 +489,9 @@ function start(){
     	tokenSeparators: [",", " "]}
     );
     $("#and-or-select").select2();
-    $("#filter-select, #and-or-select").on("change",function(e){
+    $("#filter-select, #and-or-select").on("change",function(event){
     	filter_for_tag();
-    })
+    })  
     /* end create filter box/search bar*/
 
 	cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
@@ -580,14 +584,14 @@ function filter_for_tag(){
 	tags = $("#filter-select option:selected");
 	bool_connector = $("#and-or-select option:selected").attr("id");
 	if (tags.length == 0){
-		$("td").removeClass('hidden');//show all
+		$("tr").removeClass('hidden');//show all
 	}
 	else{
 		selected_tags = []; //collect tags (selected option ids) only
 		tags.each(function(){ selected_tags.push(this.id); });
 		console.log(selected_tags);
 
-		$("#table-extra_entry .td-tags").each(function(){//only filter within extracurriculars
+		$(".td-tags").each(function(){
 			//traverses set of td-tags
 			///returns all of the divs (icons) that are any of the selected classes
 			

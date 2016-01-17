@@ -123,6 +123,7 @@ table::before{
 }
 .icon-text{
 	position:absolute;
+	font-size: .8em;
 }
 .vol{
 	background-image: url("../images/icon-charity-Vladimir.svg");
@@ -147,6 +148,9 @@ table::before{
 }
 .cs{
 	background-image: url("../images/icon-cs-Christopher Holm-Hansen.svg");
+}
+.neuro{
+	background-image: url("../images/icon-neuro-Aha-Soft.svg");
 }
 
 
