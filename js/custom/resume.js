@@ -46,9 +46,6 @@ entry([],"2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Educa
 entry([],"2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
 ];
 extra_entries = [
-entry(["cs","prof"],"Sept 2015 - Present", 201509, today(), "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", 
-	["Use HTML/CSS/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
-	"Work with a team of interns and staff to collaboratively solve problems, and tackle new fields such as design"]),
 entry(["learn", "cs", "women"],"Jul - Aug 2013", 20130708, 20130830, "gwc", "Girls Who Code", "Student", "New York, NY", 
 	["Selected to participate in a computer programming workshop for teen girls", 
 	"Learned new skills and languages through various projects, 20 field trips, and 30+ speakers", 
@@ -77,7 +74,7 @@ entry(["hum"], "Feb 2012 - Dec 2013, Sept 2014 - Feb 2015", 201202, 201502, "bhs
 	["Helped students at the desk by checking books in and out, helping with homework, and directing students to the right section of the library",
 	"Recommended, ordered, and catalogued new books",
 	"Familiarized myself with library software"]),
-entry(["club","cs"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Member", "Long Island City, NY",
+entry(["club","cs"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Team Member", "Long Island City, NY",
 	["Recruited to this eight-member team by a classmate", 
 	"Discussed and solved real-world problem sets", 
 	"Participated in the state and national TEAMS Competitions"]),
@@ -101,12 +98,15 @@ entry(["prof", "teach"], "Dec 2010 - Jun 2013", 201012, 201306, "ktutoring", "Pr
 	"Worked with neighborhood children, most of whom needed tutoring to advance to the next grade level"]),
 entry(["vol","teach"], "Dec 2012 - Jun 2013", 201212, 201306, "starlearning", "Goddard Community Center, Star Learning Center", "Volunteer Tutor", "New York, NY",
 	["Taught English and math to a 2nd grader at community center"]),
+entry(["cs","prof"],"Sept 2015 - Present", 201509, today(), "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", 
+	["Use HTML/CSS/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
+	"Work with a team of interns and staff to collaboratively solve problems, and tackle new fields such as design"]),
 entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Translation", "Publicity Chair, Copy-Editor, Editor", "Providence, RI",
 	["Use Facebook, the website, and email to promote the journal and get new editors as well as submissions", 
 	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"]),
-entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownjus", "Brown University US-Japan Education and Family Research Lab", "US Team Member, Japan Team Member", "Providence, RI",
+entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownjus", "Brown University US-Japan Education and Family Research Lab", "US Team Research Assistant, Japan Team Research Assistant", "Providence, RI",
 	["Transcribe and analyze transcripts taken from interviews of Japanese and US mothers on their beliefs about their children and their futures, especially as related to education", 
-	"Meet weekly for case analysis meets with each team to discuss individual mothers and families"])
+	"Meet weekly for case analysis meets with each team to discuss individual mothers and how their beliefs may connect to greater systems in the world or specific to either country of interest"])
 ];
 honors = [
 award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
@@ -366,40 +366,55 @@ function parse_date(number){
 	}
 	return date;
 }
+function date_subtraction(date_a, date_b){ //datea - dateb
+	diff_year = date_a.year - date_b.year;
+	diff_month = date_a.month - date_b.month;
+	diff_day = date_a.day - date_b.day;
+	return {year: diff_year, month: diff_month, day: diff_day};
+}
+function date_bigger(date_a, date_b){
+	difference = date_subtraction(date_a, date_b);
+
+	if (difference.year < 0){ return -1; }
+	else if (difference.year > 0){ return 1; }
+	else{
+		if (difference.month < 0){ return -1; }
+		else if (difference.month > 0){ return 1; }
+		else{ 
+			if (difference.day < 0){ return -1; }
+			else if (difference.day > 0){ return 1; }
+			else{ return 0; }
+		}
+	}
+}
 
 function entry_sort_duration(arr){
 	//sort by end date
 	arr.sort(function(b, a){
-		a_duration_year = parse_date(a.date_end_num).year - parse_date(a.date_start_num).year;
-		b_duration_year = parse_date(b.date_end_num).year - parse_date(b.date_start_num).year;
+		a_duration = date_subtraction(parse_date(a.date_end_num), parse_date(a.date_start_num));
+		b_duration = date_subtraction(parse_date(b.date_end_num), parse_date(b.date_start_num));
 
-		if (a_duration_year < b_duration_year){
-			return -1;
-		}
-		else if (a_duration_year > b_duration_year){
-			return 1;
-		}
-		else{
-			a_duration_month = parse_date(a.date_end_num).month - parse_date(a.date_start_num).month;
-			b_duration_month = parse_date(b.date_end_num).month - parse_date(b.date_start_num).month;
-			if (a_duration_month < b_duration_month){ return -1; }
-			else if (a_duration_month > b_duration_month){ return 1; }
-			else{
-				a_duration_day = parse_date(a.date_end_num).day - parse_date(a.date_start_num).day;
-				b_duration_day = parse_date(b.date_end_num).day - parse_date(b.date_start_num).day;
-				if (a_duration_day < b_duration_day){ return -1; }
-				else if (a_duration_day > b_duration_day){ return 1; }
-				else { return 0; }
-			}
-
-		}
+		return date_bigger(a_duration, b_duration);
 	})
 	return arr;
 }
 function entry_sort_year(arr){
 	//sort by end date
-	arr.sort(function(a, b){
-	 return parse_date(b.date_end_num).year - parse_date(a.date_end_num).year;
+	arr.sort(function(b, a){//switch to make ascending
+		a_end = parse_date(a.date_end_num);
+		b_end = parse_date(b.date_end_num);
+		end_return = date_bigger(a_end, b_end);
+
+		if (end_return !== 0){
+			return end_return;
+		}
+		else{ //end dates are the same, comapre start dates
+			//earlier start dates are better
+			console.log("comparing starts");
+			a_start = parse_date(a.date_start_num);
+			b_start = parse_date(b.date_start_num);
+			return date_bigger(b_start,a_start);
+		}
 	})
 	return arr;
 }
