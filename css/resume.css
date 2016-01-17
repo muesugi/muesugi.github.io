@@ -59,6 +59,7 @@ svg {
 	padding-top:20px;
 }
 
+/*written cv*/
 #cvtitle{
 	font-size: 1em;
 	text-align: center;
@@ -86,6 +87,7 @@ table::before{
 #table-award::before{
 	content:"Honors";
 }
+
 #cvlisting {
 	float:none;
 }
@@ -96,6 +98,56 @@ table::before{
 /*hide specific id entries*/
 #ice { display:none;}
 #ps261 { display:none;}
+
+#filter{
+	text-align: center;
+}
+.select2-container{
+	text-align: center;
+}
+#s2id_filter-select.select2-container {
+	width:500px;
+}
+/*tags icons*/
+.td-tags{
+	width:75px;
+	padding:5px;
+	height:auto;
+}
+.cv-icon{
+	display:inline-block;
+	width: 25px; 
+	height: 25px;
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+.icon-text{
+	position:absolute;
+}
+.vol{
+	background-image: url("../images/icon-charity-Vladimir.svg");
+}
+.prof{
+	background-image: url("../images/icon-professional-Andrey Vasiliev.svg");
+}
+.learn{
+	background-image: url("../images/icon-education-Kevin Augustine LO.svg");
+}
+.teach{
+	background-image: url("../images/icon-teach-Julien Deveaux.svg");
+}
+.club{
+	background-image: url("../images/icon-club-Aha-Soft.svg");
+}
+.hum{
+	background-image: url("../images/icon-thinker-Nuno Lezon.svg");
+}
+.lang{
+	background-image: url("../images/icon-lang-Lek Potharam.svg");
+}
+.cs{
+	background-image: url("../images/icon-cs-Christopher Holm-Hansen.svg");
+}
 
 
 /*entry attribute styling classes*/

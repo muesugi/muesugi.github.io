@@ -1,5 +1,6 @@
 //basic type definitions
-function entry(dstr, dsn, den, i, c, p, loc, rs){
+function entry(tgs,dstr, dsn, den, i, c, p, loc, rs){
+	tgs = tgs || []; //tgs arg is a list of applicable tags
 	dstr = dstr || "Present";
 	dsn = dsn || 2016;
 	den = den || 2016;
@@ -8,7 +9,7 @@ function entry(dstr, dsn, den, i, c, p, loc, rs){
 	loc = loc || "";
 	rs = rs || []; //roles is a list of strings
 
-	new_entry = new Object({date_str: dstr, date_start_num: dsn, date_end_num: den, id: i, company: c, position: p, location: loc, roles: rs});
+	new_entry = new Object({tags: tgs, date_str: dstr, date_start_num: dsn, date_end_num: den, id: i, company: c, position: p, location: loc, roles: rs});
 	return new_entry;
 }
 
@@ -39,68 +40,68 @@ function today(){
 
 //define all entries here
 academic_entries = [
-entry("2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate School"),
-entry("2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
-entry("2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
-entry("2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
+entry(["learn", "cs", "hum"],"2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate School"),
+entry(["learn"],"2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
+entry(["learn"],"2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
+entry(["learn"],"2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
 ];
 extra_entries = [
-entry("Sept 2015 - Present", 201509, today(), "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", 
+entry(["cs","prof"],"Sept 2015 - Present", 201509, today(), "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", 
 	["Use HTML/CSS/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
 	"Work with a team of interns and staff to collaboratively solve problems, and tackle new fields such as design"]),
-entry("Jul - Aug 2013", 20130708, 20130830, "gwc", "Girls Who Code", "Student", "New York, NY", 
+entry(["learn", "cs", "women"],"Jul - Aug 2013", 20130708, 20130830, "gwc", "Girls Who Code", "Student", "New York, NY", 
 	["Selected to participate in a computer programming workshop for teen girls", 
 	"Learned new skills and languages through various projects, 20 field trips, and 30+ speakers", 
 	"Created projects from the idea to the product, and presented work with pitches and demos",
 	"Built a sisterhood with other girls as part of a national movement"]),
-entry("Feb 2014 - Jun 2015", 201402, 201506, "bhsecgwc", "Bard High School Early College Queens Girls Who Code Club", "Co-founder, Co-leader/Curriculum Director (Sept 2014 - Jun 2015)", "Long Island City, NY",
+entry(["club", "cs", "teach"],"Feb 2014 - Jun 2015", 201402, 201506, "bhsecgwc", "Bard High School Early College Queens Girls Who Code Club", "Co-founder, Co-leader/Curriculum Director (Sept 2014 - Jun 2015)", "Long Island City, NY",
 	["Helped members with curriculum using knowledge gained in the GWC summer program", 
 	"Worked with two outside computer programmers to teach all interested students to code in a supportive, collaborative environment"]),
-entry("Sept 2013 - Jun 2014", 201309, 201406, "pixelaca", "Pixel Academy", "Intern", "Brooklyn, NY", 
+entry(["prof","cs", "teach"],"Sept 2013 - Jun 2014", 201309, 201406, "pixelaca", "Pixel Academy", "Intern", "Brooklyn, NY", 
 	["Helped instructors teach kids different ways to be creative with technology (coding, games, 3D-design, etc) both one-on-one and through group workshops",
 	"Worked on personal project under the instructors’ guidance"]),
-entry("Sept 2012 - Jun 2015", 201209, 201506, "gwn", "Girls Write Now", "Mentee", "New York, NY", 
+entry(["hum"],"Sept 2012 - Jun 2015", 201209, 201506, "gwn", "Girls Write Now", "Mentee", "New York, NY", 
 	["Met with mentor once a week and established a constructive relationship",
 	"Wrote fiction and memoir pieces individually between meetings",
 	"Explored new fields of writing at group workshops held once a month",
 	"Used feedback and criticism from others to improve"]),
-entry("Apr 2005 - Jun 2015", 200504, 201506, "tachibana", "Tachibana Japanese Dance Group", "Dancer", "New York Branch, NY", 
+entry(["learn"], "Apr 2005 - Jun 2015", 200504, 201506, "tachibana", "Tachibana Japanese Dance Group", "Dancer", "New York Branch, NY", 
 	["Learned the art of traditional Japanese dance while coordinating with other dancers",
 	"Performed 4-5 times a year at the annual recital, New Year’s dance ritual, and other events at elderly homes and cultural venues in New York"]),
-entry("Oct 2012 - Jun 2015", 201210, 201506, "bhsecgov", "Bard High School Early College Queens Student Government", "Minute-taker (all), Elected Advisory Representative (Sept 2013 - Jun 2015)", "Long Island City, NY",
+entry(["club", "hum"], "Oct 2012 - Jun 2015", 201210, 201506, "bhsecgov", "Bard High School Early College Queens Student Government", "Minute-taker (all), Elected Advisory Representative (Sept 2013 - Jun 2015)", "Long Island City, NY",
 	["Listened and responded to others’ opinions", "Recorded ideas and oppositions in a clear, concise way",
 	"Created the minute-taker role for organization and school community awareness"]),
-entry("Oct 2012 - Jun 2015", 201210, 201506, "bhsecpeertutor", "Bard High School Early College Queens Peer Tutoring", "Biology (Fall 2012), Writing/English (all), Math (all) peer tutor", "Long Island City, NY",
+entry(["club", "teach"], "Oct 2012 - Jun 2015", 201210, 201506, "bhsecpeertutor", "Bard High School Early College Queens Peer Tutoring", "Biology (Fall 2012), Writing/English (all), Math (all) peer tutor", "Long Island City, NY",
 	["Helped fellow students with homework, test preparation and more"]),
-entry("Feb 2012 - Dec 2013, Sept 2014 - Feb 2015", 201202, 201502, "bhseclibrary", "Bard High School Early College Queens Library", "Intern","Long Island City, NY",
+entry(["hum"], "Feb 2012 - Dec 2013, Sept 2014 - Feb 2015", 201202, 201502, "bhseclibrary", "Bard High School Early College Queens Library", "Intern","Long Island City, NY",
 	["Helped students at the desk by checking books in and out, helping with homework, and directing students to the right section of the library",
 	"Recommended, ordered, and catalogued new books",
 	"Familiarized myself with library software"]),
-entry("Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Member", "Long Island City, NY",
+entry(["club","cs"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Member", "Long Island City, NY",
 	["Recruited to this eight-member team by a classmate", 
 	"Discussed and solved real-world problem sets", 
 	"Participated in the state and national TEAMS Competitions"]),
-entry("Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
+entry(["club"], "Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
 	["Discussed neuroscience knowledge with other representative and professor during weekly meetings", 
 	"Independently studied neuroscience information material and books to prepare for January 31 competition"]),
-entry("Sept 2011 - Jun 2013", 201109, 201306, "bhsecqa", "Bard High School Early College Queens Queer-Straight Alliance", "Member (2011-2012), Co-leader (2012-13)","Long Island City, NY",
+entry(["club"], "Sept 2011 - Jun 2013", 201109, 201306, "bhsecqa", "Bard High School Early College Queens Queer-Straight Alliance", "Member (2011-2012), Co-leader (2012-13)","Long Island City, NY",
 	["Cooperated and exchanged ideas with other leaders",
 	"Planned events and meetings including workshops, discussions, and school community outreach"]),
-entry("Sept 2014 - Feb 2015", 201409, 201502, "jtranslation", "Private Translation", "", 
+entry(["prof","lang"], "Sept 2014 - Feb 2015", 201409, 201502, "jtranslation", "Private Translation", "", 
 	["Worked for an independent filmmaker to translate raw footage in Japanese to English"]),
-entry("Summers of 2010, 2011, 2012, 2013, and 2015", 201006, 201508, "upaf","Uno Port Art Films", "Assistant to Directors (2011 - Present)", "Okayama, Japan",
+entry(["prof","hum","lang"], "Summers of 2010, 2011, 2012, 2013, and 2015", 201006, 201508, "upaf","Uno Port Art Films", "Assistant to Directors (2011 - Present)", "Okayama, Japan",
 	["Participated in this annual mainly-outdoor non-profit film festival in Japan that shows cutting-edge films from around the world", 
 	"Translated (English-Japanese, Japanese-English) and subtitled (using Final Cut Pro) a total of 5 films individually, while co-translating and co-subtitling 24 films",
 	"Took charge of ticketing in the box office, sales of merchandise (T-shirts, bags), and records"]),
-entry("Jul - Aug 2014", 20140721, 20140809, "obras", "Obras Sociales de Santo Hermano Pedro","Volunteer with Proyecto Nutricional", "Antigua Guatemala, Guatemala",
+entry(["vol"], "Jul - Aug 2014", 20140721, 20140809, "obras", "Obras Sociales de Santo Hermano Pedro","Volunteer with Proyecto Nutricional", "Antigua Guatemala, Guatemala",
 	["Cared for hospitalized babies and children by bottle feeding, carrying, and playing with them",
 	"Spoke to staff, parents and children exclusively in Spanish to communicate"]),
-entry("Dec 2010 - Jun 2013", 201012, 201306, "ktutoring", "Private Tutoring", "", "Brooklyn, NY",
+entry(["prof", "teach"], "Dec 2010 - Jun 2013", 201012, 201306, "ktutoring", "Private Tutoring", "", "Brooklyn, NY",
 	["Taught English, reading comprehension, and math for homework and in preparation for NY standardized tests",
 	"Worked with neighborhood children, most of whom needed tutoring to advance to the next grade level"]),
-entry("Dec 2012 - Jun 2013", 201212, 201306, "starlearning", "Goddard Community Center, Star Learning Center", "Volunteer Tutor", "New York, NY",
+entry(["vol","teach"], "Dec 2012 - Jun 2013", 201212, 201306, "starlearning", "Goddard Community Center, Star Learning Center", "Volunteer Tutor", "New York, NY",
 	["Taught English and math to a 2nd grader at community center"]),
-entry("Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Translation", "Publicity Chair, Copy-Editor, Editor", "Providence, RI",
+entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Translation", "Publicity Chair, Copy-Editor, Editor", "Providence, RI",
 	["Use Facebook, the website, and email to promote the journal and get new editors as well as submissions", 
 	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"])
 ];
@@ -124,6 +125,17 @@ var extra_paper;
 var academic_paper;
 var timeline_start_year;
 var timeline_end_year;
+
+var tag_hash = 
+{"cs":"Computer Science", 
+	"hum": "Humanities", 
+	"learn": "Learning", 
+	"teach": "Teaching", 
+	"club": "Clubs",
+	"lang": "Language", 
+	"prof": "Professional",
+	"vol": "Volunteer"};
+
 
 function cv_entries(entries, type){
 	//traverse entries to display correctly
@@ -153,7 +165,16 @@ function cv_entries(entries, type){
 		*/
 		for (var k = 0; k < keys.length; k++){
 			cur_key = keys[k];
-			if (cur_key.indexOf("date") >= 0){
+			if (cur_key == "tags"){
+				tag_arr = cur_entry["tags"];
+				cur_html += "<td class='td-tags'>";
+				for (var t = 0; t < tag_arr.length; t++){
+					cur_html += "<div class='cv-icon "+tag_arr[t]+"'> </div>";
+					cur_html += "<div class='icon-text hidden'>"+tag_hash[tag_arr[t]]+" </div>";
+				}
+				cur_html += "</td>";
+			}
+			else if (cur_key.indexOf("date") >= 0){
 				if (cur_key == "date_str"){
 					cur_html += "<td><div class='date_str'>"+cur_entry["date_str"]+"</div></td><td>";
 				}
@@ -435,13 +456,40 @@ function start(){
 
 	create_timeline();
 
-
 	graph_entries(entry_sort_duration(extra_entries), true, extra_paper);
 	graph_entries(academic_entries, false, academic_paper);
 	graph_awards(honors, true, extra_paper);
 	today_line([timeline_paper,extra_paper,academic_paper]);
 
 	cv_entries(entry_sort_year(academic_entries), "academic_entry"); 
+
+	/*create filter box/search bar*/
+
+	filter_box_html = '<div id="filter"><select id="filter-select" name="select-boxes" multiple="multiple">';
+	option_ids = Object.keys(tag_hash);
+	//hash so that it's easier to add tags in the future
+
+	for (var k = 0; k < option_ids.length; k++){
+		cur_id = option_ids[k];//computer name
+		cur_val = tag_hash[cur_id];//pretty text
+		filter_box_html += "<option id='"+cur_id+"'>"+cur_val+"</option>";
+	}
+	filter_box_html += "</select>";
+    filter_box_html += "<select id='and-or-select'><option id='or' selected='selected'>OR</option><option id='and'>AND</option></select>"
+	filter_box_html += "</div>";
+	$("#cvlisting").append(filter_box_html);
+
+	$("#filter-select").select2(
+		{placeholder: "Filter Experiences",
+    	allowClear: true,
+    	tokenSeparators: [",", " "]}
+    );
+    $("#and-or-select").select2();
+    $("#filter-select, #and-or-select").on("change",function(e){
+    	filter_for_tag();
+    })
+    /* end create filter box/search bar*/
+
 	cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
 	cv_entries(award_arr_sort(honors), "award"); 
 	mobile_friendly();
@@ -470,6 +518,11 @@ function start(){
         	fade_in_if_hidden("to-top-button");
    		 }
     });
+
+	$(".cv-icon").hover(function(){
+		$(this).next(".icon-text").toggleClass('hidden');
+	})
+
 }
 
 function fade_in_if_hidden(id){
@@ -523,4 +576,45 @@ function mobile_friendly(){
 	}
 }
 
+function filter_for_tag(){
+	tags = $("#filter-select option:selected");
+	bool_connector = $("#and-or-select option:selected").attr("id");
+	if (tags.length == 0){
+		$("td").removeClass('hidden');//show all
+	}
+	else{
+		selected_tags = []; //collect tags (selected option ids) only
+		tags.each(function(){ selected_tags.push(this.id); });
+		console.log(selected_tags);
 
+		$("#table-extra_entry .td-tags").each(function(){//only filter within extracurriculars
+			//traverses set of td-tags
+			///returns all of the divs (icons) that are any of the selected classes
+			
+			if (bool_connector == "or"){ start_val = false; }//found one up to a given point in search?
+			//and
+			else{ start_val = true; }//found all up to the given point in the seach?
+			
+			//condition that causes break out of while loop
+			function break_checker(arr_len){
+				if (bool_connector == "or"){ return arr_len > 0; }
+				else { return arr_len == 0; }; 
+			}
+
+			
+			found = start_val;
+			tag_i = 0;
+			while ((found == start_val) && (tag_i < selected_tags.length)){
+				if (break_checker($(this).children("."+selected_tags[tag_i]).length)){
+					found = !start_val;
+				}
+				tag_i++;
+			}
+
+			console.log(found);
+			if (found){ $(this).parent().removeClass('hidden'); }
+			else{ $(this).parent().addClass('hidden'); }
+
+		});
+	}
+}
