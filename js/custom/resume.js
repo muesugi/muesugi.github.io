@@ -1,5 +1,5 @@
 //basic type definitions
-function entry(tgs,dstr, dsn, den, i, c, p, loc, rs){
+function entry(tgs,dstr, dsn, den, i, c, p, loc, rs, lnk){
 	tgs = tgs || []; //tgs arg is a list of applicable tags
 	dstr = dstr || "Present";
 	dsn = dsn || 2016;
@@ -8,20 +8,22 @@ function entry(tgs,dstr, dsn, den, i, c, p, loc, rs){
 	p = p || "";
 	loc = loc || "";
 	rs = rs || []; //roles is a list of strings
+	lnk = lnk || "";
 
-	new_entry = new Object({tags: tgs, date_str: dstr, date_start_num: dsn, date_end_num: den, id: i, company: c, position: p, location: loc, roles: rs});
+	new_entry = new Object({tags: tgs, date_str: dstr, date_start_num: dsn, date_end_num: den, id: i, company: c, position: p, location: loc, roles: rs, link: lnk});
 	return new_entry;
 }
 
-function award(tgs, dstr, dnum, i, o, t, n, deets){
+function award(tgs, dstr, dnum, i, o, t, n, deets, lnk){
 	n = n || "";
 	deets = deets || [];
 	//dnum is the award date
+	lnk = lnk || "";
 
 	//org: the organization who gives the honor/award
 	//title: the title of the award
 	// name: winner, runner-up, etc
-	new_award = new Object({tags: tgs, date_str: dstr, date_num: dnum, id: i, org: o, title: t, name: n, details: deets})
+	new_award = new Object({tags: tgs, date_str: dstr, date_num: dnum, id: i, org: o, title: t, name: n, details: deets, link: lnk})
 	
 	return new_award;
 }
@@ -40,8 +42,8 @@ function today(){
 
 //define all entries here
 academic_entries = [
-entry([],"2015 - Present", 201509, 2019, "bu", "Brown University", "Undergraduate School"),
-entry([],"2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "High School"),
+entry([],"2015 - Present", 201509, 2019, "bu", "Brown University", "Bachelor of Arts in Computer Science and Comparative Literature", "Providence, RI", [], "http://www.brown.edu/academics"),
+entry([],"2011 - 2015", 201109, 201506, "bhsecq", "Bard High School Early College Queens", "Bard College Associate of Arts in Liberal Arts; High School Diploma", "Long Island City, NY", [], "http://bhsec.bard.edu/queens/"),
 entry([],"2008 - 2011", 200809, 201106, "ice","Institute for Collaborative Education", "Middle School"),
 entry([],"2002 - 2008", 200209, 200806, "ps261", "PS 261", "Elementary School"),
 ];
@@ -50,18 +52,18 @@ entry(["learn", "cs", "women"],"Jul - Aug 2013", 20130708, 20130830, "gwc", "Gir
 	["Selected to participate in a computer programming workshop for teen girls", 
 	"Learned new skills and languages through various projects, 20 field trips, and 30+ speakers", 
 	"Created projects from the idea to the product, and presented work with pitches and demos",
-	"Built a sisterhood with other girls as part of a national movement"]),
+	"Built a sisterhood with other girls as part of a national movement"], "http://girlswhocode.com/"),
 entry(["club", "cs", "teach"],"Feb 2014 - Jun 2015", 201402, 201506, "bhsecgwc", "Bard High School Early College Queens Girls Who Code Club", "Co-founder, Co-leader/Curriculum Director (Sept 2014 - Jun 2015)", "Long Island City, NY",
 	["Helped members with curriculum using knowledge gained in the GWC summer program", 
 	"Worked with two outside computer programmers to teach all interested students to code in a supportive, collaborative environment"]),
 entry(["prof","cs", "teach"],"Sept 2013 - Jun 2014", 201309, 201406, "pixelaca", "Pixel Academy", "Intern", "Brooklyn, NY", 
 	["Helped instructors teach kids different ways to be creative with technology (coding, games, 3D-design, etc) both one-on-one and through group workshops",
-	"Worked on personal project under the instructors’ guidance"]),
+	"Worked on personal project under the instructors’ guidance"], "http://www.pixelacademy.org/"),
 entry(["hum"],"Sept 2012 - Jun 2015", 201209, 201506, "gwn", "Girls Write Now", "Mentee", "New York, NY", 
 	["Met with mentor once a week and established a constructive relationship",
 	"Wrote fiction and memoir pieces individually between meetings",
 	"Explored new fields of writing at group workshops held once a month",
-	"Used feedback and criticism from others to improve"]),
+	"Used feedback and criticism from others to improve"], "http://www.girlswritenow.org/"),
 entry(["learn"], "Apr 2005 - Jun 2015", 200504, 201506, "tachibana", "Tachibana Japanese Dance Group", "Dancer", "New York Branch, NY", 
 	["Learned the art of traditional Japanese dance while coordinating with other dancers",
 	"Performed 4-5 times a year at the annual recital, New Year’s dance ritual, and other events at elderly homes and cultural venues in New York"]),
@@ -80,7 +82,7 @@ entry(["club","cs"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard 
 	"Participated in the state and national TEAMS Competitions"]),
 entry(["neuro", "club"], "Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
 	["Discussed neuroscience knowledge with other representative and professor during weekly meetings", 
-	"Independently studied neuroscience information material and books to prepare for January 31 competition"]),
+	"Independently studied neuroscience information material and books to prepare for January 31 competition"],"http://www.dana.org/nycbrainbee/"),
 entry(["club"], "Sept 2011 - Jun 2013", 201109, 201306, "bhsecqa", "Bard High School Early College Queens Queer-Straight Alliance", "Member (2011-2012), Co-leader (2012-13)","Long Island City, NY",
 	["Cooperated and exchanged ideas with other leaders",
 	"Planned events and meetings including workshops, discussions, and school community outreach"]),
@@ -89,7 +91,7 @@ entry(["prof","lang"], "Sept 2014 - Feb 2015", 201409, 201502, "jtranslation", "
 entry(["prof","hum","lang"], "Summers of 2010, 2011, 2012, 2013, and 2015", 201006, 201508, "upaf","Uno Port Art Films", "Assistant to Directors (2011 - Present)", "Okayama, Japan",
 	["Participated in this annual mainly-outdoor non-profit film festival in Japan that shows cutting-edge films from around the world", 
 	"Translated (English-Japanese, Japanese-English) and subtitled (using Final Cut Pro) a total of 5 films individually, while co-translating and co-subtitling 24 films",
-	"Took charge of ticketing in the box office, sales of merchandise (T-shirts, bags), and records"]),
+	"Took charge of ticketing in the box office, sales of merchandise (T-shirts, bags), and records"], "http://unoportartfilms.org/en/"),
 entry(["vol"], "Jul - Aug 2014", 20140721, 20140809, "obras", "Obras Sociales de Santo Hermano Pedro","Volunteer with Proyecto Nutricional", "Antigua Guatemala, Guatemala",
 	["Cared for hospitalized babies and children by bottle feeding, carrying, and playing with them",
 	"Spoke to staff, parents and children exclusively in Spanish to communicate"]),
@@ -97,26 +99,26 @@ entry(["prof", "teach"], "Dec 2010 - Jun 2013", 201012, 201306, "ktutoring", "Pr
 	["Taught English, reading comprehension, and math for homework and in preparation for NY standardized tests",
 	"Worked with neighborhood children, most of whom needed tutoring to advance to the next grade level"]),
 entry(["vol","teach"], "Dec 2012 - Jun 2013", 201212, 201306, "starlearning", "Goddard Community Center, Star Learning Center", "Volunteer Tutor", "New York, NY",
-	["Taught English and math to a 2nd grader at community center"]),
+	["Taught English and math to a 2nd grader at a NYC community center"], "http://www.goddard.org/page/tutoring-at-star-learning-center-58.html"),
 entry(["cs","prof"],"Sept 2015 - Present", 201509, today(), "brownweb", "Brown WebServices", "Web Developer Intern", "Providence, RI", 
 	["Use HTML/CSS/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
-	"Work with a team of interns and staff to collaboratively solve problems, and tackle new fields such as design"]),
+	"Work with a team of interns and staff to collaboratively solve problems, and tackle new fields such as design"], "http://www.brown.edu/information-technology/webservices/about/internships-web-services"),
 entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownaldus", "Aldus Journal of Translation", "Publicity Chair, Copy-Editor, Editor", "Providence, RI",
 	["Use Facebook, the website, and email to promote the journal and get new editors as well as submissions", 
-	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"]),
+	"Meet weekly to review pieces of translation and decide their inclusion in our biyearly journal"], "https://www.facebook.com/aldusjournal/?fref=ts"),
 entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownjus", "Brown University US-Japan Education and Family Research Lab", "US Team Research Assistant, Japan Team Research Assistant", "Providence, RI",
 	["Transcribe and analyze transcripts taken from interviews of Japanese and US mothers on their beliefs about their children and their futures, especially as related to education", 
-	"Meet weekly for case analysis meets with each team to discuss individual mothers and how their beliefs may connect to greater systems in the world or specific to either country of interest"])
+	"Meet weekly for case analysis meets with each team to discuss individual mothers and how their beliefs may connect to greater systems in the world or specific to either country of interest"], "https://www.facebook.com/USJapanEducationLab")
 ];
 honors = [
-award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
-award(["neuro"], "Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant writing"),
-award(["hum"], "2014", 2014, "mariewanek", "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
-award(["hum"], "Feb 2013", 201302, "scholastic", "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
-award(["vol"], "2015", 201506, "milken", "Milken Scholars", "Scholar"),
-award(["cs"], "2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Scholarship Awardee"),
+award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspirations in Computing New York City", "Winner", "", "https://www.aspirations.org/"),
+award(["neuro"], "Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant proposal. <a href='portfolio.html#dana'>See more</a> about this project.", "http://danablog.org/2015/03/16/2015-winners-of-design-a-brain-experiment-competition/"),
+award(["hum"], "2014", 2014, "mariewanek", "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.', "portfolio.html#maaras"),
+award(["hum"], "Feb 2013", 201302, "scholastic", "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "Awarded for Creative Writing piece <a href='portfolio.html#rooted'>'Rooted'</a>", "http://www.artandwriting.org/"),
+award(["vol"], "2015", 201506, "milken", "Milken Institute, Milken Family Foundation", "Milken Scholar", "", "", "http://www.milkenscholars.org/scholars.taf"),
+award(["cs"], "2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Undergraduate Scholarship", "1 of 2 National 2015 Scholars", "", "https://dac.com/content/po-pistilli-undergraduate-scholarship-0"),
 award(["vol","club"], "2016", 201606, "kimandharold", "Kim and Harold Louie Family Foundation", "Scholar"),
-award(["hum"], "2015", 201506, "penguinwriting", "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award"),
+award(["hum"], "2015", 201506, "penguinwriting", "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award","", "http://www.penguinrandomhouse.com/creativewriting/"),
 award(["vol","club"], "2015", 201506,"cumberland", "Cumberland Farms", "Scholar"),
 ];
 school_honors = [
@@ -195,7 +197,7 @@ function cv_entries(entries, type){
 				style = $('<style> #'+cur_entry["id"]+' .company { color: '+cur_entry["color"]+'; }</style>');
 				$('html > head').append(style);
 			}
-			else if (cur_key == "id"){} //dont print 
+			else if ((cur_key == "id") || (cur_key == "link")){} //dont print 
 			else if (cur_key == "roles"){
 				cur_html += "<ul>";
 				cur_roles = cur_entry.roles;
@@ -203,6 +205,17 @@ function cv_entries(entries, type){
 					cur_html += "<li class='role'>"+cur_roles[r]+"</li>";
 				}
 				cur_html += "</ul>";
+			}
+			else if ((cur_key == "company") || (cur_key == "title")){
+				if (cur_entry["link"]){
+					link_start_html = "<a href='"+cur_entry["link"]+"'><div class='"+cur_key+" clickable'>";
+					link_end_html = "</a>";
+				}
+				else{
+					link_start_html = "<div class='"+cur_key+"'>";
+					link_end_html = "";
+				}
+				cur_html += link_start_html+cur_entry[cur_key]+"</div>"+link_end_html;
 			}
 			else{
 				cur_html += "<div class='"+cur_key+"'>"+cur_entry[cur_key]+"</div>";
@@ -594,7 +607,9 @@ window.addEventListener('resize', function(event){
 });
 
 function mobile_friendly(){
-	child_hoverers = ".company,.position,.location, .org,.title,.name";
+	child_hoverers = ".position,.location,.org,.name";
+
+	console.log(child_hoverers);
 	if (window.innerWidth < 770){//mobile
 		//hide all lis, award details, and tag icons
 		$(".role, .details, .td-tags").addClass("hidden"); 

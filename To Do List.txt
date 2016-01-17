@@ -12,3 +12,4 @@ Portfolio.html
 
 Credits.html
  - fix link styling (ew blue now)
+- add select2

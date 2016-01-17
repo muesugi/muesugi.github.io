@@ -84,3 +84,6 @@ body {
 .keyword{
 	color: #A84A5C;
 }
+.clickable:hover{
+	text-decoration: underline;
+}
