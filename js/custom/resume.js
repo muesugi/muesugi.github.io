@@ -283,7 +283,6 @@ function graph_entries(loe, upward, paper){
 		if (upward){ ypos = paper.height; direction = 1;} else{ ypos = 0; direction = 0;}
 
 		height = path_width/10 + 10*Math.random();
-		console.log(path_width/10 + 10, cur_entry["id"]);
 		//path_str = "M"+ start_xpos_str + " 100 "+"T" +end_xpos_str + " 100"; //+ start_xpos_str + " 100 ";
 		path_str = "M"+ start_xpos+ " "+ypos+" A"+(path_width/2)+" "+height+" 0 0 "+direction+" "+end_xpos+" "+ypos;
 		//path_str = "M"+ start_xpos+ " 100 "+(path_width/4)+" 20 0 0 0 "+end_xpos+" 100";
@@ -431,7 +430,6 @@ function entry_sort_year(arr){
 		}
 		else{ //end dates are the same, comapre start dates
 			//earlier start dates are better
-			console.log("comparing starts");
 			a_start = parse_date(a.date_start_num);
 			b_start = parse_date(b.date_start_num);
 			return date_bigger(b_start,a_start);
@@ -480,7 +478,6 @@ function defaults(){
 	extra_tallest_end = position_from_date(year_width, parse_date(201506));
 	extra_tallest_start = position_from_date(year_width, parse_date(200504));
 	extra_height = 30 + (extra_tallest_end - extra_tallest_start)/10;
-	console.log("extra_height", year_width);
 
 	extra_paper = Raphael(document.getElementById('extracontainer'), "100%", extra_height);
 	//height based on ps261 being the longest/tallest acadmic entry
@@ -537,7 +534,7 @@ function start(){
 	cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
 	cv_entries(award_arr_sort(honors.concat(school_honors)), "award"); 
 	mobile_friendly();
-
+	cv_courses(courses);
 	//event listeners
 
 	$("#to-top-button").on('click',function(){
@@ -638,17 +635,55 @@ function mobile_friendly(){
 		$('.academic_entry, .extra_entry, .award').find(child_hoverers).off('mouseenter mouseleave');
 	}
 }
+courses =
+	[
+		course("Bard College Associate of Arts", "Spring 2015", 201501, ["cs"], "Practicum and Theory of Computer Science Education", "Introduction to Java Teaching Assistant, etc", "A"),
+		course("Bard College Associate of Arts", "Spring 2014", 201401, ["cs"], "Object-Oriented Programming", "Introduction to Object Oriented principles in Python", "A"),
+		course("Bard College Associate of Arts", "Fall 2014", 201409,  ["hum"], "Ancient Japanese Literature", "", "A"),
+		course("Bard College Associate of Arts", "Spring 2015", 201501,  ["hum"], "Modern Japanese Literature", "", "A")
+	]
+function course(d, dstr, dnum, ty, ttl, desc, score){
+	return new Object({degree:d, date_str: dstr, date_num:dnum, type:ty, title:ttl, description: desc, grade: score});
+}
+function cv_courses(course_arr){
+	arr_courses = course_arr.sort(function(b, a){ //sort array
+		a_date = parse_date(a.date_num);
+		b_date = parse_date(b.date_num);
+
+		return date_bigger(a_date, b_date);
+	});
+
+	return_html = "<div id='course-table-head'>Selected Classes</div><table id='table-course_entry'>";
+	for (var c = 0; c < arr_courses.length; c++){
+		cur_course = arr_courses[c];
+		cur_types = cur_course["type"];
+		type_str = "";
+		for (var t = 0; t<cur_types.length; t++){
+			type_str += cur_types[t]+" ";
+		}
+		return_html += "<tr class='hidden'>";
+		return_html += "<td class='td-tags'><span class='cv-icon "+type_str+"'></span></td>";
+		return_html += "<td class='td-dates'>"+cur_course["date_str"]+"</td>";
+		return_html += "<td class='details'><div class='title'>"+cur_course["title"]+"</div>"+cur_course["degree"]+"<br>"+cur_course["description"]+"</td>";
+		return_html += "<td>"+cur_course["grade"]+"</td></tr>";
+	}
+	return_html += "</table>";
+	console.log("return", return_html);
+	$('#cvlisting').append(return_html);
+	$("#course-table-head").addClass('hidden');
+}
 
 function filter_for_tag(){
 	tags = $("#filter-select option:selected");
 	bool_connector = $("#and-or-select option:selected").attr("id");
 	if (tags.length == 0){
 		$("tr").removeClass('hidden');//show all
+		$("#course-table-head").addClass('hidden');
+		$("#table-course_entry tr").addClass('hidden');
 	}
 	else{
 		selected_tags = []; //collect tags (selected option ids) only
 		tags.each(function(){ selected_tags.push(this.id); });
-		console.log(selected_tags);
 
 		$(".td-tags").each(function(){
 			//traverses set of td-tags
@@ -674,10 +709,16 @@ function filter_for_tag(){
 				tag_i++;
 			}
 
-			console.log(found);
 			if (found){ $(this).parent().removeClass('hidden'); }
 			else{ $(this).parent().addClass('hidden'); }
-
 		});
+
+		//show table header if course table has shown elements
+		if ($("#table-course_entry").find("tr").not(".hidden").length > 0){
+			$("#course-table-head").removeClass('hidden');
+		}
+		else{
+			$("#course-table-head").addClass('hidden');
+		}
 	}
 }

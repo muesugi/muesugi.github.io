@@ -87,6 +87,11 @@ table::before{
 #table-award::before{
 	content:"Honors";
 }
+#course-table-head{
+	font-size: 1.02em;
+	font-weight:700;
+	margin-left: 20px;
+}
 
 #cvlisting {
 	float:none;

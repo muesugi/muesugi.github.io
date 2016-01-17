@@ -2,6 +2,7 @@ Index.html
 
 Resume.html
 - Add languages
+- Add classes that show up only on search
 
 Portfolio.html
 - add actual links to project
