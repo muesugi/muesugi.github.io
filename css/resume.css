@@ -112,7 +112,7 @@ table::before{
 }
 /*tags icons*/
 .td-tags{
-	width:75px;
+	width:90px;
 	padding:5px;
 	height:auto;
 }
@@ -120,7 +120,8 @@ table::before{
 	display:inline-block;
 	width: 25px; 
 	height: 25px;
-	background-size: cover;
+	margin-right:5px;
+	background-size: contain;
     background-repeat: no-repeat;
 }
 .icon-text{
@@ -128,31 +129,31 @@ table::before{
 	font-size: .8em;
 }
 .vol{
-	background-image: url("../images/icon-charity-Vladimir.svg");
+	background-image: url("../images/icon-charity-Vladimir.png");
 }
 .prof{
-	background-image: url("../images/icon-professional-Andrey Vasiliev.svg");
+	background-image: url("../images/icon-professional-Andrey Vasiliev.png");
 }
 .learn{
-	background-image: url("../images/icon-education-Kevin Augustine LO.svg");
+	background-image: url("../images/icon-education-Kevin Augustine LO.png");
 }
 .teach{
-	background-image: url("../images/icon-teach-Julien Deveaux.svg");
+	background-image: url("../images/icon-teach-Julien Deveaux.png");
 }
 .club{
-	background-image: url("../images/icon-club-Aha-Soft.svg");
+	background-image: url("../images/icon-club-Aha-Soft.png");
 }
 .hum{
-	background-image: url("../images/icon-thinker-Nuno Lezon.svg");
+	background-image: url("../images/icon-thinker-Nuno Lezon.png");
 }
 .lang{
-	background-image: url("../images/icon-lang-Lek Potharam.svg");
+	background-image: url("../images/icon-lang-Lek Potharam.png");
 }
 .cs{
-	background-image: url("../images/icon-cs-Christopher Holm-Hansen.svg");
+	background-image: url("../images/icon-cs-Christopher Holm-Hansen.png");
 }
 .neuro{
-	background-image: url("../images/icon-neuro-Aha-Soft.svg");
+	background-image: url("../images/icon-neuro-Aha-Soft.png");
 }
 
 
