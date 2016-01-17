@@ -421,8 +421,8 @@ function today_line(book){ //a list of papers
 			paper.rect(line_xpos+1, 0, total_width - (line_xpos + 1), paper.height).attr({"fill": "white", "fill-opacity": ".8", "stroke": "none"});
 
 			if (p + 1 == book.length){ //last iteration
-				p_line = paper.path("M"+line_xpos+" 0v"+(paper.height - 12.5)).attr("stroke", "#88382D");
-				paper.text(line_xpos, paper.height - 5, "Today").attr({"fill": "#88382D", "font-family": "Open Sans"});
+				p_line = paper.path("M"+line_xpos+" 0v"+(paper.height - 14)).attr("stroke", "#88382D");
+				paper.text(line_xpos, paper.height - 6.5, "Today").attr({"fill": "#88382D", "font-family": "Open Sans"});
 			}
 			else{
 				p_line = paper.path("M"+line_xpos+" 0v"+paper.height).attr("stroke", "#88382D");
