@@ -539,6 +539,7 @@ function start(){
 	    	allowClear: true,
 	    	tokenSeparators: [",", " "]}
 	    );
+	    filter_for_tag();
 	})
 
 }
