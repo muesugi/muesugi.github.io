@@ -557,12 +557,12 @@ window.addEventListener('resize', function(event){
 });
 
 function mobile_friendly(){
+	child_hoverers = ".company,.position,.location, .org,.title,.name";
 	if (window.innerWidth < 770){//mobile
 		//hide all lis, award details, and tag icons
 		$(".role, .details, .td-tags").addClass("hidden"); 
 
 		//make tds clickable//hide all lis, award details, and tag icons
-		child_hoverers = ".company,.position,.location, .org,.title,.name";
 		$(".academic_entry,.extra_entry,.award").find(child_hoverers).hover(
 			function(){ $(this).siblings(child_hoverers).andSelf().addClass('underline'); }, 
 			function(){ $(this).siblings(child_hoverers).andSelf().removeClass('underline'); });
@@ -579,6 +579,8 @@ function mobile_friendly(){
 	else{
 		$(".role, .details, .td-tags").removeClass("hidden"); 
 		$(".academic_entry, .extra_entry, .award").children("td").not(".td-dates").removeClass("clickable"); 
+		$('.academic_entry, .extra_entry, .award').off('click');
+		$('.academic_entry, .extra_entry, .award').find(child_hoverers).off('mouseenter mouseleave');
 	}
 }
 
