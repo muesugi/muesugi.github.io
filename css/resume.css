@@ -59,6 +59,7 @@ svg {
 	padding-top:20px;
 }
 
+/*written cv*/
 #cvtitle{
 	font-size: 1em;
 	text-align: center;
@@ -86,6 +87,7 @@ table::before{
 #table-award::before{
 	content:"Honors";
 }
+
 #cvlisting {
 	float:none;
 }
@@ -93,22 +95,81 @@ table::before{
 	padding-left:20px;
 	vertical-align:top;
 }
+
 /*hide specific id entries*/
 #ice { display:none;}
 #ps261 { display:none;}
 
+#filter{
+	text-align: center;
+	padding: 10px 0px 30px 0px;
+}
+#s2id_filter-select.select2-container {
+	width:500px;
+}
+#s2id_and-or-select.select2-container {
+	padding-left: 5px;
+}
+/*tags icons*/
+.td-tags{
+	width:75px;
+	padding:5px;
+	height:auto;
+}
+.cv-icon{
+	display:inline-block;
+	width: 25px; 
+	height: 25px;
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+.icon-text{
+	position:absolute;
+	font-size: .8em;
+}
+.vol{
+	background-image: url("../images/icon-charity-Vladimir.svg");
+}
+.prof{
+	background-image: url("../images/icon-professional-Andrey Vasiliev.svg");
+}
+.learn{
+	background-image: url("../images/icon-education-Kevin Augustine LO.svg");
+}
+.teach{
+	background-image: url("../images/icon-teach-Julien Deveaux.svg");
+}
+.club{
+	background-image: url("../images/icon-club-Aha-Soft.svg");
+}
+.hum{
+	background-image: url("../images/icon-thinker-Nuno Lezon.svg");
+}
+.lang{
+	background-image: url("../images/icon-lang-Lek Potharam.svg");
+}
+.cs{
+	background-image: url("../images/icon-cs-Christopher Holm-Hansen.svg");
+}
+.neuro{
+	background-image: url("../images/icon-neuro-Aha-Soft.svg");
+}
+
 
 /*entry attribute styling classes*/
-.date_str{
-	padding-right: 5%; /*separates table rows*/
-}
+.td-dates{ width: 10%;}
+.date_str{}
 .date_start_num{}
 .date_end_num{}
+
+.underline{ text-decoration: underline; }
 .company{
 	font-weight:700;
 } 
 .position{}
-.role{}
+.role{
+	text-decoration: none; /*overrides custom.css underline for clickable*/ 
+}
 
 /*award styling*/
 .title{
