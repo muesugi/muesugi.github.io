@@ -110,17 +110,19 @@ entry(["club","hum", "lang"], "Sept 2015 - Present", 201509, today(), "brownjus"
 ];
 honors = [
 award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspiration in Computing New York City", "Winner"),
-award(["cs"], "2015", 201506, "bhseccs", "Bard High School Early College Queens", "Computer Science Award", "Winner"),
-award(["lang"], "2015", 201506, "bhsecspanish", "Bard High School Early College Queens", "Spanish Language Award", "Winner"),
 award(["neuro"], "Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant writing"),
 award(["hum"], "2014", 2014, "mariewanek", "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.'),
 award(["hum"], "Feb 2013", 201302, "scholastic", "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "for Rooted"),
-award(["club"], "Sept 2013", 201309,"bhsecstudentlife", "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony"),
 award(["vol"], "2015", 201506, "milken", "Milken Scholars", "Scholar"),
 award(["cs"], "2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Scholarship Awardee"),
 award(["vol","club"], "2016", 201606, "kimandharold", "Kim and Harold Louie Family Foundation", "Scholar"),
 award(["hum"], "2015", 201506, "penguinwriting", "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award"),
 award(["vol","club"], "2015", 201506,"cumberland", "Cumberland Farms", "Scholar"),
+];
+school_honors = [
+award(["cs"], "2015", 201506, "bhseccs", "Bard High School Early College Queens", "Computer Science Award", "Winner"),
+award(["lang"], "2015", 201506, "bhsecspanish", "Bard High School Early College Queens", "Spanish Language Award", "Winner"),
+award(["club"], "Sept 2013", 201309,"bhsecstudentlife", "Bard High School Early College Queens", "Student Life Award", "Award presented for involvement in the BHSECQ community at the stepping-up ceremony")
 ]
 
 var timeline_paper;
@@ -310,7 +312,8 @@ function graph_awards(loa, upward, paper){
 
 	for (var a = 0; a < loa.length; a++){
 		cur_award = loa[a];
-		xpos = position_from_date(year_width, parse_date(cur_award.date_num));
+		month_pixels = year_width/(12);
+		xpos = position_from_date(year_width, parse_date(cur_award.date_num)) + (month_pixels*Math.random() - month_pixels) ; //move at most a month away, +/-
 		mag = 30;
 		if (upward){ start_ypos = paper.height; mag = -1*mag; } else{ start_ypos = 0;}
 		path_str = "M"+xpos+" "+start_ypos+"v"+mag;
@@ -481,6 +484,7 @@ function start(){
 	graph_entries(entry_sort_duration(extra_entries), true, extra_paper);
 	graph_entries(academic_entries, false, academic_paper);
 	graph_awards(honors, true, extra_paper);
+	graph_awards(school_honors, false, academic_paper);
 	today_line([timeline_paper,extra_paper,academic_paper]);
 
 	cv_entries(entry_sort_year(academic_entries), "academic_entry"); 
@@ -513,7 +517,7 @@ function start(){
     /* end create filter box/search bar*/
 
 	cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
-	cv_entries(award_arr_sort(honors), "award"); 
+	cv_entries(award_arr_sort(honors.concat(school_honors)), "award"); 
 	mobile_friendly();
 
 	//event listeners
