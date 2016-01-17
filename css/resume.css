@@ -157,8 +157,11 @@ table::before{
 .cs{
 	background-image: url("../images/icon-cs-Christopher Holm-Hansen.png");
 }
-.neuro{
+.natsci{
 	background-image: url("../images/icon-neuro-Aha-Soft.png");
+}
+.math{
+	background-image: url("../images/icon-math-Gao.png");
 }
 
 

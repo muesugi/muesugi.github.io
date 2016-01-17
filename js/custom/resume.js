@@ -76,11 +76,11 @@ entry(["hum"], "Feb 2012 - Dec 2013, Sept 2014 - Feb 2015", 201202, 201502, "bhs
 	["Helped students at the desk by checking books in and out, helping with homework, and directing students to the right section of the library",
 	"Recommended, ordered, and catalogued new books",
 	"Familiarized myself with library software"]),
-entry(["club","cs"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Team Member", "Long Island City, NY",
+entry(["club","math"], "Oct 2014 - Jul 2015", 201410, 201507, "bhsecteams", "Bard High School Early College Queens TEAMS (Test of Engineering Aptitude, Mathematics, and Science) Club", "Team Member", "Long Island City, NY",
 	["Recruited to this eight-member team by a classmate", 
 	"Discussed and solved real-world problem sets", 
 	"Participated in the state and national TEAMS Competitions in Texas"]),
-entry(["neuro", "club"], "Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
+entry(["natsci", "club"], "Nov 2014 - Jan 2015", 201411, 201501, "brainbee", "NY Region Brain Bee Competition", "School Representative (1 of 2)","Long Island City, NY",
 	["Discussed neuroscience knowledge with other representative and professor during weekly meetings", 
 	"Independently studied neuroscience information material and books to prepare for January 31 competition"],"http://www.dana.org/nycbrainbee/"),
 entry(["club"], "Sept 2011 - Jun 2013", 201109, 201306, "bhsecqa", "Bard High School Early College Queens Queer-Straight Alliance", "Member (2011-2012), Co-leader (2012-13)","Long Island City, NY",
@@ -118,11 +118,11 @@ entry(["club","vol"], "Oct 2015 - Present", 201510, today(), "brownfrn", "Brown 
 ];
 honors = [
 award(["cs", "women"], "2015", 201502, "ncwit", "National Center for Women & Information Technology", "Award for Aspirations in Computing New York City", "Winner", "", "https://www.aspirations.org/"),
-award(["neuro"], "Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant proposal. <a href='portfolio.html#dana'>See more</a> about this project.", "http://danablog.org/2015/03/16/2015-winners-of-design-a-brain-experiment-competition/"),
+award(["natsci"], "Feb 2015", 201502, "danabrain", "The Dana Foundation", "National Design a Brain Experiment Competition", "First Place", "Award for neurobiology grant proposal. <a href='portfolio.html#dana'>See more</a> about this project.", "http://danablog.org/2015/03/16/2015-winners-of-design-a-brain-experiment-competition/"),
 award(["hum"], "2014", 2014, "mariewanek", "The Mid-Atlantic Association for Asian Studies", "Marie Wanek High School Essay Prize", "First Place", 'Awarded for for essay, “A Sexual WWII: The Key as an Allegory for the Relationship between Japan and the West.” Published online on the Mid-Atlantic Association for Asian Studies page.', "portfolio.html#maaras"),
 award(["hum"], "Feb 2013", 201302, "scholastic", "Scholastic", "Arts and Writing Awards NYC", "Honorable Mention", "Awarded for Creative Writing piece <a href='portfolio.html#rooted'>'Rooted'</a>", "http://www.artandwriting.org/"),
 award(["vol"], "2015", 201506, "milken", "Milken Institute, Milken Family Foundation", "Milken Scholar", "", "", "http://www.milkenscholars.org/scholars.taf"),
-award(["cs"], "2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Undergraduate Scholarship", "1 of 2 National 2015 Scholars", "", "https://dac.com/content/po-pistilli-undergraduate-scholarship-0"),
+award(["cs", "math"], "2015", 201506, "popisilli", "Design Automation Conference", "P.O. Pistilli Undergraduate Scholarship", "1 of 2 National 2015 Scholars", "", "https://dac.com/content/po-pistilli-undergraduate-scholarship-0"),
 award(["vol","club"], "2016", 201606, "kimandharold", "Kim and Harold Louie Family Foundation", "Scholar"),
 award(["hum"], "2015", 201506, "penguinwriting", "Penguin Random House", "Creative Writing Competition", "Artist Recognition Award","", "http://www.penguinrandomhouse.com/creativewriting/"),
 award(["vol","club"], "2015", 201506,"cumberland", "Cumberland Farms", "Scholar"),
@@ -147,7 +147,8 @@ var tag_hash = {"cs":"Computer Science",
 	"lang": "Language", 
 	"prof": "Professional",
 	"vol": "Volunteer",
-	"neuro": "Neurobiology"};
+	"natsci": "Natural Sciences", 
+	"math": "Math and Engineering"};
 
 
 function cv_entries(entries, type){
@@ -635,16 +636,25 @@ function mobile_friendly(){
 		$('.academic_entry, .extra_entry, .award').find(child_hoverers).off('mouseenter mouseleave');
 	}
 }
-courses =
-	[
-		course("Bard College Associate of Arts", "Spring 2015", 201501, ["cs"], "Practicum and Theory of Computer Science Education", "Introduction to Java Teaching Assistant, etc", "A"),
+courses = [
+		course("Bard College Associate of Arts", "Spring 2015", 201501, ["cs", "teach"], "Practicum and Theory of Computer Science Education", "Single-Person Independent Study; Introduction to Java Teaching Assistant, etc", "A"),
 		course("Bard College Associate of Arts", "Spring 2014", 201401, ["cs"], "Object-Oriented Programming", "Introduction to Object Oriented principles in Python", "A"),
 		course("Bard College Associate of Arts", "Fall 2014", 201409,  ["hum"], "Ancient Japanese Literature", "", "A"),
-		course("Bard College Associate of Arts", "Spring 2015", 201501,  ["hum"], "Modern Japanese Literature", "", "A")
+		course("Bard College Associate of Arts", "Fall 2014", 201409, ["cs"], "Introduction to Java, Object-Oriented Programming", "Single-Person Independent Study", "A"),
+		course("Bard College Associate of Arts", "Spring 2015", 201501,  ["hum"], "Modern Japanese Literature", "", "A"),
+		course("Bard College Associate of Arts", "Spring 2014", 201409,  ["math"], "Calculus I", "", "A"),
+		course("Bard College Associate of Arts", "Fall 2014", 201409,  ["math"], "Calculus II", "", "A"),
+		course("Bard College Associate of Arts", "Fall 2013", 201309,  ["natsci"], "Organic Chemistry I", "", "A"),
+		course("Bard College Associate of Arts", "Spring 2014", 201401,  ["natsci"], "Organic Chemistry II", "", "A"),
+		course("Bard College Associate of Arts", "Spring 2014", 201401,  ["natsci"], "Organic Chemistry II", "", "A"),
+		course("Bard College Associate of Arts", "Fall 2014", 201409,  ["natsci"], "Neurobiology", "", "A"),
+		course("Bard College Associate of Arts", "Fall 2014", 201409,  ["lang", "hum"], "Cervantes' Don Quixote I", "", "A"),
+		course("Bard College Associate of Arts", "Spring 2015", 201501,  ["lang", "hum"], "Cervantes' Don Quixote II", "", "A"),
 	]
 function course(d, dstr, dnum, ty, ttl, desc, score){
 	return new Object({degree:d, date_str: dstr, date_num:dnum, type:ty, title:ttl, description: desc, grade: score});
 }
+
 function cv_courses(course_arr){
 	arr_courses = course_arr.sort(function(b, a){ //sort array
 		a_date = parse_date(a.date_num);
@@ -657,12 +667,13 @@ function cv_courses(course_arr){
 	for (var c = 0; c < arr_courses.length; c++){
 		cur_course = arr_courses[c];
 		cur_types = cur_course["type"];
-		type_str = "";
-		for (var t = 0; t<cur_types.length; t++){
-			type_str += cur_types[t]+" ";
+		return_html += "<tr class='hidden'><td class='td-tags'>";
+		for (var t = 0; t < cur_types.length; t++){
+			cur_tag = cur_types[t];
+			return_html += "<span class='cv-icon "+cur_tag+"'> </span>";
+			return_html += "<div class='icon-text hidden'>"+tag_hash[cur_tag]+" </div>";
 		}
-		return_html += "<tr class='hidden'>";
-		return_html += "<td class='td-tags'><span class='cv-icon "+type_str+"'></span></td>";
+		return_html += "</td>";
 		return_html += "<td class='td-dates'>"+cur_course["date_str"]+"</td>";
 		return_html += "<td class='details'><div class='title'>"+cur_course["title"]+"</div>"+cur_course["degree"]+"<br>"+cur_course["description"]+"</td>";
 		return_html += "<td>"+cur_course["grade"]+"</td></tr>";
