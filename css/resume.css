@@ -95,18 +95,20 @@ table::before{
 	padding-left:20px;
 	vertical-align:top;
 }
+
 /*hide specific id entries*/
 #ice { display:none;}
 #ps261 { display:none;}
 
 #filter{
 	text-align: center;
-}
-.select2-container{
-	text-align: center;
+	padding: 10px 0px 30px 0px;
 }
 #s2id_filter-select.select2-container {
 	width:500px;
+}
+#s2id_and-or-select.select2-container {
+	padding-left: 5px;
 }
 /*tags icons*/
 .td-tags{
@@ -155,16 +157,19 @@ table::before{
 
 
 /*entry attribute styling classes*/
-.date_str{
-	padding-right: 5%; /*separates table rows*/
-}
+.td-dates{ width: 10%;}
+.date_str{}
 .date_start_num{}
 .date_end_num{}
+
+.underline{ text-decoration: underline; }
 .company{
 	font-weight:700;
 } 
 .position{}
-.role{}
+.role{
+	text-decoration: none; /*overrides custom.css underline for clickable*/ 
+}
 
 /*award styling*/
 .title{

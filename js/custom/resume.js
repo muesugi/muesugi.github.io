@@ -180,7 +180,7 @@ function cv_entries(entries, type){
 			}
 			else if (cur_key.indexOf("date") >= 0){
 				if (cur_key == "date_str"){
-					cur_html += "<td><div class='date_str'>"+cur_entry["date_str"]+"</div></td><td>";
+					cur_html += "<td class='td-dates'><div class='date_str'>"+cur_entry["date_str"]+"</div></td><td>";
 				}
 				else{}
 			}
@@ -484,7 +484,7 @@ function start(){
 	$("#cvlisting").append(filter_box_html);
 
 	$("#filter-select").select2(
-		{placeholder: "Filter Experiences",
+		{placeholder: "Filter Experiences and Honors",
     	allowClear: true,
     	tokenSeparators: [",", " "]}
     );
@@ -558,14 +558,15 @@ window.addEventListener('resize', function(event){
 
 function mobile_friendly(){
 	if (window.innerWidth < 770){//mobile
-		$(".role").addClass("hidden"); //hide all lis
-		$(".details").addClass("hidden"); //hide all award details
-		//make tds clickable
-		$('.academic_entry').on('click', function(event){
-			clicked_id = $(this).attr('id');
-			$("#"+clicked_id + " td .role").toggleClass("hidden");
-		});
-		$('.extra_entry').on('click', function(event){
+		//hide all lis, award details, and tag icons
+		$(".role, .details, .td-tags").addClass("hidden"); 
+
+		//make tds clickable//hide all lis, award details, and tag icons
+		child_hoverers = ".company,.position,.location, .org,.title,.name";
+		$(".academic_entry,.extra_entry,.award").find(child_hoverers).hover(
+			function(){ $(this).siblings(child_hoverers).andSelf().addClass('underline'); }, 
+			function(){ $(this).siblings(child_hoverers).andSelf().removeClass('underline'); });
+		$('.academic_entry, .extra_entry').on('click', function(event){
 			clicked_id = $(this).attr('id');
 			$("#"+clicked_id + " td .role").toggleClass("hidden");
 		});
@@ -576,7 +577,8 @@ function mobile_friendly(){
 
 	}
 	else{
-		$("#download")
+		$(".role, .details, .td-tags").removeClass("hidden"); 
+		$(".academic_entry, .extra_entry, .award").children("td").not(".td-dates").removeClass("clickable"); 
 	}
 }
 

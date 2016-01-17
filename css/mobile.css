@@ -43,3 +43,7 @@
 .nav-button{
 	z-index: 20;
 }
+#s2id_and-or-select.select2-container {
+	padding-left: 0px;
+	padding-top: 5px;
+}
