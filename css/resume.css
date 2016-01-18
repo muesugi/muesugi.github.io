@@ -87,10 +87,16 @@ table::before{
 #table-award::before{
 	content:"Honors";
 }
-#course-table-head{
+.table-head{
 	font-size: 1.02em;
 	font-weight:700;
 	margin-left: 20px;
+}
+#lang-table-head{
+	padding-top:20px;
+}
+.table-lang#lang_1{
+	padding-bottom:20px;
 }
 
 #cvlisting {
@@ -183,6 +189,9 @@ table::before{
 /*award styling*/
 .title{
 	font-weight:700;
+}
+hr{
+	margin:0px;
 }
 /*download button*/
 #download a {

@@ -159,24 +159,7 @@ function cv_entries(entries, type){
 		keys = Object.keys(cur_entry);
 		//cur_html = "<div class='entry'>";
 		cur_html += "<tr class='"+type+" anchor' id='"+cur_entry["id"]+"'>";
-		/*cur_html += "<td><div class='date_str'>"+cur_entry["date_str"]+"</div></td>";
-		cur_html += "<td><div class='company'>"+cur_entry["company"]+"</div>";
-		cur_html += "<div class='position'>"+cur_entry["position"]+"</div>";
-		cur_html += "<div class='location'>"+cur_entry["location"]+"</div>";
-		cur_html += "<ul>";
-		if (cur_entry.hasOwnProperty("roles")){
-			cur_roles = cur_entry["roles"];
-			console.log(cur_roles);
-			for (var r = 0; r < cur_roles.length; r++){
-				cur_html += "<li class='role'>"+cur_roles[r]+"</li>";
-			}
-			cur_html += "</ul>";
-		}
-		cur_html += "</td></tr>";
-
-		$("#"+cur_entry["id"]+".company").css("color", Raphael.hsb2rgb(cur_entry["color"]));
 		
-		*/
 		for (var k = 0; k < keys.length; k++){
 			cur_key = keys[k];
 			if (cur_key == "tags"){
@@ -536,8 +519,16 @@ function start(){
 	cv_entries(award_arr_sort(honors.concat(school_honors)), "award"); 
 	mobile_friendly();
 	cv_courses(courses);
-	//event listeners
+	lang_skills = "<div id='lang-table-head' class='table-head'>Languages and Skills</div>";
+	lang_skills += "<table class='table-lang' id='lang_0'><tr><td>Fluent in:</td><td>LaTeX, HTML/CSS, JavaScript, Java</td><td></td><td>English, Japanese (verbal), Spanish</td></tr>";
+	lang_skills += "<tr><td>Proficient in:</td><td>Python, Racket</td><td></td><td>Japanese (written)</td></tr>";
+	lang_skills += "<tr><td>Dabbled in:</td><td>PHP</td><td></td><td></td></tr></table>";
+	lang_skills += "<table class='table-lang' id='lang_1'><tr><td>Favorite APIs:</td><td>JQuery, JQuery Mobile, Raphael.js</td>";
+	lang_skills += "<tr><td>Able to use:</td><td>Microsoft Office suite, Final Cut Pro 7/X, Adobe Photoshop and Premiere Pro</td></tr></table>";
+	$("#cvlisting").append(lang_skills);
 
+
+	//event listeners
 	$("#to-top-button").on('click',function(){
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 	});
@@ -663,7 +654,7 @@ function cv_courses(course_arr){
 		return date_bigger(a_date, b_date);
 	});
 
-	return_html = "<div id='course-table-head'>Selected Classes</div><table id='table-course_entry'>";
+	return_html = "<div id='course-table-head' class='table-head'>Selected Classes</div><table id='table-course_entry'>";
 	for (var c = 0; c < arr_courses.length; c++){
 		cur_course = arr_courses[c];
 		cur_types = cur_course["type"];
@@ -679,7 +670,6 @@ function cv_courses(course_arr){
 		return_html += "<td>"+cur_course["grade"]+"</td></tr>";
 	}
 	return_html += "</table>";
-	console.log("return", return_html);
 	$('#cvlisting').append(return_html);
 	$("#course-table-head").addClass('hidden');
 }
