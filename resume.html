@@ -72,8 +72,106 @@
    <div class="nav-button" id="to-download-button">Download<br>Resume<br><i class="fa fa-caret-down fa-3x"></i></div>
  </div>
  <script>
- //generate cv and graph before load
- start();
+ 
+  //define all entries here
+  timeline_start_year = 2006;
+  timeline_end_year = new Date().getFullYear(); //default is current year
+
+  //set defaults for globals:
+  defaults();
+
+  create_timeline();
+
+  graph_entries(entry_sort_duration(extra_entries), true, extra_paper);
+  graph_entries(academic_entries, false, academic_paper);
+  graph_awards(honors, true, extra_paper);
+  graph_awards(school_honors, false, academic_paper);
+  today_line([timeline_paper,extra_paper,academic_paper]);
+
+  cv_entries(entry_sort_year(academic_entries), "academic_entry"); 
+
+  /*create filter box/search bar*/
+
+  filter_box_html = '<div id="filter"><select id="filter-select" name="select-boxes" multiple="multiple">';
+  option_ids = Object.keys(tag_hash);
+  //hash so that it's easier to add tags in the future
+
+  for (var k = 0; k < option_ids.length; k++){
+    cur_id = option_ids[k];//computer name
+    cur_val = tag_hash[cur_id];//pretty text
+    filter_box_html += "<option id='"+cur_id+"'>"+cur_val+"</option>";
+  }
+  filter_box_html += "</select>";
+    filter_box_html += "<select id='and-or-select'><option id='or' selected='selected'>OR</option><option id='and'>AND</option></select>"
+  filter_box_html += "</div>";
+  $("#cvlisting").append(filter_box_html);
+
+  $("#filter-select").select2(
+    {placeholder: "Filter Experiences and Honors",
+      allowClear: true,
+      tokenSeparators: [",", " "]}
+    );
+    $("#and-or-select").select2();
+    $("#filter-select, #and-or-select").on("change",function(event){
+      filter_for_tag();
+    })  
+    /* end create filter box/search bar*/
+
+  cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
+  cv_entries(award_arr_sort(honors.concat(school_honors)), "award"); 
+  mobile_friendly();
+  cv_courses(courses);
+  lang_skills = "<div id='lang-table-head' class='table-head'>Languages and Skills</div>";
+  lang_skills += "<table class='table-lang' id='lang_0'><tr><td>Fluent:</td><td>LaTeX, HTML/CSS, JavaScript, Java</td><td></td><td>English, Japanese (verbal), Spanish</td></tr>";
+  lang_skills += "<tr><td>Proficient:</td><td>Python, Racket</td><td></td><td>Japanese (written)</td></tr>";
+  lang_skills += "<tr><td>Dabbled:</td><td>PHP</td><td></td><td></td></tr></table>";
+  lang_skills += "<table class='table-lang' id='lang_1'><tr><td>Favorite CMSs and APIs:</td><td>WordPress, Drupal; JQuery, JQuery Mobile, Raphael.js</td>";
+  lang_skills += "<tr><td>Able to use:</td><td>Microsoft Office suite, Final Cut Pro 7/X, Adobe Photoshop and Premiere Pro</td></tr></table>";
+  $("#cvlisting").append(lang_skills);
+
+
+  //event listeners
+  $("#to-top-button").on('click',function(){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
+  $("#to-download-button").on('click',function(){ scrollTo("download");
+  });
+
+  top_offset = 200;
+  download_offset = 700;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() < top_offset) { //before top offset
+          fade_out_if_visible("to-top-button");
+          fade_in_if_hidden("to-download-button");
+        }
+        //after download offset mark
+        else if (jQuery(this).scrollTop() > ($(document).height() - download_offset)){
+          fade_out_if_visible("to-download-button");
+          fade_in_if_hidden("to-top-button");
+        }
+        //between two marks
+        else{ 
+          fade_in_if_hidden("to-download-button");
+          fade_in_if_hidden("to-top-button");
+       }
+    });
+
+  $(".cv-icon").hover(function(event){
+    $(this).next(".icon-text").toggleClass('hidden');
+  })
+
+  $(".cv-icon").on('click',function(event){
+    icon_tag = $(this).attr('class').substring(8);
+    $("option#"+icon_tag).attr('selected','selected');
+    $("#filter-select").select2("destroy");
+    $("#filter-select").append("<option value='1'>Text</option>");
+    $("#filter-select").select2(
+      {placeholder: "Filter Experiences and Honors",
+        allowClear: true,
+        tokenSeparators: [",", " "]}
+      );
+      filter_for_tag();
+  });
  </script>
  <div id="download"><a href="MoieUesugi-Resume.pdf" download><i class="fa fa-download fa-3x"></i></a>Download<span id='download-longer'> (Shorter!)</span> Resume PDF</div>
  <!-- /specific to resume.html -->
