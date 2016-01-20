@@ -23,6 +23,7 @@
 #photo{
 	padding-top:64px; /*for menu bar*/
 	height:90vh; /*equiv to 70 + 10 + 10 vh in landing*/
+	width:auto;
 }
 /*#about::before{
 	display: block; 

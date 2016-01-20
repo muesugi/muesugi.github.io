@@ -27,18 +27,19 @@
       path: 'css/',
 		  dynamic: true,
 		  range: [
-		    '0px    to 770px  = mobile.css'
+		    '0px    to 800px  = mobile.css'
 		  ]
 		};
 
     function landing_photo_resize(photo_width){
-      if (window.innerWidth <= 760){ /*mobile*/
-        $("#landing").width(window.innerWidth - 0.05*window.innerWidth);
-      } 
-      else{ /*not mobile*/
+      if (window.innerWidth > 800){ /* not mobile*/
         $("#landing").width($(window).width() - photo_width - 0.05*window.innerWidth);
+        $("#landing").css("padding-right", "5vw");
       }
-      $("#landing").css("padding-right", "5vw");
+      else{
+        $("#landing").width($(window).width() - 0.05*window.innerWidth);
+        $("#landing").css("padding-right", "5vw");
+      }
     }
 	</script>
   <script src="js/plugins/adapt.min.js"></script>
@@ -84,6 +85,7 @@
   fit_sizing('about'); 
   
   window.addEventListener('resize', function(event){
+    console.log($("#photo").width(), window.innerWidth);
     landing_photo_resize($("#photo").width()); 
     fit_sizing("about");
   });
