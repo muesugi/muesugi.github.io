@@ -16,7 +16,7 @@ body {
 .menu{	
 	position:fixed;
 	height:60px;
-	padding-bottom: 1%;
+	padding-bottom: 4px; /*total height of menu is 64 px*/
 	font-size: 24px;
 	line-height: 60px;
 	vertical-align: center;

@@ -32,14 +32,13 @@
 		};
 
     function landing_photo_resize(photo_width){
-      console.log("landing_photo_resize");
       if (window.innerWidth <= 760){ /*mobile*/
-        $(".landing").width(window.innerWidth - 0.05*window.innerWidth);
-        $(".landing").css("padding-right", "5%");
+        $("#landing").width(window.innerWidth - 0.05*window.innerWidth);
       } 
       else{ /*not mobile*/
-        $(".landing").width(window.innerWidth - photo_width - 0.05*window.innerWidth);
+        $("#landing").width($(window).width() - photo_width - 0.05*window.innerWidth);
       }
+      $("#landing").css("padding-right", "5vw");
     }
 	</script>
   <script src="js/plugins/adapt.min.js"></script>
@@ -60,7 +59,7 @@
   <div id="mob-menu-icon"><a id="simple-menu" href="#sidr"><i class="fa fa-bars fa-2x"></i></a></div>
   <div class="spacer"> </div>
  </div>
-  <div class="landing">
+  <div id="landing">
   	<p id="title">Moie Uesugi</p>
   	<p id="subtitle">Computer Science and Comparative Literature Student at Brown University, <br>
   	Crocheter, Rambler, Learner.</p>
