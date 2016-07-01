@@ -13,6 +13,9 @@
 }
 
 /* index.html (mobile additions to index.css) */
+#landing-container {
+	display: block;
+}
 #landing{
     width:95%;
     padding:10vh 5vw 10vh 0;
