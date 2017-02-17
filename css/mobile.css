@@ -14,16 +14,22 @@
 
 /* index.html (mobile additions to index.css) */
 #landing-container {
+	padding-top: calc(60px + 5%);
+	min-height: calc(100% + 60px);
 	display: block;
-}
-#landing{
-    width:95%;
-    padding:10vh 5vw 10vh 0;
+	text-align: center;
+	height: auto;
 }
 #photo{
-	width:100%;
-	height:auto;
-	padding:0px;
+	width: 35%;
+}
+#landing{
+    /*width:95%;*/
+    padding: 0px;
+    text-align: center;
+}
+#landing #subtitle, #landing #title{
+    width:100%;
 }
 .about-line:last-child {
 	padding-bottom: 30px;

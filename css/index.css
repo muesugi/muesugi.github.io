@@ -1,40 +1,37 @@
 #landing-container {
 	display: flex;
+	align-items: center;
+    justify-content: center;
+	padding: 10%;
+	width: 80%;
+	height: 70vh;
+	min-height: calc(100% + 60px);
+	background-image: url("../images/subtle_white_mini_waves.png");
 }
 
+#photo{
+	/*border: 1px solid white;*/
+
+	border-radius: 20%;
+	padding: 3%;
+	width: 30%;
+	height: auto;
+}
 #landing{
-	width: 100%;
+	padding-left:5%;
 	font-family: 'Arvo', serif;
 	font-size:28px;
-	text-align: center;
-	height:70vh;
-	margin-top: 64px;
-	padding-top:20vh;
- 	/*padding-right: 3em;*/
-	background-image: url("../images/subtle_white_mini_waves.png");
-
-	/*float:left;
-	overflow: hidden;*/
+	text-align: left;
 }
 #title{
 	font-size:42px;
+	/*border-bottom: 1px solid maroon;*/
 }
 #subtitle{
-	/*width:75%;*/
-	/*padding-left:25%;*/
+	/*font-family: 'Open Sans', sans-serif;*/
+	font-size: 0.8em;
+	width:75%;
 }
-#photo{
-	padding-top:64px; /*for menu bar*/
-	height:90vh; /*equiv to 70 + 10 + 10 vh in landing*/
-	/*width:auto;*/
-}
-/*#about::before{
-	display: block; 
-	content: " ";   
-	margin-top: -62px; 
-	height: 62px; 
-	visibility: hidden; 
-}*/
 #about{
 	font-family: 'Open Sans', sans-serif;
 	display:inline-block;
