@@ -15,7 +15,7 @@
 /* index.html (mobile additions to index.css) */
 #landing-container {
 	padding-top: calc(60px + 5%);
-	min-height: calc(100% + 60px);
+	min-height: calc(100% + 60px);w
 	display: block;
 	text-align: center;
 	height: auto;
