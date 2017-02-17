@@ -3,31 +3,30 @@
 }
 
 #landing{
+	width: 100%;
 	font-family: 'Arvo', serif;
 	font-size:28px;
-
-	text-align: right;
+	text-align: center;
 	height:70vh;
 	margin-top: 64px;
 	padding-top:20vh;
-	
-
+ 	/*padding-right: 3em;*/
 	background-image: url("../images/subtle_white_mini_waves.png");
 
-	float:left;
-	overflow: hidden;
+	/*float:left;
+	overflow: hidden;*/
 }
 #title{
 	font-size:42px;
 }
 #subtitle{
-	width:75%;
-	padding-left:25%;
+	/*width:75%;*/
+	/*padding-left:25%;*/
 }
 #photo{
 	padding-top:64px; /*for menu bar*/
 	height:90vh; /*equiv to 70 + 10 + 10 vh in landing*/
-	width:auto;
+	/*width:auto;*/
 }
 /*#about::before{
 	display: block; 
