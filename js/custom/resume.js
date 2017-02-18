@@ -11,8 +11,22 @@ var tag_hash = {"cs":"Computer Science",
 
 /**
 *
-*
+* Sorters
 */
+function entry_sort_height(arr, year_width){
+	//sort by height
+	height_tracker = {};
+	arr.sort(function(a, b){
+		a_height = a.height(year_width);
+		b_height = b.height(year_width);
+
+		if (a_height > b_height) return 1;
+		else if (a_height == b_height) return 0;
+		else return -1;
+	});
+	console.log(arr);
+	return arr;
+}
 function entry_sort_duration(arr){
 	//sort by end date
 	arr.sort(function(a, b){
@@ -20,7 +34,7 @@ function entry_sort_duration(arr){
 		b_duration = b.end.subtract(b.start);
 
 		return a_duration.isBigger(b_duration);
-	})
+	});
 	return arr;
 }
 
@@ -148,7 +162,7 @@ function cv_entries(entries, type){
 			else if (cur_key == "date_str"){
 				cur_html += "<td class='td-dates'><div class='date_str'>"+cur_entry["date_str"]+"</div></td><td>";
 			}
-			else if (cur_key == "start" || cur_key == "end"){
+			else if (cur_key == "start" || cur_key == "end" || cur_key == "date"){
 				//do nothing
 			}
 			else if (cur_key == "color"){

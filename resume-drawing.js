@@ -1,10 +1,3 @@
-var timeline_paper;
-var extra_paper;
-var academic_paper;
-var timeline_start_year;
-var timeline_end_year;
-
-
 function create_timeline(end_year){
 	timeline_end_year = end_year || timeline_end_year;
 	
@@ -45,27 +38,20 @@ function draw_bar(paper, direction, bl_xpos, bl_ypos, width, height, color){
 		return paper.rect(bl_xpos, tl_ypos, width, height).attr({fill: color}); 
 }
 function graph_entries(loe, upward, paper, drawing_function){
-	loe = entry_sort_duration(loe);
-
 	//given a list of entries, displays all in specified paper obj
 	total_width = window.innerWidth; //change this to update automatically up to a certain device width.
 	year_width = total_width/(timeline_end_year-timeline_start_year+1);
+	loe = entry_sort_height(loe, year_width);
 
-	width_counter = {}; //counts the number of entries so far with a given width. Used for staggering height.
+	midpoint_checker = {}; //counts the number of entries so far with a given width. Used for staggering height.
 
 	for (var e = 0; e < loe.length; e++){
 		cur_entry = loe[e];
+		start_xpos = cur_entry.startXPos(year_width);
+		end_xpos = cur_entry.startXPos(year_width);
+		mid_xpos = cur_entry.midXPos(year_width);
+		path_width =  cur_entry.pathWidth(year_width);
 
-		// full_date_start = cur_entry["date_start_num"] || timeline_start_year; //duration defaults to the whole timeline 
-		// full_date_end = cur_entry["date_end_num"] || new Date().getFullYear();
-
-		//use parse_date to separate years, months, days as applicable
-		// start_xpos = position_from_date(year_width, parse_date(full_date_start));
-		start_xpos = cur_entry.start.scaledPosition(year_width);
-		end_xpos = cur_entry.end.scaledPosition(year_width);
-		// end_xpos = position_from_date(year_width, parse_date(full_date_end));
-		mid_xpos = (end_xpos + start_xpos)/2;
-		path_width = end_xpos - start_xpos;
 		if (upward){ 
 			ypos = paper.height; 
 			direction = 1;
@@ -73,15 +59,16 @@ function graph_entries(loe, upward, paper, drawing_function){
 			ypos = 0; 
 			direction = 0;
 		}
-		height = path_width/9;
 
-		rounded_path_width = Math.ceil(path_width / 10) * 10;
-		if (width_counter[rounded_path_width]){
+		rounded_midpoint = Math.ceil(mid_xpos / 500) * 500;
+
+		height = cur_entry.height(year_width, midpoint_checker[rounded_midpoint]);
+		console.log(height);
+		if (midpoint_checker[rounded_midpoint]){
 			//has already been seen
-			height = 25*width_counter[rounded_path_width];
-			width_counter[rounded_path_width] += 1;
+			midpoint_checker[rounded_midpoint] += 1;
 		} else {
-			width_counter[rounded_path_width] = 1;
+			midpoint_checker[rounded_midpoint] = 1;
 		}
 
 

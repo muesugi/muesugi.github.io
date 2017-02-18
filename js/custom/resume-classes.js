@@ -1,3 +1,9 @@
+var timeline_paper;
+var extra_paper;
+var academic_paper;
+var timeline_start_year;
+var timeline_end_year;
+
 class DateDrawable{
 	constructor(){}
 
@@ -79,7 +85,26 @@ class Entry{
 		this.location = loc || "";
 		this.roles = rs || []; //roles is a list of strings
 		this.link = lnk || "";
+
+		this.height = -1;
 	}
+	startXPos(year_width){
+		return this.start.scaledPosition(year_width);
+	}
+	endXPos(year_width){
+		return this.end.scaledPosition(year_width);
+	}
+	midXPos(year_width){
+		return (this.endXPos(year_width) + this.startXPos(year_width))/2;
+	}
+	pathWidth(year_width){
+		return this.endXPos(year_width) - this.startXPos(year_width);
+	}
+	height(year_width, nInBucket){
+		if (height == 0) this.height = this.pathWidth(year_width)/9 + this.midXPos(year_width);//(nInBucket ? nInBucket * 25 : 0);
+		return this.height;
+	} 
+
 }
 
 class Award{
