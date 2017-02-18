@@ -162,9 +162,6 @@ function cv_entries(entries, type){
 			else if (cur_key == "date_str"){
 				cur_html += "<td class='td-dates'><div class='date_str'>"+cur_entry["date_str"]+"</div></td><td>";
 			}
-			else if (cur_key == "start" || cur_key == "end" || cur_key == "date"){
-				//do nothing
-			}
 			else if (cur_key == "color"){
 				//$("#"+cur_entry["id"]).css("color", cur_entry["color"]);
 
@@ -191,7 +188,7 @@ function cv_entries(entries, type){
 				}
 				cur_html += link_start_html+cur_entry[cur_key]+"</div>"+link_end_html;
 			}
-			else{
+			else if(cur_key == "position" || cur_key == "location"|| cur_key == "name" || cur_key == "org"){
 				cur_html += "<div class='"+cur_key+"'>"+cur_entry[cur_key]+"</div>";
 			}
 			
