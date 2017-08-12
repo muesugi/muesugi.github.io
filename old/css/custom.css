@@ -1,0 +1,91 @@
+body {
+  padding:0; margin:0;
+}
+/*header*/
+#logo{
+	background-size:contain;
+	height:51.25px;
+	margin:1% 2%;
+}
+#menubar{
+	width:100%;
+	/*border-bottom:solid black 1px;*/
+	background-color:#88382D;
+	z-index: 10;
+}
+
+.menu{	
+	position:fixed;
+	height:60px;
+	padding-bottom: 4px; /*total height of menu is 64 px*/
+	font-size: 20px;
+	line-height: 60px;
+	color:black;
+
+	/*equidistant spacing*/
+	display: flex;
+ 	justify-content: space-between;
+}
+.menu a {
+	/*font-family: 'Open Sans', sans-serif;*/
+	font-family: 'Arvo', serif; /*change this?*/
+	/*text-transform: uppercase;*/
+	text-decoration: none; 
+	color:black;
+}
+
+#mob-menu-icon{
+	display: none;
+}
+.menu-item{
+	display:inline-block;
+}
+#sidr{
+	display: none;
+}
+/*footer*/
+#contact{
+	width:100%;
+	background-color:#2d2d2d;
+	bottom:0px;
+}
+.social-icons{
+	text-align: center;
+	padding:.5em 0px .5em 5%; /*cancel out the extra 5% padding on the right*/
+	height: 4em;/*as defined by font awesome f-4x*/
+}
+.social-icons i{
+	color: #88382D;
+	padding-right: 5%;
+}
+.hidden{
+	display: none;
+}
+
+#contact{
+	position:relative;
+	color: #FDFDFD;
+}
+#contact #credits{
+	font-family: 'Open Sans', sans-serif;
+	font-size: .78em;
+	text-align: right;
+	position:absolute;
+	right:20px;
+	bottom:15px;
+	width: 200px;
+}
+#contact #credits a {
+	color:inherit;
+	text-decoration: underline;
+} 
+#contact #credits a:hover {
+	text-decoration: none;
+} 
+
+.keyword{
+	color: #A84A5C;
+}
+.clickable:hover{
+	text-decoration: underline;
+}

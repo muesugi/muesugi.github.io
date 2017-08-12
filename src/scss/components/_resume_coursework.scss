@@ -1,0 +1,13 @@
+.relevant-coursework {
+  .coursework-lists {
+    // display: flex;
+    // justify-content: space-between;
+    ul {
+      padding:0px;
+      margin:0px;
+      display:inline-block;
+      width: 50%;
+      list-style-type: none;
+    }
+  }
+}

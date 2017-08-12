@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <title>Moie Uesugi</title>
+  <link rel="shortcut icon" href="images/leaf-favicon.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/resume.css">
+
+ <noscript>
+  <link rel="stylesheet" href="css/mobile.min.css" />
+  </noscript>
+
+  <link rel="stylesheet" href="css/font-awesome-4.5.0/css/font-awesome.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/jquery.sidr/2.0.0/jquery.sidr.js"></script>
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.sidr/2.0.0/stylesheets/jquery.sidr.dark.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="js/custom/custom.js"></script>
+  <script src="js/custom/resume-classes.js"></script>
+  <script src="js/custom/resume-data.js"></script>
+  <script src="js/custom/resume-drawing.js"></script>
+  <script src="js/custom/resume.js"></script>
+ 	
+	<script>
+		var ADAPT_CONFIG = {
+      path: 'css/',
+		  dynamic: true,
+		  range: [
+		    '0px    to 770px  = mobile.css'
+		  ]
+		};
+	</script>
+  <script src="js/plugins/adapt.min.js"></script>
+  <script src="js/plugins/select2.min.js"></script>
+</head>
+
+<body onload="">
+<div class="menu" id="menubar">
+  <a href="index.html"> <img class="menu" id="logo" src="images/logo.png"/></a>
+   <div class="spacer"> </div>
+   <div class="spacer"> </div>
+   <!--<div id="menu-items">-->
+	  <a class="menu-item" id="about-link" href="index.html#about">About</a>
+	  <a class="menu-item" id="resume-link" href="resume.html">Resume</a>
+	  <a class="menu-item" id="portfolio-link" href="portfolio.html">Portfolio</a>
+	  <a class="menu-item" id="contact-link" href="index.html#contact">Contact</a>
+	<!--</div>-->
+	<div id="sidr"></div>
+  <div id="mob-menu-icon"><a id="simple-menu" href="#sidr"><i class="fa fa-bars fa-2x"></i></a></div>
+  <div class="spacer"> </div>
+ </div>
+ <!-- specific to resume.html -->
+ <div id='graph-intro'>Thanks for coming to the resume page! Below you'll find a <span class='keyword'> graphical CV</span> created with <span class='keyword'>Raphael.js</span>, where all of the data from my CV is displayed visually for all of us visual learners in the world. <a href=''><span class='keyword'>Reload</span></a> the page to see (my life in) a whole new schema of colors, or <span class='keyword'>click</span> on one of the elements to navigate to the pertinent part of the written CV and find out more!</div> 
+  <div id="graphlisting">
+    <div id="extracontainer"></div>
+    <div id="timeline"></div>
+    <div id="academiccontainer"></div>
+ </div>
+
+ <!--<a id="download-ref" onclick="scrollTo('download');">Go to resume download link below </a>-->
+ <div id="cvtitle">
+   <div id="cvtitle-name">Moie Uesugi</div>
+   <div id="cvtitle-contact"><a href="mailto:moie_uesugi@brown.edu">moie_uesugi@brown.edu</a> | 718.974.7118</div>
+ </div>
+ <div id="cvlisting"></div>
+ <div id='nav-button-container'>
+   <div class="nav-button" id="to-top-button"><i class="fa fa-caret-up fa-3x"></i><br>Top</div>
+   <div class="nav-button" id="to-download-button">Download<br>Resume<br><i class="fa fa-caret-down fa-3x"></i></div>
+ </div>
+ <script>
+ 
+  //define all entries here
+  timeline_start_year = 2006;
+  timeline_end_year = new Date().getFullYear(); //default is current year
+
+  //set defaults for globals:
+  defaults();
+
+  create_timeline();
+  graph_entries(extra_entries, true, extra_paper, draw_bar);
+  graph_entries(academic_entries, false, academic_paper, draw_arc);
+  graph_awards(honors, true, extra_paper);
+  graph_awards(school_honors, false, academic_paper);
+  today_line([timeline_paper,extra_paper,academic_paper]);
+
+  cv_entries(entry_sort_year(academic_entries), "academic_entry"); 
+
+  /*create filter box/search bar*/
+
+  filter_box_html = '<div id="filter"><select id="filter-select" name="select-boxes" multiple="multiple">';
+  option_ids = Object.keys(tag_hash);
+  //hash so that it's easier to add tags in the future
+
+  for (var k = 0; k < option_ids.length; k++){
+    cur_id = option_ids[k];//computer name
+    cur_val = tag_hash[cur_id];//pretty text
+    filter_box_html += "<option id='"+cur_id+"'>"+cur_val+"</option>";
+  }
+  filter_box_html += "</select>";
+    filter_box_html += "<select id='and-or-select'><option id='or' selected='selected'>OR</option><option id='and'>AND</option></select>"
+  filter_box_html += "</div>";
+  $("#cvlisting").append(filter_box_html);
+
+  $("#filter-select").select2(
+    {placeholder: "Filter Experiences and Honors",
+      allowClear: true,
+      tokenSeparators: [",", " "]}
+    );
+    $("#and-or-select").select2();
+    $("#filter-select, #and-or-select").on("change",function(event){
+      filter_for_tag();
+    })  
+    /* end create filter box/search bar*/
+
+  cv_entries(entry_sort_year(extra_entries), "extra_entry"); 
+  cv_entries(award_arr_sort(honors.concat(school_honors)), "award"); 
+  mobile_friendly();
+  cv_courses(courses);
+  lang_skills = "<div id='lang-table-head' class='table-head'>Languages and Skills</div>";
+  lang_skills += "<table class='table-lang' id='lang_0'><tr><td>Fluent:</td><td>LaTeX, HTML/CSS, JavaScript, Java</td><td></td><td>English, Japanese (verbal), Spanish</td></tr>";
+  lang_skills += "<tr><td>Proficient:</td><td>Python, Racket</td><td></td><td>Japanese (written)</td></tr>";
+  lang_skills += "<tr><td>Dabbled:</td><td>PHP</td><td></td><td></td></tr></table>";
+  lang_skills += "<table class='table-lang' id='lang_1'><tr><td>Favorite CMSs and APIs:</td><td>WordPress, Drupal; JQuery, JQuery Mobile, Raphael.js</td>";
+  lang_skills += "<tr><td>Able to use:</td><td>Microsoft Office suite, Final Cut Pro 7/X, Adobe Photoshop and Premiere Pro</td></tr></table>";
+  $("#cvlisting").append(lang_skills);
+
+
+  //event listeners
+  $("#to-top-button").on('click',function(){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
+  $("#to-download-button").on('click',function(){ scrollTo("download");
+  });
+
+  top_offset = 200;
+  download_offset = 700;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() < top_offset) { //before top offset
+          fade_out_if_visible("to-top-button");
+          fade_in_if_hidden("to-download-button");
+        }
+        //after download offset mark
+        else if (jQuery(this).scrollTop() > ($(document).height() - download_offset)){
+          fade_out_if_visible("to-download-button");
+          fade_in_if_hidden("to-top-button");
+        }
+        //between two marks
+        else{ 
+          fade_in_if_hidden("to-download-button");
+          fade_in_if_hidden("to-top-button");
+       }
+    });
+
+  $(".cv-icon").hover(function(event){
+    $(this).next(".icon-text").toggleClass('hidden');
+  })
+
+  $(".cv-icon").on('click',function(event){
+    icon_tag = $(this).attr('class').substring(8);
+    $("option#"+icon_tag).attr('selected','selected');
+    $("#filter-select").select2("destroy");
+    $("#filter-select").append("<option value='1'>Text</option>");
+    $("#filter-select").select2(
+      {placeholder: "Filter Experiences and Honors",
+        allowClear: true,
+        tokenSeparators: [",", " "]}
+      );
+      filter_for_tag();
+  });
+ </script>
+ <div id="download"><a href="MoieUesugi-Resume20160928.pdf" download><i class="fa fa-download fa-3x"></i></a>Download<span id='download-longer'> (Shorter!)</span> Resume PDF</div>
+ <!-- /specific to resume.html -->
+  <div id="contact">
+  	<div class="social-icons">
+  		<a href="mailto:moie_uesugi@brown.edu"><i class="fa fa-envelope-o fa-4x"></i></a>
+  		<a href="https://www.linkedin.com/in/moieu"><i class="fa fa-linkedin-square fa-4x"></i></a>
+  		<a href="https://github.com/muesugi"><i class="fa fa-github fa-4x"></i></a>
+      <div id='credits'>Made with curiosity by<br>Moie Uesugi © 2016<br> 
+      <a href='credits.html'>Credits</a>
+      </div>
+  	</div>
+  </div>
+</body>
+</html>

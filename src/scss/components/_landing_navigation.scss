@@ -1,0 +1,11 @@
+.landing-menu {
+  nav {
+    margin-top: 100px;
+    border-top: 1px solid $color_brown;
+    padding-top: 20px;
+    font-weight: $semibold;
+    a {
+      margin: 0 60px;
+    }
+  }
+}

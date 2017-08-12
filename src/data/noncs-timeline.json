@@ -1,0 +1,80 @@
+{
+   "height":150,
+   "categories":{
+      "Education":"#d0d3c5",
+      "Professional Experience":"#984b43",
+      "Extracurricular":"#eac67a"
+   },
+   "data":[
+      {
+         "title":"Tachibana Traditional \nJapanese Dance Group",
+         "date":"2005 - 2015",
+         "larger":1,
+         "color":"#eac67a",
+         "selectable":0
+      },
+      {
+         "title":"Girls Write Now Mentee",
+         "date":"Fall 2012 - Spring 2015",
+         "larger":1,
+         "color":"#eac67a",
+         "selectable":0
+      },
+      {
+         "title":"Entered Brown Unversity",
+         "date":"Fall 2015",
+         "larger":0,
+         "color":"#d0d3c5",
+         "selectable":0
+      },
+      {
+         "title":"US-Japan Education and Family Research Lab",
+         "date":"2015 - 2016",
+         "selectable":0,
+         "larger":1,
+         "color":"#d0d3c5"
+      },
+      {
+         "title":"Aldus Journal of Translation",
+         "date":"Fall 2015 - Present",
+         "larger":1,
+         "color":"#eac67a",
+         "selectable":1,
+         "subtitle":"Web Developer Intern",
+         "location":"Providence, RI",
+         "description":[
+            "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
+            "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
+            "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
+         ]
+      },
+      {
+         "title":"St. Anthony Hall Literary Fraternity",
+         "date":"Spring 2016 - Present",
+         "larger":1,
+         "color":"#eac67a",
+         "selectable":1,
+         "subtitle":"Web Developer",
+         "location":"Uno, Japan",
+         "description":[
+            "Code multiple iterations of a custom WordPress template for an inn, including the integration of a booking system",
+            "Create local development versions of the site (MAMP, Ampps), demo to the client (ngrok), then deploy to live server",
+            "Researched more than 35 payment gateways and central reservation systems to produce client-specific recommendations"
+         ]
+      },
+      {
+         "title":"Uno Port Art Films",
+         "date":"Summers  2010 - 2013, \n2015, 2016",
+         "larger":1,
+         "color":"#984b43",
+         "selectable":1,
+         "subtitle":"Technology Apprentice",
+         "location":"New York, NY",
+         "description":[
+            "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
+            "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
+            "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
+         ]
+      }
+   ]
+}

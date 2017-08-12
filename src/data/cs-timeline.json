@@ -1,0 +1,79 @@
+{
+   "height":150,
+   "categories":{
+      "Education":"#d0d3c5",
+      "Professional Experience":"#984b43"
+   },
+   "data":[
+      {
+         "title":"Girls Who Code",
+         "date":"Summer 2013",
+         "larger":1,
+         "color":"#d0d3c5",
+         "selectable":0
+      },
+      {
+         "title":"Intern at Pixel Academy",
+         "date":"Fall 2013 - Spring 2014",
+         "larger":0,
+         "color":"#984b43",
+         "selectable":0
+      },
+      {
+         "title":"Teaching Apprentice for HS Object Oriented Programming",
+         "date":"Spring 2015",
+         "selectable":0,
+         "larger":1,
+         "color":"#d0d3c5"
+      },
+      {
+         "title":"Entered Brown Unversity",
+         "date":"Fall 2015",
+         "larger":0,
+         "color":"#d0d3c5",
+         "selectable":0
+      },
+      {
+         "title":"Brown WebServices",
+         "date":"Fall 2015 - Present",
+         "larger":1,
+         "color":"#984b43",
+         "selectable":1,
+         "subtitle":"Web Developer Intern",
+         "location":"Providence, RI",
+         "description":[
+            "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
+            "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
+            "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
+         ]
+      },
+      {
+         "title":"Uno Port Inn Website",
+         "date":"Jan 2016 - Jan 2017",
+         "larger":1,
+         "color":"#984b43",
+         "selectable":1,
+         "subtitle":"Web Developer",
+         "location":"Uno, Japan",
+         "description":[
+            "Code multiple iterations of a custom WordPress template for an inn, including the integration of a booking system",
+            "Create local development versions of the site (MAMP, Ampps), demo to the client (ngrok), then deploy to live server",
+            "Researched more than 35 payment gateways and central reservation systems to produce client-specific recommendations"
+         ]
+      },
+      {
+         "title":"R/GA Apprenticeship",
+         "date":"Summer 2017",
+         "larger":1,
+         "color":"#984b43",
+         "selectable":1,
+         "subtitle":"Technology Apprentice",
+         "location":"New York, NY",
+         "description":[
+            "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
+            "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
+            "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
+         ]
+      }
+   ]
+}

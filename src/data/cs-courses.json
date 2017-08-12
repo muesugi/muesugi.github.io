@@ -1,0 +1,19 @@
+{
+   "headers":[
+      "Object-Oriented Programming",
+      "Other"
+   ],
+   "data":[
+      [
+         "Software Engineering (Java)",
+         "Computer Science: Integrated Introduction (both Java and Scala)",
+         "Systems (C)",
+         "Object-Oriented Programming (Python)"
+      ],
+      [
+         "Creating Modern Web Apps (JavaScript/Node.js)",
+         "Discrete Structures and Probability (Mathematical Proofs)",
+         "Accelerated Introduction to Computer Science (Functional languages: Racket, Pyret)"
+      ]
+   ]
+}

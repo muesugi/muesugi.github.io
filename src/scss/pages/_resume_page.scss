@@ -1,0 +1,29 @@
+.icon-set {
+  margin-top:20px;
+  margin-left: -10px;
+}
+
+.resume-header {
+  font-size: $normal_font;
+  font-weight: bold;
+  margin-top:24px;
+  margin-bottom: 20px;
+}
+.resum-section{
+  margin: 24px 0;
+}
+.resume-subsection {
+  // width: 95%;
+  margin: 40px auto;
+
+}
+
+.resume-subheader {
+  font-size: $small_font;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.resume-subsubheader {
+  text-decoration: underline;
+}

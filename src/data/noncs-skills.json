@@ -1,0 +1,61 @@
+[
+   {
+      "title":"Courses at Brown",
+      "skills":[
+         {
+            "name":"Advanced Japanese",
+            "proficiency":"A"
+         },
+         {
+            "name":"Discrete Structures and Probability",
+            "proficiency":"A"
+         },
+         {
+            "name":"The Silk Road: East + West in Antiquity",
+            "proficiency":"A"
+         },
+         {
+            "name":"African-American Literature after 1945",
+            "proficiency":"A"
+         },
+         {
+            "name":"Creative Nonfiction",
+            "proficiency":"A"
+         },
+         {
+            "name":"Queer Japan",
+            "proficiency":"A"
+         }
+      ]
+   },
+
+   {
+      "title":"Language",
+      "skills":[
+         {
+            "name":"Japanese -> English Translation",
+            "proficiency":4
+         },
+         {
+            "name":"English -> Japanese Translation",
+            "proficiency":3
+         },
+         {
+            "name":"",
+            "proficiency":0
+         },
+         {
+            "name":"Spanish",
+            "proficiency":"fluent"
+         },
+         {
+            "name":"Conversation - Japanese",
+            "proficiency":"native"
+         },
+         {
+            "name":"Writing - Japanese",
+            "proficiency":"professional working"
+         }
+      ]
+   }
+]

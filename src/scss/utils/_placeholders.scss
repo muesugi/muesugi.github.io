@@ -1,0 +1,10 @@
+%name_styling {
+  color: $color_red;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+%circle {
+  border-radius: 50%;
+  display: inline-block;
+}

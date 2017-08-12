@@ -1,0 +1,54 @@
+.relevant-skill-list {
+  display: inline-block;
+
+  .skill-table-title {
+    text-align: center;
+    font-size: $small_font;
+    font-weight: $semibold;
+    padding-bottom: 10px;
+  }
+
+  table.skill-table {
+    border: 0px;
+    border-spacing:0;
+    empty-cells: show;
+    tr.skill-entry {
+      td.skill-name {
+        text-align: right;
+        padding-right: 1em;
+        a {
+          text-decoration: underline;
+        }
+      }
+      &:first-child {
+        td.skill-name {
+          padding-top: 10px;
+        }
+      }
+      td.skill-dots-container {
+        padding: 0 10px;
+        max-width: 75px;
+        background-color: $color_yellow;
+        .skill-dot {
+          @extend %circle;
+          background-color: white;
+          width: 8px;
+          height: 8px;
+          margin: .5em 4px;
+        }
+        .skill-text {
+          color:white;
+        }
+      }
+      &.text-proficiency {
+        vertical-align: top;
+      }
+      &:first-child td.skill-dots-container {
+        padding-top: 10px;
+      }
+      &:last-child td.skill-dots-container {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

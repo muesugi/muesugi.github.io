@@ -1,0 +1,76 @@
+{
+   "projects":[
+
+      {
+         "title":"Adapt Translations",
+         "image":"portfolio/adapt/adapt-translations-1.png",
+         "subtitle":"a project for CS32, Software Engineering",
+         "skills":[
+            "JavaScript", "Raphael.js, D3.js, Three.js"
+         ],
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "content":"<div>I am content</div>"
+      },
+      {
+         "title":"Uno Port Inn",
+         "image":"portfolio/unoportinn/unoportinn-rooms.png",
+         "subtitle":"a website for a B&B in Japan",
+         "skills":[
+            "WordPress", "PHP"
+         ],
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "content":"<div>I am content</div>"
+      },
+      {
+         "title":"ESPN Pitch",
+         "image":"portfolio/espn/mockups.png",
+         "subtitle":"an apprentice project for R/GA",
+         "skills":[
+           "AfterEffects", "Photoshop"
+         ],
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "content":"<div>I am content</div>"
+      },
+      {
+         "title":"Uno Port Art Films",
+         "image":"portfolio/unoportartfilms/upaf-home.png",
+         "subtitle":"a website for an outdoor film festival in Japan",
+         "skills":[
+            "WordPress", "PHP"
+         ],
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "content":"<div>I am content</div>"
+      },
+      {
+         "title":"This site",
+         "image":"portfolio/muesugi/this-site.png",
+         "subtitle":"a website for an outdoor film festival in Japan",
+         "skills":[
+            "JavaScript", "React.js", "SASS"
+         ],
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "content":"<div>I am content</div>"
+      },
+      {
+         "title":"IBES Globe and other Brown WebServices Work",
+         "image":"portfolio/webservices-ibes/ibes.png",
+         "subtitle":"a website for an outdoor film festival in Japan",
+         "skills":[
+            "Drupal 6", "JavaScript", "PHP", "Raphael.js, D3.js, Three.js"
+         ],
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "content":"<div>I am content</div>"
+      },
+      {
+         "title":"String",
+         "image":"portfolio/string-strung/strung.png",
+         "subtitle":"a Girls Who Code summer project",
+         "skills":[
+            "JavaScript", "Raphael.js, D3.js, Three.js"
+         ],
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "content":"<div>I am content</div>"
+      }
+
+   ]
+}
