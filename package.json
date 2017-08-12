@@ -9,6 +9,7 @@
     "konva": "^1.6.7",
     "path": "^0.12.7",
     "react": "^15.6.1",
+    "react-burger-menu": "^2.1.4",
     "react-dom": "^15.6.1",
     "react-fullpage": "^0.1.18",
     "react-konva": "^1.1.4",

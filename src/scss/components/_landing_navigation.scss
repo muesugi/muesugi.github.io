@@ -1,4 +1,7 @@
 .landing-menu {
+  @media #{$media_tiny}, #{$media_small}{
+    display: none;
+  }
   nav {
     margin-top: 100px;
     border-top: 1px solid $color_brown;
