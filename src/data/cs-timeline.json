@@ -8,7 +8,7 @@
       {
          "title":"Girls Who Code",
          "date":"Summer 2013",
-         "larger":1,
+         "larger":0,
          "color":"#d0d3c5",
          "selectable":0
       },
@@ -23,7 +23,7 @@
          "title":"Teaching Apprentice for HS Object Oriented Programming",
          "date":"Spring 2015",
          "selectable":0,
-         "larger":1,
+         "larger":0,
          "color":"#d0d3c5"
       },
       {

@@ -1,5 +1,6 @@
 import React from 'react';
 import MainNavigation from '../components/MainNavigation';
+import MainFooter from '../components/MainFooter';
 import PortfolioContent from '../datalayers/PortfolioContent';
 import SkillFilter from '../components/portfolio/SkillFilter';
 
@@ -42,6 +43,8 @@ export default class PortfolioPage extends React.Component {
 
         <PortfolioContent filterSkill={this.state.filterSkill}
           onFilter={this.onFilterSkillChange.bind(this)}/>
+
+        <MainFooter back="resume" next="contact"/>
       </div>
     );
   }

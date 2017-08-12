@@ -1,6 +1,6 @@
 [
    {
-      "title":"Courses at Brown",
+      "title":"Undergraduate Courses",
       "skills":[
          {
             "name":"Advanced Japanese",
@@ -30,14 +30,14 @@
    },
 
    {
-      "title":"Language",
+      "title":"Languages",
       "skills":[
          {
-            "name":"Japanese -> English Translation",
+            "name":"Japanese → English Translation",
             "proficiency":4
          },
          {
-            "name":"English -> Japanese Translation",
+            "name":"English → Japanese Translation",
             "proficiency":3
          },
          {

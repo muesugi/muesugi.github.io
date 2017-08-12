@@ -9,14 +9,14 @@
       {
          "title":"Tachibana Traditional \nJapanese Dance Group",
          "date":"2005 - 2015",
-         "larger":1,
+         "larger":0,
          "color":"#eac67a",
          "selectable":0
       },
       {
          "title":"Girls Write Now Mentee",
          "date":"Fall 2012 - Spring 2015",
-         "larger":1,
+         "larger":0,
          "color":"#eac67a",
          "selectable":0
       },
@@ -30,9 +30,15 @@
       {
          "title":"US-Japan Education and Family Research Lab",
          "date":"2015 - 2016",
-         "selectable":0,
+         "selectable":1,
          "larger":1,
-         "color":"#d0d3c5"
+         "color":"#d0d3c5",
+         "subtitle":"Research Assistant",
+         "location":"Providence, RI",
+         "description": [
+           "Participated in weekly case meetings with the research team to discuss the greater implications of each family",
+           "Trained for parent and child interviews in both Japanese and English; Transcribed Japanese and English interviews"
+         ]
       },
       {
          "title":"Aldus Journal of Translation",
@@ -43,9 +49,8 @@
          "subtitle":"Web Developer Intern",
          "location":"Providence, RI",
          "description":[
-            "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
-            "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
-            "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
+            "Use Brown’s notification system, Facebook, and email to promote the journal and get new editors and submissions",
+            "Meet weekly to review pieces of translation, discuss their merits, and decide their inclusion in our biyearly journal"
          ]
       },
       {
@@ -54,12 +59,12 @@
          "larger":1,
          "color":"#eac67a",
          "selectable":1,
-         "subtitle":"Web Developer",
-         "location":"Uno, Japan",
+         "subtitle":"Inclusivity Chair, President, and more",
+         "location":"Providence, RI",
          "description":[
-            "Code multiple iterations of a custom WordPress template for an inn, including the integration of a booking system",
-            "Create local development versions of the site (MAMP, Ampps), demo to the client (ngrok), then deploy to live server",
-            "Researched more than 35 payment gateways and central reservation systems to produce client-specific recommendations"
+            "Inclusivity Chair (Spring - Fall 2017), President (Fall 2017), Community Service Chair (Spring 2017), Tech Chair (Fall 2016, Spring 2017)",
+            "Attend weekly meetings and inclusivity chair meetings, help with publicity, and engage prospective members at events",
+            "Established a weekly newsletter to members with community service opportunities at Brown and within Providence"
          ]
       },
       {
@@ -68,12 +73,12 @@
          "larger":1,
          "color":"#984b43",
          "selectable":1,
-         "subtitle":"Technology Apprentice",
-         "location":"New York, NY",
-         "description":[
-            "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
-            "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
-            "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
+         "subtitle":"Assistant to Directors",
+         "location":"Uno, Japan",
+         "description":["Participated in the translation and subtitling (Final Cut Pro 7, Adobe Premiere Pro) of over 40 films",
+            "Managed more than $2000 in box office purchases annually, kept digital records and graphs, designed tickets",
+            "Created and migrated to a new WordPress site in a week. Wrote full documentation of functionality for future upkeep",
+            "Curated the 2016 kids and youth programs entirely and participated in the curation of all other programs"
          ]
       }
    ]

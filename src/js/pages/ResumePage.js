@@ -1,5 +1,6 @@
 import React from 'react';
 import MainNavigation from '../components/MainNavigation';
+import MainFooter from '../components/MainFooter';
 import HoverableIcon from '../components/HoverableIcon';
 import EducationSection from '../datalayers/EducationSection';
 import ComputerScienceSection from '../datalayers/ComputerScienceSection';
@@ -33,6 +34,9 @@ export default class ResumePage extends React.Component {
         <EducationSection />
         <ComputerScienceSection />
         <NonTechnicalSection />
+
+
+      <MainFooter next="portfolio"/>
       </div>
     );
   }
