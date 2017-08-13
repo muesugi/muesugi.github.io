@@ -16,7 +16,7 @@ import DownloadIcon from '../../img/icon-download.png';
 export default class ResumePage extends React.Component {
   render(){
     return (
-      <div>
+      <div className="resume-page">
         <MainNavigation />
 
         <div className="icon-set">

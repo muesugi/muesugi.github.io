@@ -1,6 +1,9 @@
 body {
   font-family: "Source Sans Pro";
-  margin: 20px 50px 0 50px;
+  margin: 10px 10px 0 10px;
+  @media #{$media_medium_and_up}{
+    margin: 20px 50px 0 50px;
+  }
   font-size: 14px;
 }
 
@@ -35,4 +38,8 @@ span.icon-caption {
   vertical-align: middle;
   margin-right: 20px;
   font-size: $small_font;
+}
+ul li {
+  list-style-position: outside;
+  margin-left: 2em;
 }

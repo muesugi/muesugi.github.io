@@ -20,7 +20,7 @@ export default class MainNavigation extends React.Component {
           <NavLink to='/contact'>contact</NavLink>
         </nav>
         <div id="hamburger-container">
-          <Menu right width="250">
+          <Menu right width="250px">
             <Link to='/'>about</Link>
             <NavLink to='/resume'>resume</NavLink>
             <NavLink to='/portfolio'>portfolio</NavLink>

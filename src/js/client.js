@@ -9,7 +9,7 @@ import ContactPage from './pages/ContactPage';
 ReactDOM.render(
   <HashRouter>
     <main>
-      <Switch>
+      <Switch onUpdate={() => window.scrollTo(0, 0)} >
         <Route exact path='/' component={LandingPage}/>
         <Route path='/resume' component={ResumePage}/>
         <Route path='/portfolio/:skill?' component={PortfolioPage}/>

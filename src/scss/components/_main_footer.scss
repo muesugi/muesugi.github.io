@@ -1,6 +1,11 @@
 .main-footer {
-  margin-left: -50px;
-  width: calc(100% + 100px);
+  margin-left: -10px;
+  width: calc(100% + 20px);
+  @media #{$media_medium_and_up}{
+    margin-left: -50px;
+    width: calc(100% + 100px);
+  }
+
   height: 3em;
   align-items: center;
   display: flex;

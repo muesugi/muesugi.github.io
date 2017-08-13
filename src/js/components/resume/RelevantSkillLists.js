@@ -6,7 +6,7 @@ export default class RelevantSkillLists extends React.Component {
     return (
       <div className="relevant-skill-lists resume-subsection">
         <div className="resume-subheader">Relevant Skills</div>
-        <div  style={{display: "flex", justifyContent: "space-around"}}>
+        <div className="relevant-skill-list-container">
           {this.props.data.map((list, i) => {
            return ( <RelevantSkillList key={i} title={list.title} skills={list.skills} />);
           })}

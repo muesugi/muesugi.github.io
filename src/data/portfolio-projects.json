@@ -4,71 +4,61 @@
       {
          "title":"Adapt Translations",
          "image":"portfolio/adapt/adapt-translations-1.png",
-         "subtitle":"a project for CS32, Software Engineering",
+         "subtitle":"a course project for CS32 Software Engineering - Spring 2017",
          "skills":[
             "JavaScript", "Raphael.js, D3.js, Three.js"
          ],
-         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-         "content":"<div>I am content</div>"
+         "description":"A web app that enables translators to align their original and translated documents for a seamless translation experience.",
+         "content":"alright\n"
       },
       {
          "title":"Uno Port Inn",
          "image":"portfolio/unoportinn/unoportinn-rooms.png",
-         "subtitle":"a website for a B&B in Japan",
+         "subtitle":"a site for a B&B in Japan",
          "skills":[
             "WordPress", "PHP"
          ],
-         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-         "content":"<div>I am content</div>"
-      },
-      {
-         "title":"ESPN Pitch",
-         "image":"portfolio/espn/mockups.png",
-         "subtitle":"an apprentice project for R/GA",
-         "skills":[
-           "AfterEffects", "Photoshop"
-         ],
-         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "description":"Built on WordPress, this website features a custom theme, multiple languages, and integration with the Sirvoy hotel management system.",
          "content":"<div>I am content</div>"
       },
       {
          "title":"Uno Port Art Films",
          "image":"portfolio/unoportartfilms/upaf-home.png",
-         "subtitle":"a website for an outdoor film festival in Japan",
+         "subtitle":"a site for a summer outdoor film festival in Japan",
          "skills":[
             "WordPress", "PHP"
          ],
-         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "description":"Built on WordPress for future upkeep, I configured this new site on a short timespan to fit the needs of the festival. The key technical aspect of this new site was a new taxonomy system for organizing exisiting data and data types specific to the film festival.",
          "content":"<div>I am content</div>"
       },
       {
-         "title":"This site",
+         "title":"This site, 2.0",
          "image":"portfolio/muesugi/this-site.png",
-         "subtitle":"a website for an outdoor film festival in Japan",
+         "subtitle":"a React site built with curiosity",
          "skills":[
             "JavaScript", "React.js", "SASS"
          ],
-         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "description":"Rebuilt this site completely after finishing my time at R/GA where I learned and used React, so I could have experience building with React from the bottom up. Enjoy!",
          "content":"<div>I am content</div>"
       },
       {
          "title":"IBES Globe and other Brown WebServices Work",
          "image":"portfolio/webservices-ibes/ibes.png",
-         "subtitle":"a website for an outdoor film festival in Japan",
+         "subtitle":"a custom module built for the Institute at Brown for Environment & Society (IBES)",
          "skills":[
             "Drupal 6", "JavaScript", "PHP", "Raphael.js, D3.js, Three.js"
          ],
-         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "description":"IBES supports research of different types around the world, but their home page was a static presentation of various images of a map. They came to Brown WebServices asking for a more interactive way to show this same data, and I was tasked with creating a proof of concept and executing the idea. This is what we came up with.",
          "content":"<div>I am content</div>"
       },
       {
-         "title":"String",
+         "title":"String - Strung",
          "image":"portfolio/string-strung/strung.png",
-         "subtitle":"a Girls Who Code summer project",
+         "subtitle":"a Girls Who Code summer project for crocheters",
          "skills":[
             "JavaScript", "Raphael.js, D3.js, Three.js"
          ],
-         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+         "description":"Created as my final project for the Girls Who Code program in the span of under a week, the 'String' web tool allows users to enter a written crochet pattern and see a visual approximation (using Raphael.js) of the intended product to catch mistakes before publishing patterns. The 2.0 site, Strung, is pictured here.",
          "content":"<div>I am content</div>"
       }
 

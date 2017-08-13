@@ -1,0 +1,7 @@
+.relevant-skill-lists .relevant-skill-list-container{
+  text-align: center;
+  @media #{$media_medium_and_up}{
+    display: flex;
+    justify-content: space-around;
+  }
+}

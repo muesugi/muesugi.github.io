@@ -12,8 +12,8 @@ export default class ContactPage extends React.Component {
       <div className="contact-page">
         <MainNavigation />
         <div className="content">
-          {/* <div>Keep in touch!</div> */}
-          <img src={require('../../img/doggo.jpg')} width="25%" />
+          <h4>Get in touch!</h4>
+        {  /*<img src={require('../../img/doggo.jpg')} />*/}
           <div className="contact-mediums">
           <div><a href="mailto:moie_uesugi@brown.edu">EMAIL // moie_uesugi@brown.edu</a></div>
           <div><a href="mailto:moie_uesugi@brown.edu">LINKEDIN // moieu</a></div>

@@ -1,18 +1,15 @@
 div.skill-filter {
-    // border:
-    // width: 100%;
     border-radius: 3px;
-    // overflow: hidden;
-    // background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
    select {
-    // padding: 5px 8px;
     border: 1px solid #ccc;
     box-shadow: none;
     background: transparent;
     height: 2em;
-    // background-image: none;
-    // -webkit-appearance: none;
 
+    @media #{$media_tiny} , #{$media_small} {
+      width: 100%;
+      height: 3em;
+    }
     &:focus {
       outline: none;
     }

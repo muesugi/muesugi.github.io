@@ -3,14 +3,8 @@
     display: inline-block;
     vertical-align: top;
   }
-  .resume-date {
-    width: 25%;
-  }
-  .resume-main {
-    width: 75%;
-    .title {
-      font-weight: $semibold;
-    }
+  .resume-main .title {
+    font-weight: $semibold;
   }
 
   &:not(:last-child){
@@ -20,23 +14,47 @@
     color: $color_red;
   }
 
-  &.has-description {
+  //widths:
+  @media #{$media_medium_and_up}{
     .resume-date {
-      width: 15%;
-      min-width:100px
+      width: 25%;
     }
+
     .resume-main {
-      width: 20%;
-    }
-    .resume-description{
-      display: inline-block;
-      max-width: 65%;
-      ul {
-        display: inline-block;
-        // list-style-type: none;
-        margin:0;
-        padding:0;
+      width: 75%;
+      .title {
+        font-weight: $semibold;
       }
     }
+
+    &.has-description {
+      .resume-date {
+        width: 15%;
+        min-width:100px;
+      }
+      .resume-main {
+        width: 20%;
+      }
+      .resume-description{
+        display: inline-block;
+        max-width: 65%;
+        ul {
+          display: inline-block;
+          // list-style-type: none;
+          margin:0;
+          padding:0;
+        }
+      }
+    }
+  }
+
+  @media #{$media_tiny}, #{$media_small}{
+   .resume-date, .resume-main{
+      width: 100%;
+    }
+    .resume-main .title {
+      font-size: 1.25em;
+    }
+
   }
 }

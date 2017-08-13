@@ -1,4 +1,6 @@
 import React from 'react';
+import scrollToComponent from 'react-scroll-to-component';
+
 import ResumeEntry from './ResumeEntry';
 import RelevantCoursework from './RelevantCoursework';
 import RelevantSkillLists from './RelevantSkillLists';
@@ -12,7 +14,7 @@ export default class ResumeSection extends React.Component {
 
     this.state = Object.assign({
       keyedTimelineData: this.keyTimeline(props.timelineData),
-      selected: -1,
+      hovered: -1
     });
   }
 
@@ -24,17 +26,29 @@ export default class ResumeSection extends React.Component {
 
     return keyedTimeline;
   }
-
-  onTimelineElementSelect(key){
+  onTimelineElementHover(key){
     if (key == -1 || !this.state.keyedTimelineData[key]["selectable"])
-      this.setState({selected: -1});
-    else this.setState({selected: key});
+      this.setState({hovered: -1});
+    else this.setState({hovered: key});
+  }
+  onTimelineElementSelect(key){
+    if (key == -1 || !this.state.keyedTimelineData[key]["selectable"]){
+      return;
+    }
+    else {
+      const resumeEntry = this.refs.entrylist.refs["resume-entry-"+key];
+      console.log(resumeEntry);
+      scrollToComponent(resumeEntry,{
+        align: 'bottom',
+        duration: 1500
+    });
+    }
   }
 //  <RelevantCoursework headers={this.props.courseData.headers}
     // data={this.props.courseData.data} />
     //<RelevantSkillList title="Test skills"
       // skills={} />
-      
+
       // {this.props.courseData ?
       //   <RelevantCoursework headers={this.props.courseData.headers}
       //     data={ this.props.courseData.data} /> : ""}
@@ -46,15 +60,18 @@ export default class ResumeSection extends React.Component {
           <TimelineLegend data={this.props.timelineData.categories} />
         </div>
 
-        <Timeline data={this.state.keyedTimelineData} selected={this.state.selected}
+        <Timeline data={this.state.keyedTimelineData} hovered={this.state.hovered}
           height={this.props.timelineData.height}
+          onHover={this.onTimelineElementHover.bind(this)}
           onSelect={this.onTimelineElementSelect.bind(this)}/>
+
+        <InteractiveEntryList ref="entrylist"
+         listTitle={this.props.experienceTitle}
+          data={this.state.keyedTimelineData} hovered={this.state.hovered} />
 
         <RelevantSkillLists title={this.props.skillsTitle}
             data={this.props.skillsData}/>
 
-        <InteractiveEntryList listTitle={this.props.experienceTitle}
-          data={this.state.keyedTimelineData} selected={this.state.selected} />
       </div>
     );
   }

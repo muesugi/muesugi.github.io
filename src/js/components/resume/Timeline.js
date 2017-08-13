@@ -5,19 +5,19 @@ import {Layer, Circle, Line, Text, Stage, Group} from 'react-konva';
 export default class Timeline extends React.Component {
     constructor(props) {
       super(props);
+      const timelineWidth = this.timelineWidth();
       this.state = Object.assign({
-        timelineWidth: 1000,
-        itemWidth: 1000 / props.data.length,
-        selected: props.selected
+        timelineWidth: timelineWidth,
+        itemWidth: timelineWidth / props.data.length
       });
 
       this.updateTimelineWidth = this.updateTimelineWidth.bind(this);
     }
-    componentWillReceiveProps(newProps){
-      if (newProps.selected != this.props.selected){
-        this.setState({selected: newProps.selected});
-      }
-    }
+    // componentWillReceiveProps(newProps){
+    //   if (newProps.selected != this.props.selected){
+    //     this.setState({selected: newProps.selected});
+    //   }
+    // }
     componentDidMount() {
       this.updateTimelineWidth();
       window.addEventListener('resize', this.updateTimelineWidth);
@@ -26,15 +26,23 @@ export default class Timeline extends React.Component {
     componentWillUnmount() {
       window.removeEventListener('resize', this.updateTimelineWidth);
     }
+    timelineWidth(){
+      let timelineWidth = window.innerWidth;
+      if (timelineWidth >= 767) timelineWidth -= 100;
+      else timelineWidth -= 20;
+
+      return timelineWidth;
+    }
     updateTimelineWidth() {
+      const twidth = this.timelineWidth();
       this.setState({
-        timelineWidth: window.innerWidth - 100,
-        itemWidth: (window.innerWidth - 100) / this.props.data.length
+        timelineWidth: twidth,
+        itemWidth: (twidth) / this.props.data.length
       });
     }
     render() {
         return (
-          <div className="animated slideInLeft">
+          <div className="timeline animated slideInLeft">
           <Stage width={this.state.timelineWidth} height={this.props.height}><Layer>
             <Line points={[0, 50, this.state.timelineWidth, 50]} dash={[4, 1]}
               strokeWidth="1" stroke="#88562d" />
@@ -46,29 +54,38 @@ export default class Timeline extends React.Component {
             {this.props.data.map((item, index) => {
               return (
                 <Group key={"group-" + index}
-                  onMouseEnter={this.props.onSelect.bind(this, index)}
-                  onMouseLeave={this.props.onSelect.bind(this, -1)}>
+                  onMouseEnter={this.props.onHover.bind(null, index)}
+                  onMouseLeave={this.props.onHover.bind(null, -1)}
+                  onClick={this.props.onSelect.bind(null, index)}>
                   <Circle key={"circle-" + index}
-                    radius={((item.larger) ? 15 : 8) + (5 * (this.state.selected == index))}
+                    radius={((item.larger) ? 15 : 8) + (5 * (this.props.hovered == index))}
                     x={this.state.itemWidth * (index+.5)} y={50}
                     fill={item.color}/>
                   <Text key={"title-" + index} text={item.title} align="center"
                     fontFamily="Source Sans Pro" width={this.state.itemWidth - 10}
-                    fontSize="14"
-                    color={(this.state.selected == index) ? this.props.selectedColor : "black"}
+                    fontSize="14" ref={"titleText" + index}
+                    color={(this.props.hovered == index) ? this.props.selectedColor : "black"}
                     x={this.state.itemWidth * index} y={80}/>
-
-                  {(this.state.selected == index) &&
-                    <Text key={"role-"+index}  align="center"
-                      text={`${item.subtitle} \n(click for more)`}
-                      x={this.state.itemWidth  * (index+.1)} y={100}/>}
-
                   <Text key={"date-" + index} text={item.date} align="center"
                     fontFamily="Source Sans Pro" width={this.state.itemWidth - 10}
                     x={this.state.itemWidth * index}  y={0}/>
                 </Group>
               );
             })}
+            {this.props.data.map((item, index) => {
+              return (
+                <Group key={"group-helptext-" + index}>
+                  {(this.props.hovered == index) &&
+                    (this.refs["titleText"+index]) &&
+                    <Text key={"role-"+index}  align="center"
+                      text={`${item.subtitle} \n(click for more)`}
+                      width={this.state.itemWidth - 10}
+                      x={this.state.itemWidth  * index}
+                      y={this.refs["titleText"+index].height() + 80 + 5}/>}
+                </Group>
+              );
+            })}
+
           </Layer></Stage>
           </div>
         );

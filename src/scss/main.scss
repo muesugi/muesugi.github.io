@@ -1,4 +1,5 @@
 @import 'utils/_variables.scss';
+@import 'utils/_mixins.scss';
 @import 'utils/_placeholders.scss';
 
 //styles that apply to all pages or all elements of a type
@@ -15,6 +16,7 @@
 @import 'components/_resume_coursework.scss';
 @import 'components/_timeline_legend.scss';
 @import 'components/_relevant_skill_list.scss';
+@import 'components/_relevant_skill_lists.scss';
 
 @import 'components/_portfolio_entry.scss';
 @import 'components/_skill_filter.scss';

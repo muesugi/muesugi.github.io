@@ -1,77 +1,74 @@
-$portfolio-entry-color: $color_yellow;
-%clickable_subtle {
-  cursor: pointer;
-  text-decoration: none;
-  &:hover{
-    text-decoration: underline;
-  }
-}
 .portfolio-entry {
   margin: 2em 0;
   .portfolio-summary {
-    // background-color: $color_yellow;
-
     .portfolio-img {
-      // border-right: 5px solid $color_yellow;
-      @extend %clickable_subtle;
       vertical-align: middle;
       padding: 10px;
+      @media #{$media_tiny}, #{$media_small}{
+        width:100%;
+        padding:0px;
+      }
     }
     .portfolio-profile {
-      display: inline-block;
-      max-width: calc( 50% - 2em - 20px);
-      vertical-align: middle;
-      margin: 1em;
-      .view-more {
-        @extend %clickable_subtle;
-        // position: absolute;
-        // bottom: 3em;
-        // right: 61px;
-    }
+      @media #{$media_medium_and_up}{
+        display: inline-block;
+        max-width: calc( 50% - 2em - 20px);
+        vertical-align: middle;
+        margin: 1em;
+      }
+      @media #{$media_tiny}, #{$media_small}{
+        text-align: center;
+      }
       .portfolio-title {
         font-weight: bold;
         font-size: $medium_font;
-        @extend %clickable_subtle;
       }
-      .portfolio-skill {
-        @extend %clickable_subtle;
-        margin-left: .4em;
-        font-style: italic;
+      .portfolio-description {
+        margin:1em 0;
+        font-size: $normal_font;
+      }
 
-        &:after {
-          content: ",";
+      .portfolio-skills-container{
+        @media #{$media_medium_and_up}{
+          padding-bottom: 2em;
         }
-        &:last-child:after {
-          content: "";
+        .portfolio-skill {
+          margin-left: .4em;
+          font-style: italic;
+
+          @include delimit(',');
         }
       }
     }
-  }
 
-  //borders:
-  .portfolio-summary {
-    border-top: 5px solid $portfolio-entry-color;
-  }
-  &.closed .portfolio-summary {
-    border-bottom: 1px dotted $portfolio-entry-color;
-  }
-
-  &:nth-child(2n){
-    .portfolio-summary {
-      border-top: 5px solid $color_lightblue;
-    }
-
-    &.closed .portfolio-summary {
-      border-bottom: 1px dotted $color_lightblue;
-    }
-    .portfolio-more {
-      border-bottom: 1px solid $color_lightblue;
+    .view-more{
+      @media #{$media_medium_and_up} {
+        position: absolute;
+        right: calc(50px + 1em);
+        margin-top: -2em;
+      }
     }
   }
   .portfolio-more {
     border-bottom: 1px solid $color_yellow;
-    // border-bottom: 5px solid $portfolio-entry-color;
     padding: 20px;
-    // background-color: $color_lightblue;
+  }
+  @include portfolio_color_pattern($color_yellow);
+
+  &:nth-child(2n){
+    @include portfolio_color_pattern($color_lightblue);
   }
 }
+
+@include hide_in_closed_mobile_only(portfolio-img);
+@include hide_in_closed_mobile_only(portfolio-description);
+@include hide_in_closed_mobile_only(view-more);
+
+// .portfolio-summary {
+//   .portfolio-img,
+//   .portfolio-profile .portfolio-title,
+//   .portfolio-skill,
+//   .view-more {
+//     @extend %clickable_subtle;
+//   }
+// }
