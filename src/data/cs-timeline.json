@@ -45,7 +45,8 @@
             "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
             "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
             "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
-         ]
+         ],
+         "portfolioId":"ibes"
       },
       {
          "title":"Uno Port Inn Website",
@@ -59,7 +60,8 @@
             "Code multiple iterations of a custom WordPress template for an inn, including the integration of a booking system",
             "Create local development versions of the site (MAMP, Ampps), demo to the client (ngrok), then deploy to live server",
             "Researched more than 35 payment gateways and central reservation systems to produce client-specific recommendations"
-         ]
+         ],
+         "portfolioId":"upinn"
       },
       {
          "title":"R/GA Apprenticeship",
@@ -70,10 +72,11 @@
          "subtitle":"Technology Apprentice",
          "location":"New York, NY",
          "description":[
-            "Use HTML/CSS/JavaScript/PHP and learn Drupal 6 and 7 to create and modify Brown University sites",
-            "Work with a team of interns and staff; independently produced and presented an interactive globe D3.js visualization",
-            "Produced, tweaked, or wireframed more than 15 sites, including official departmental sites and the President’s site"
-         ]
+            "Completed over 50 new features and bug fixes on new internal tools for resource management and portfolio review",
+            "Learned the Vue.js and React.js frameworks in the first week and helped to establish Verizon’s new web style guide",
+            "Took roles in strategy, animation, and copyediting as part of an apprentice project pitch for a major sports network"
+         ],
+         "portfolioId":"muesugi"
       }
    ]
 }

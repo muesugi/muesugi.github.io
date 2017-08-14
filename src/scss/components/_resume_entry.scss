@@ -6,6 +6,11 @@
   .resume-main .title {
     font-weight: $semibold;
   }
+  .resume-portfolio-link {
+    font-size: .9em;
+    color: $color_brown;
+    display: block;
+  }
 
   &:not(:last-child){
     margin-bottom:24px;

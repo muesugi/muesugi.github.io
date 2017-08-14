@@ -6,7 +6,6 @@ export default class PortfolioEntry extends React.Component {
     this.state = Object.assign({showMore: false});
   }
   clickSummary(ev){
-    console.log(ev.target.classList);
     if (!ev.target.classList.contains('openPrevent'))
       this.setState({showMore: !this.state.showMore});
   }
@@ -17,7 +16,9 @@ export default class PortfolioEntry extends React.Component {
           && this.props.skills != null
           && this.props.skills.length > 0
           && this.props.skills.indexOf(this.props.filterSkill) != -1)){
-        return (<div className={`portfolio-entry ${(this.state.showMore) ? "expanded" : "closed"}`} >
+        return (
+      <div id={this.props.id}
+        className={`portfolio-entry ${(this.state.showMore) ? "expanded" : "closed"}`} >
         <div className="portfolio-summary" onClick={this.clickSummary.bind(this)}>
           <img className="portfolio-img" src={image}
             width={(this.props.width) ? this.props.width : "50%"}
@@ -28,12 +29,14 @@ export default class PortfolioEntry extends React.Component {
             </div>
             <span className="portfolio-links">
               {this.props.siteLink || this.props.codeLink ? "(" : ""}
-              {this.props.codeLink ? <a className="openPrevent" href={this.props.codeLink}>code</a> : ""}
+              {this.props.codeLink ? <a className="openPrevent" target="_blank" href={this.props.codeLink}>code</a> : ""}
               {this.props.siteLink && this.props.codeLink ? "|" : ""}
-              {this.props.siteLink ? <a className="openPrevent" href={this.props.siteLink}>site</a> : ""}
-                {this.props.siteLink || this.props.codeLink ? ")" : ""}
+              {this.props.siteLink ? <a className="openPrevent" target="_blank" href={this.props.siteLink}>site</a> : ""}
+              {this.props.siteLink || this.props.codeLink ? ")" : ""}
             </span>
+
             <div className="portfolio-subtitle">{this.props.subtitle}</div>
+
             <div className="portfolio-description">{this.props.description}</div>
             <div className="portfolio-skills-container">Skills used:
               {this.props.skills.map((skill, i) => {

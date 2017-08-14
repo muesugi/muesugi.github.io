@@ -18,7 +18,7 @@ export default class PortfolioContent extends React.Component {
     return (
       <div>
         {require('json-loader!../../data/portfolio-projects.json').projects.map((proj, i) => {
-          return (<PortfolioEntry key={i} title={proj.title}
+          return (<PortfolioEntry key={i} title={proj.title} id={proj.id}
             siteLink={proj.siteLink}
             codeLink={proj.codeLink}
             subtitle={proj.subtitle} description={proj.description}

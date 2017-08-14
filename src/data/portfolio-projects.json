@@ -3,6 +3,7 @@
 
       {
          "title":"Adapt Translations",
+         "id": "adapt",
          "image":"portfolio/adapt/adapt-translations-1.png",
          "subtitle":"a course project for CS32 Software Engineering - Spring 2017",
          "skills":[
@@ -55,6 +56,7 @@
       },
       {
          "title":"Uno Port Inn",
+         "id": "upinn",
          "image":"portfolio/unoportinn/unoportinn-rooms.png",
          "subtitle":"a site for a B&B in Japan",
          "siteLink": "http://unoportinn.com",
@@ -109,6 +111,7 @@
       },
       {
          "title":"Uno Port Art Films",
+         "id": "upaf",
          "image":"portfolio/unoportartfilms/upaf-home.png",
          "siteLink": "http://unoportartfilms.org",
          "subtitle":"a site for a summer outdoor film festival in Japan",
@@ -132,11 +135,13 @@
       },
       {
          "title":"This site, 2.0",
+         "id": "muesugi",
          "image":"portfolio/muesugi/this-site.png",
-         "subtitle":"a React site built with curiosity",
+         "subtitle":"a React site, built with curiosity",
          "skills":[
             "JavaScript", "React.js", "SASS"
          ],
+         "codeLink": "https://github.com/muesugi/muesugi.github.io",
          "description":"After finishing my time at R/GA where I learned and used React for the first time, I rebuilt this site so I could have experience building with React from the bottom up. Enjoy!",
          "content": {
            "component": "div",
@@ -205,6 +210,7 @@
       },
       {
          "title":"Brown WebServices IBES Globe",
+         "id": "ibes",
          "image":"portfolio/webservices-ibes/ibes.png",
          "subtitle":"a custom module built for the Institute at Brown for Environment & Society (IBES)",
          "skills":[
@@ -244,6 +250,8 @@
       },
       {
          "title":"String - Strung",
+         "id": "string",
+         "codeLink": "https://github.com/muesugi/String",
          "image":"portfolio/string-strung/strung.png",
          "subtitle":"a Girls Who Code summer project for crocheters",
          "skills":[

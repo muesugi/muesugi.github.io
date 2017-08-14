@@ -12,7 +12,7 @@ ReactDOM.render(
       <Switch onUpdate={() => window.scrollTo(0, 0)} >
         <Route exact path='/' component={LandingPage}/>
         <Route path='/resume' component={ResumePage}/>
-        <Route path='/portfolio/:skill?' component={PortfolioPage}/>
+        <Route path='/portfolio' component={PortfolioPage}/>
         <Route path='/contact' component={ContactPage}/>
       </Switch>
     </main>

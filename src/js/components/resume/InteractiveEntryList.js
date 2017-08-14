@@ -2,9 +2,6 @@ import React from 'react';
 import ResumeEntry from './ResumeEntry';
 
 export default class InteractiveEntryList extends React.Component {
-  componentDidMount(){
-    console.log(this.refs);
-  }
   render(){
     return (
       <div className="resume-subsection">
@@ -16,7 +13,8 @@ export default class InteractiveEntryList extends React.Component {
               key={index}
               date={item.date} title={item.title}
               subtitle={item.subtitle} location={item.location}
-              description={item.description}/>
+              description={item.description}
+              portfolioId={item.portfolioId}/>
           }
         })}
       </div>

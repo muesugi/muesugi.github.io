@@ -18,7 +18,7 @@ export default class RelevantSkillList extends React.Component {
               `skill-entry ${!isFinite(skill.proficiency) ? "text-proficiency" : ""}`}>
               <td className="skill-name">
                 {(skill.link_portfolio) ?
-                  <Link to={"/portfolio/" + encodeURIComponent(skill.name)}>{((skill.name) ? skill.name : '\u00A0')}</Link> :
+                  <Link to={"/portfolio/?filter=" + encodeURIComponent(skill.name)}>{((skill.name) ? skill.name : '\u00A0')}</Link> :
                   ((skill.name) ? skill.name : '\u00A0')
                 }
               </td>
