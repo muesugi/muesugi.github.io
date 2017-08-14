@@ -37,9 +37,9 @@ export default class ResumeSection extends React.Component {
     }
     else {
       const resumeEntry = this.refs.entrylist.refs["resume-entry-"+key];
-      console.log(resumeEntry);
       scrollToComponent(resumeEntry,{
-        align: 'bottom',
+        offset: -200,
+        align: 'middle',
         duration: 1500
     });
     }

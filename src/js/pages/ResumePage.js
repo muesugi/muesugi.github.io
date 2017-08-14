@@ -23,9 +23,9 @@ export default class ResumePage extends React.Component {
           <HoverableIcon icon={MailIcon} text="Send me an email!"
             link="mailto:moie_uesugi@brown.edu"/>
           <HoverableIcon icon={LinkedInIcon} text="Connect with me!"
-            link="http://linkedin"/>
+            link="https://www.linkedin.com/in/moieu/"/>
           <HoverableIcon icon={GithubIcon} text="Check out my GitHub!"
-            link="http://github"/>
+            link="https://github.com/muesugi"/>
           <a href="download" className="float-right">
             <span className="icon-caption">download</span>
             <img className="icon" src={DownloadIcon} />

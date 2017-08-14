@@ -1,6 +1,8 @@
 import React from 'react';
+
 import MainNavigation from '../components/MainNavigation';
 import MainFooter from '../components/MainFooter';
+import ProfileImage from '../components/ProfileImage';
 import PortfolioContent from '../datalayers/PortfolioContent';
 import SkillFilter from '../components/portfolio/SkillFilter';
 
