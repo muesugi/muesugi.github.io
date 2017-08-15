@@ -15,16 +15,7 @@
     color: white;
     padding: 0 20px;
   }
-
-  .back-page::before,
-  .next-page::after {
-    padding: .4em;
-  }
-
-  .back-page::before {
-    content:"<";
-  }
-  .next-page::after {
-    content:">";
+  a {
+    @extend %clickable_subtle;
   }
 }

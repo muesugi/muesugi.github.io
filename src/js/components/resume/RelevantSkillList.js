@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 export default class RelevantSkillList extends React.Component {
 
 
-  // <img src={require('../../../img/skills1-technicallangs.png')} />
-  // <img src={require('../../../img/skills1-goodies.png')} />
-  // <img src={require('../../../img/skills1-softskills.png')} />
+  // <img src={require('../../../assets/skills1-technicallangs.png')} />
+  // <img src={require('../../../assets/skills1-goodies.png')} />
+  // <img src={require('../../../assets/skills1-softskills.png')} />
 
   render(){
     return (

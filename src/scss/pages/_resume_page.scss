@@ -7,6 +7,9 @@
   .icon-set {
     margin-top:20px;
     margin-left: -10px;
+    a {
+      @extend %clickable_subtle; 
+    }
     @media #{$media_tiny}, #{$media_small}{
       position: fixed;
       bottom:0;

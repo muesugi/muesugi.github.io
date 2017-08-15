@@ -9,7 +9,7 @@ export default class LandingPage extends React.Component {
     return (
       <div className="landing-page">
         <div id="hamburger-container">
-          <Menu right width="250">
+          <Menu right width="250px">
             <Link to='/' className="active">about</Link>
             <NavLink to='/resume'>resume</NavLink>
             <NavLink to='/portfolio'>portfolio</NavLink>

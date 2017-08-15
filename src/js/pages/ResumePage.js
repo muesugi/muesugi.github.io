@@ -8,10 +8,11 @@ import NonTechnicalSection from '../datalayers/NonTechnicalSection';
 // import {SectionsContainer, ScrollToTopOnMount, Section} from 'react-fullpage';
 
 //icon images
-import MailIcon from '../../img/icon-mail.png';
-import LinkedInIcon from '../../img/icon-linkedin.png';
-import GithubIcon from '../../img/icon-github.png';
-import DownloadIcon from '../../img/icon-download.png';
+import MailIcon from '../../assets/icon-mail.png';
+import LinkedInIcon from '../../assets/icon-linkedin.png';
+import GithubIcon from '../../assets/icon-github.png';
+import DownloadIcon from '../../assets/icon-download.png';
+import ResumePdf from '../../assets/moie_uesugi-resume.pdf';
 
 export default class ResumePage extends React.Component {
   render(){
@@ -26,7 +27,7 @@ export default class ResumePage extends React.Component {
             link="https://www.linkedin.com/in/moieu/"/>
           <HoverableIcon icon={GithubIcon} text="Check out my GitHub!"
             link="https://github.com/muesugi"/>
-          <a href="download" className="float-right">
+          <a href={ResumePdf} className="float-right" download>
             <span className="icon-caption">download</span>
             <img className="icon" src={DownloadIcon} />
           </a>

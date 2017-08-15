@@ -9,7 +9,24 @@
   display: inline-block;
 }
 
+%clickable_verysubtle {
+  cursor: pointer;
+}
 %clickable_subtle {
+  cursor: pointer;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+%clickable_internal {
+  @extend %clickable_subtle;
+  color: $color_brown;
+  &:after {
+    content: " ›";
+  }
+}
+%clickable_underlined {
   cursor: pointer;
   text-decoration: underline;
   &:hover{

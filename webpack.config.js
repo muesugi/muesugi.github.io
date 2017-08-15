@@ -24,11 +24,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(jpg|png|svg|gif)$/i,
+        test: /\.(pdf|jpg|png|svg|gif)$/i,
         use: {
-          loader: "file-loader?name=img/img-[hash:6].[ext]"
+          loader: "file-loader?name=assets/[name].[ext]"
         },
-        include:  __dirname + '/src/img'
+        include:  __dirname + '/src/assets'
       },
       {
         test: /\.scss$/,
@@ -50,5 +50,8 @@ module.exports = {
         filename: 'style.css',
         disable: false,
         allChunks: true
-      })]
+      })],
+      devServer: {
+        public: 'a95f3509.ngrok.io' // That solved it
+      }
 };

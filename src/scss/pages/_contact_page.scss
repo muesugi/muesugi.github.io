@@ -10,6 +10,9 @@
     text-align: center;
     font-size: 18px;
     line-height: 1.25em;
+    a {
+      @extend %clickable_subtle;
+    }
     img {
       width: 25%;
     }
@@ -23,7 +26,7 @@
       color: $color_blue;
     }
   }
-  
+
   .main-footer {
     position: absolute;
     bottom: 0;

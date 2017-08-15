@@ -64,8 +64,8 @@ export default class Timeline extends React.Component {
                   <Text key={"title-" + index} text={item.title} align="center"
                     fontFamily="Source Sans Pro" width={this.state.itemWidth - 10}
                     fontSize="14" ref={"titleText" + index}
-                    color={(this.props.hovered == index) ? this.props.selectedColor : "black"}
-                    textDecoration={(this.props.hovered == index) ? "underline" : "none"}
+                    fill={(this.props.hovered == index) ? "#984b43" : "black"}
+                    // textDecoration={(this.props.hovered == index) ? "underline" : "none"}
                     x={this.state.itemWidth * index} y={80}/>
                   <Text key={"date-" + index} text={item.date} align="center"
                     fontFamily="Source Sans Pro" width={this.state.itemWidth - 10}
@@ -79,9 +79,10 @@ export default class Timeline extends React.Component {
                   {(this.props.hovered == index) &&
                     (this.refs["titleText"+index]) &&
                     <Text key={"role-"+index}  align="center"
+                      fill="#984b43"
                       text={item.subtitle}
                       width={this.state.itemWidth - 10}
-                      textDecoration="underline"
+                      // textDecoration="underline"
                       x={this.state.itemWidth  * index}
                       y={this.refs["titleText"+index].height() + 80 + 5}/>}
                 </Group>

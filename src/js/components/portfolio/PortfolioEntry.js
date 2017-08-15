@@ -10,7 +10,7 @@ export default class PortfolioEntry extends React.Component {
       this.setState({showMore: !this.state.showMore});
   }
   render(){
-    const image = require('../../../img/' + this.props.image);
+    const image = require('../../../assets/' + this.props.image);
     if ((this.props.filterSkill == "")
       || (typeof this.props.skills != "undefined"
           && this.props.skills != null
@@ -27,15 +27,12 @@ export default class PortfolioEntry extends React.Component {
             <div className="portfolio-title" onClick={this.clickSummary.bind(this)}>
             {this.props.title}
             </div>
-            <span className="portfolio-links">
-              {this.props.siteLink || this.props.codeLink ? "(" : ""}
-              {this.props.codeLink ? <a className="openPrevent" target="_blank" href={this.props.codeLink}>code</a> : ""}
-              {this.props.siteLink && this.props.codeLink ? "|" : ""}
-              {this.props.siteLink ? <a className="openPrevent" target="_blank" href={this.props.siteLink}>site</a> : ""}
-              {this.props.siteLink || this.props.codeLink ? ")" : ""}
-            </span>
-
             <div className="portfolio-subtitle">{this.props.subtitle}</div>
+            <span className="portfolio-links">
+              {this.props.codeLink ? <a className="openPrevent" target="_blank" href={this.props.codeLink}>code</a> : ""}
+              {this.props.siteLink && this.props.codeLink ? <br/> : ""}
+              {this.props.siteLink ? <a className="openPrevent" target="_blank" href={this.props.siteLink}>site</a> : ""}
+            </span>
 
             <div className="portfolio-description">{this.props.description}</div>
             <div className="portfolio-skills-container">Skills used:

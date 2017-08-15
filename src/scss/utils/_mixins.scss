@@ -28,15 +28,16 @@
 @mixin portfolio_color_pattern($color){
   .portfolio-summary {
     border-top: 5px solid $color;
-  }
 
-  &.closed .portfolio-summary {
-    border-bottom: 1px dotted $color;
     &:hover {
       .portfolio-title{
         color: $color;
       }
     }
+  }
+
+  &.closed .portfolio-summary {
+    border-bottom: 1px dotted $color;
   }
   .portfolio-more {
     border-bottom: 1px solid $color;

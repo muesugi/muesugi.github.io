@@ -8,8 +8,8 @@
   }
   .resume-portfolio-link {
     font-size: .9em;
-    color: $color_brown;
     display: block;
+    @extend %clickable_internal;
   }
 
   &:not(:last-child){

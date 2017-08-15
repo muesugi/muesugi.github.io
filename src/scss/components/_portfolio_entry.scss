@@ -25,9 +25,13 @@
         display: inline-block;
       }
       .portfolio-links {
-        padding-left: .45em;
-        color: $color_brown !important;
+        // padding-left: .45em;
+        // color: $color_brown;
+        a {
+          @extend %clickable_internal;
+        }
       }
+
       .portfolio-description {
         margin:1em 0;
         font-size: $normal_font;
@@ -89,10 +93,10 @@
 @include hide_in_closed_mobile_only(portfolio-description);
 
 .portfolio-summary {
-  .portfolio-img,
-  .portfolio-profile .portfolio-title,
+  @extend %clickable_verysubtle;
+
   .portfolio-skill,
   .view-more {
-    @extend %clickable_subtle;
+    @extend %clickable_underlined;
   }
 }

@@ -11,6 +11,7 @@ import SkillFilter from '../components/portfolio/SkillFilter';
 export default class PortfolioPage extends React.Component {
   constructor(props){
     super(props);
+    window.scrollTo(0,0);
 
     const params = queryString.parse(props.location.search);
     this.state = Object.assign({
@@ -21,7 +22,7 @@ export default class PortfolioPage extends React.Component {
   }
   scrollToAnchor(){
     if (this.state.anchor){
-      console.log(document.getElementById(this.state.anchor));
+      // console.log(document.getElementById(this.state.anchor));
       scrollToComponent(document.getElementById(this.state.anchor),{
         align: 'top',
         duration: 100

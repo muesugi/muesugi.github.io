@@ -32,7 +32,8 @@
         text-align: right;
         padding-right: 1em;
         a {
-          text-decoration: underline;
+          // text-decoration: underline;
+          @extend %clickable_internal;
         }
       }
       &:first-child {
