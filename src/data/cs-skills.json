@@ -34,6 +34,7 @@
       "skills":[
          {
             "name":"Java",
+            "link_portfolio":1,
             "proficiency":4
          },
          {
@@ -89,7 +90,6 @@
          },
          {
             "name":"Photoshop",
-            "link_portfolio":1,
             "proficiency":3
          },
          {
@@ -98,7 +98,6 @@
          },
          {
             "name":"AfterEffects",
-            "link_portfolio":1,
             "proficiency":2
          }
       ]

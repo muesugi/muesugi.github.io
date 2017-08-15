@@ -50,7 +50,7 @@ export default class PortfolioPage extends React.Component {
       history.pushState(null, null, '#/portfolio/');
       this.setState({filterSkill: ""});
     } else {
-      history.pushState(null, null, '#/portfolio/filter='+encodeURIComponent(newValue));
+      history.pushState(null, null, '#/portfolio/?filter='+encodeURIComponent(newValue));
       this.setState({filterSkill: newValue});
     }
      window.scrollTo(0, 0);

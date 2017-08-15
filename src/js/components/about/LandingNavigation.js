@@ -7,9 +7,9 @@ export default class LandingNavigation extends React.Component {
     return (
       <div className="landing-menu animated zoomInDown">
         <nav>
-          <Link to='/resume'>resume</Link>
-          <Link to='/portfolio'>portfolio</Link>
-          <Link to='/contact'>contact</Link>
+          <Link className="landing-menu-item" to='/resume'>resume</Link>
+          <Link className="landing-menu-item" to='/portfolio'>portfolio</Link>
+          <Link className="landing-menu-item" to='/contact'>contact</Link>
         </nav>
       </div>
     );

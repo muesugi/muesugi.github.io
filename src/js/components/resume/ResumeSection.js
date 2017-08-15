@@ -36,12 +36,17 @@ export default class ResumeSection extends React.Component {
       return;
     }
     else {
+      this.onTimelineElementHover(key);
       const resumeEntry = this.refs.entrylist.refs["resume-entry-"+key];
+      window.setTimeout(function(){
+        this.onTimelineElementHover(-1);
+      }, 2000);
       scrollToComponent(resumeEntry,{
         offset: -200,
         align: 'middle',
-        duration: 1500
-    });
+        duration: 1000
+      });
+
     }
   }
 //  <RelevantCoursework headers={this.props.courseData.headers}
@@ -70,7 +75,8 @@ export default class ResumeSection extends React.Component {
           data={this.state.keyedTimelineData} hovered={this.state.hovered} />
 
         <RelevantSkillLists title={this.props.skillsTitle}
-            data={this.props.skillsData}/>
+          description={this.props.skillsDescription}
+          data={this.props.skillsData}/>
 
       </div>
     );

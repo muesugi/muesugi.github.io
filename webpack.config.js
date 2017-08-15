@@ -24,7 +24,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(pdf|jpg|png|svg|gif)$/i,
+        test: /\.(mp3|pdf|jpg|png|svg|gif)$/i,
         use: {
           loader: "file-loader?name=assets/[name].[ext]"
         },

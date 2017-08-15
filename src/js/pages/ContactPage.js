@@ -18,7 +18,6 @@ export default class ContactPage extends React.Component {
           <div><a href="mailto:moie_uesugi@brown.edu">EMAIL // moie_uesugi@brown.edu</a></div>
           <div><a target="_blank" href="https://www.linkedin.com/in/moieu/">LINKEDIN // moieu</a></div>
           <div><a target="_blank" href="https://github.com/muesugi">GITHUB // muesugi</a></div>
-          <div><a target="_blank" href="tel:7189747118">PHONE // 718.974.7118</a></div>
           </div>
         </div>
         <MainFooter back="portfolio"/>

@@ -7,7 +7,7 @@
          "image":"portfolio/adapt/adapt-translations-1.png",
          "subtitle":"a course project for CS32 Software Engineering - Spring 2017",
          "skills":[
-            "JavaScript", "Raphael.js, D3.js, Three.js"
+            "JavaScript", "Raphael.js, D3.js, Three.js", "Java"
          ],
          "description":"A web app that enables translators to align their original and translated documents for a seamless translation experience.",
          "siteLink": "http://adapt-translations.herokuapp.com/",
