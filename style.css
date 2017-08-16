@@ -416,6 +416,10 @@ div.skill-filter {
   margin: 15% auto 5% auto; }
   .landing-page a#pronounce-me {
     font-style: italic; }
+  .landing-page img#audio-icon {
+    position: absolute;
+    margin-top: .5em;
+    margin-left: .5em; }
 
 @media screen and (max-width: 480px) {
   .resume-page .timeline, .resume-page .timeline-legend {

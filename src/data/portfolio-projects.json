@@ -175,7 +175,7 @@
             "JavaScript", "React.js", "SASS"
          ],
          "codeLink": "https://github.com/muesugi/muesugi.github.io",
-         "description":"After finishing my time at R/GA where I learned and used React for the first time, I rebuilt this site so I could have experience building with React from the bottom up. Enjoy!",
+         "description":"After finishing my time at R/GA where I learned and used React for the first time, I rebuilt this site so I could have experience building with React from the bottom up. As evidenced in the description, I think it serves as a good metric of how much my mindset toward content and code has changed even within just one year. Enjoy!",
          "content": {
            "component": "div",
            "children":[
@@ -185,7 +185,7 @@
              },
              {
                "component": "div",
-               "text": "Where the old site had contained everything there was to know about me-- my hobbies, my extracurriculars in high school-- my time at R/GA showed me that often, both visually and with regard to content, less is more."
+               "text": "I created the old site just about a year before this one, in the summer of 2016. Where the old site had contained everything there was to know about me-- my hobbies, my extracurriculars in high school-- my time at R/GA showed me that often, both visually and with regard to content, less is more."
              },
              {
                "component": "div",
