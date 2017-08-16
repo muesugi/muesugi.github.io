@@ -65,7 +65,8 @@ export default class ResumeSection extends React.Component {
           <TimelineLegend data={this.props.timelineData.categories} />
         </div>
 
-        <Timeline data={this.state.keyedTimelineData} hovered={this.state.hovered}
+        <Timeline sectionTitle={this.props.title}
+          data={this.state.keyedTimelineData} hovered={this.state.hovered}
           height={this.props.timelineData.height}
           onHover={this.onTimelineElementHover.bind(this)}
           onSelect={this.onTimelineElementSelect.bind(this)}/>

@@ -40,6 +40,22 @@ export default class Timeline extends React.Component {
         itemWidth: (twidth) / this.props.data.length
       });
     }
+    onHover(key, title){
+      dataLayer.push({
+        event: "timelineHover",
+        timeline: this.props.sectionTitle,
+        timelineElement: title,
+      });
+      this.props.onHover(key);
+    }
+    onSelect(key, title){
+      dataLayer.push({
+        event: "timelineClick",
+        timeline: this.props.sectionTitle,
+        timelineElement: title
+      });
+      this.props.onSelect(key);
+    }
     render() {
         return (
           <div className="timeline animated slideInLeft">
@@ -53,15 +69,15 @@ export default class Timeline extends React.Component {
                 strokeWidth="1" stroke="#88562d" />
             {this.props.data.map((item, index) => {
               return (
-                <Group key={"group-" + index}
-                  onMouseEnter={this.props.onHover.bind(null, index)}
-                  onMouseLeave={this.props.onHover.bind(null, -1)}
-                  onClick={this.props.onSelect.bind(null, index)}>
+                <Group key={"group-" + index} className="timeline-entry"
+                  onMouseEnter={this.onHover.bind(this, index, item.title)}
+                  onMouseLeave={this.props.onHover.bind(this,-1)}
+                  onClick={this.onSelect.bind(this, index, item.title)}>
                   <Circle key={"circle-" + index}
                     radius={((item.larger) ? 15 : 8) + (5 * (this.props.hovered == index))}
                     x={this.state.itemWidth * (index+.5)} y={50}
                     fill={item.color}/>
-                  <Text key={"title-" + index} text={item.title} align="center"
+                  <Text key={"title-" + index} className="timeline-title" text={item.title} align="center"
                     fontFamily="Source Sans Pro" width={this.state.itemWidth - 10}
                     fontSize="14" ref={"titleText" + index}
                     fill={(this.props.hovered == index) ? "#984b43" : "black"}
