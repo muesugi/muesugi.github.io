@@ -40,18 +40,15 @@ module.exports = {
     ]
   },
 
-    plugins: [
-      new HTMLWebpackPlugin({
-        template: './src/index.html',
-        filename: 'index.html',
-        inject: 'body'
-      }),
-      new ExtractTextPlugin({
-        filename: 'style.css',
-        disable: false,
-        allChunks: true
-      })],
-      devServer: {
-        public: 'a95f3509.ngrok.io' // That solved it
-      }
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      inject: 'body'
+    }),
+    new ExtractTextPlugin({
+      filename: 'style.css',
+      disable: false,
+      allChunks: true
+    })]
 };
