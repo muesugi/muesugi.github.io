@@ -39,15 +39,15 @@
                 },
                 {
                   "component": "li",
-                  "text": "Load documents from files, save and reload old projects"
+                  "text": "The ability to load documents from files, save and reload old projects"
                 },
                 {
                   "component": "li",
-                  "text": "Inegration with the popular TinyMCE text editor for a familiar interface"
+                  "text": "Integration with the popular TinyMCE text editor for a familiar interface"
                 },
                 {
                   "component": "li",
-                  "text": "Integration with Google Open Authentication for user accounts"
+                  "text": "Integration with Google Open Authentication (OAuth 2.0) for user accounts"
                 }
               ]
             }
@@ -83,7 +83,7 @@
                     "children": [
                       {
                         "component": "span",
-                        "text": "/img/img-8a7e75.png"
+                        "text": "/assets/upinn-mockup-home.png"
                       },
                       {
                         "component": "span",
@@ -127,9 +127,42 @@
                "text": "This site transformed from a data dump of all of the past films shown to a navigateable site with descriptions, summaries, and help text."
              },
              {
+               "component": "div",
+               "text": "Compare the following, the old Uno Port Art Films homepage, to the new home page pictured above."
+             },
+             {
                "component": "JsonImageLoader",
-               "text": "portfolio/unoportartfilms/upaf-promo-slower.gif"
+               "text": "portfolio/unoportartfilms/old-home-scroll.gif"
+             },
+             {
+               "component": "div",
+               "text": "Overall, the new site is cleaner, more streamlined, and guided."
+              },
+             {
+               "component": "div",
+               "text": "From the ticket purchase page--"
+              },
+             {
+               "component": "JsonImageLoader",
+               "text": "portfolio/unoportartfilms/new-buy.png"
+             },
+             {
+               "component": "div",
+               "text": "--to the archives--"
+              },
+             {
+                 "component" :"JsonImageLoader",
+                 "text":"portfolio/unoportartfilms/new-through-archives-final.gif"
+              },
+              {
+                "component": "div",
+                "text": "everything was put together with the experience in mind, to make all of that great content actually accessible and managable."
+               },
+              {
+                "component" :"div",
+                "text":"The archives in particular were set up so that users could not only navigate easily to find what they were looking for but browse new films as well. In turn, the taxonomy system was built explicitly for non-technical site administrators, so that moving the films from the current year to the archives would take three clicks: one to move all tags under the current year, 2016 for example, to 'Archives', one to change the menu link to reflect the new year, and one to save all of this configuration."
              }
+
            ]
          }
       },
@@ -148,22 +181,26 @@
            "children":[
              {
                "component": "div",
-               "text": "This new website is a culmination of my time at R/GA in more ways than one. In addition to the new technical aspects of the site, I set my new focus for the site to be curation, as we had practiced in pitches during the apprenticship."
+               "text": "This new website is a culmination of my time at R/GA in more ways than one. In addition to the new technical aspects of the site, I set my new focus for the site to be curation, as we had practiced in pitches during the apprenticeship."
              },
              {
                "component": "div",
-               "text": "Where the old site had contained everything there was to know about me-- my hobbies, my extracurriculars in high school-- my time at R/GA showed me that often, both visually and for content, less is more."
+               "text": "Where the old site had contained everything there was to know about me-- my hobbies, my extracurriculars in high school-- my time at R/GA showed me that often, both visually and with regard to content, less is more."
              },
              {
                "component": "div",
                "children" : [
                  {
                    "component": "div",
-                   "text" : "The resume page in particular is a case in point. I had a graphical CV that rendered all of my experiences as visual blocks programmatically to a canvas. However, what I didn't realize was how overwhelming the entirety of this information would be, as visible in the screencap below, for someone who had never even met me."
+                   "text" : "The resume page in particular is a case in point. The old version of this site had a graphical CV that rendered all of my experiences as visual blocks programmatically to a canvas. However, what I didn't realize was how overwhelming the entirety of this information would be, as visible in the screencap below, for someone who had never even met me."
                  },
                  {
                    "component": "h3",
                    "text": "Timeline 1.0"
+                 },
+                 {
+                   "component": "div",
+                   "text" : "Each of the blocks was interactive and represented an experience that I was involved in for that amount of time. But this randomly generated set of colors, as you can see here, wasn't appealing or didn't induce clicks in any way."
                  },
                  {
                    "component": "JsonImageLoader",
@@ -249,7 +286,7 @@
          }
       },
       {
-         "title":"String - Strung",
+         "title":"String / Strung",
          "id": "string",
          "codeLink": "https://github.com/muesugi/String",
          "image":"portfolio/string-strung/strung.png",
@@ -257,17 +294,17 @@
          "skills":[
             "JavaScript", "Raphael.js, D3.js, Three.js"
          ],
-         "description":"Created as my final project for the Girls Who Code program in the span of under a week, the 'String' web tool allows users to enter a written crochet pattern and see a visual approximation (using Raphael.js) of the intended product to catch mistakes before publishing patterns. The 2.0 site, Strung, is pictured here.",
+         "description":"Created as my final project for the Girls Who Code program in the span of under a week, the 'String' web tool allows users to enter a written crochet pattern and see a visual approximation (using Raphael.js) of the intended product to catch mistakes before publishing patterns. The 2.0 site, Strung, is pictured here and is currently in progress.",
          "content": {
            "component": "div",
            "children": [
              {
                "component": "div",
-               "text": "As a crocheter myself, this project started because I found that written crochet patterns and code were quite similar. Not many people are involved in both worlds, so very few, if any, tools exist to help pattern designers and crocheters."
+               "text": "As a crocheter myself, this project started because I found that written crochet patterns and code were quite similar. Not many people are involved in both worlds, though, so very few if any tools existed to help pattern designers and crocheters."
              },
              {
                "component": "div",
-               "text": "After my last week in the Girls Who Code program, my eigth official week learning to code, I had a rough prototype featuring a live editor that could responsive graphical representations of basic written crochet patterns."
+               "text": "During my last week in the Girls Who Code program, my eigth official week learning to code, I made a rough prototype featuring a live editor, pictured below, that responsively generated graphical representations of basic written crochet patterns."
              },
              {
                "component": "JsonImageLoader",
@@ -275,15 +312,27 @@
              },
              {
                "component": "div",
-               "text": "Three years later, I decided to revisit the program-- now that I at least knew code style was a thing-- to create a more reliable, accurate, and stable tool. "
+               "text": "Recently, I decided to revisit the application-- now that I at least knew code style was a thing-- to create a more reliable, accurate, and stable tool. While the new version is still a work progress, it consists of three parts:"
               },
               {
-                "component": "div",
-                "text": "I decided to create a 3D, navigable visualization application using THREE.js for the project visualization (Visualizer)"
-             }
+                "component": "ul",
+                "children": [
+                  {
+                    "component": "li",
+                    "text": "Chartify: for converting text patterns to 2D pattern charts"
+                  },
+                  {
+                    "component": "li",
+                    "text": "Visualize: for rendering 3D crochet visualizations from text patterns (using THREE.js)"
+                  },
+                  {
+                    "component": "li",
+                    "text": "Textify: a Drag and Drop tool for generating text patterns"
+                  }
+                ]
+              }
            ]
          }
       }
-
    ]
 }

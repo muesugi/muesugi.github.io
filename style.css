@@ -11,10 +11,10 @@
 .portfolio-summary {
   cursor: pointer; }
 
-.resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a, nav a, .main-footer a, .resume-page .icon-set a, .contact-page .content a {
+.resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a, nav a, .main-footer a, .landing-page a#pronounce-me, .resume-page .icon-set a, .contact-page .content a {
   cursor: pointer;
   text-decoration: none; }
-  .resume-entry .resume-portfolio-link:hover, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a:hover, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a:hover, nav a:hover, .main-footer a:hover, .resume-page .icon-set a:hover, .contact-page .content a:hover {
+  .resume-entry .resume-portfolio-link:hover, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a:hover, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a:hover, nav a:hover, .main-footer a:hover, .landing-page a#pronounce-me:hover, .resume-page .icon-set a:hover, .contact-page .content a:hover {
     text-decoration: underline; }
 
 .resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a {
@@ -301,6 +301,11 @@ ul li {
       display: flex;
       justify-content: space-around; } }
 
+.resume-skills-desc {
+  font-size: .9em;
+  font-weight: normal;
+  color: #88562d; }
+
 .portfolio-entry {
   margin: 2em 0; }
   .portfolio-entry .portfolio-summary .portfolio-img {
@@ -409,6 +414,8 @@ div.skill-filter {
   min-width: 50%;
   height: 80%;
   margin: 15% auto 5% auto; }
+  .landing-page a#pronounce-me {
+    font-style: italic; }
 
 @media screen and (max-width: 480px) {
   .resume-page .timeline, .resume-page .timeline-legend {
@@ -473,7 +480,7 @@ div.skill-filter {
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 18px;
-  line-height: 1.25em; }
+  line-height: 1.5em; }
   .contact-page .content img {
     width: 25%; }
   @media screen and (max-width: 480px), screen and (min-width: 481px) and (max-width: 767px) {
