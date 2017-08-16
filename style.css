@@ -31,7 +31,7 @@ a, .portfolio-summary .portfolio-skill,
     text-decoration: none; }
 
 body {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", sans-serif;
   margin: 10px 10px 0 10px;
   font-size: 14px; }
   @media screen and (min-width: 768px) and (max-width: 971px), screen and (min-width: 972px) and (max-width: 1399px), screen and (min-width: 1400px) {
