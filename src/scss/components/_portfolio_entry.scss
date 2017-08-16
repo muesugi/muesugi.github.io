@@ -1,0 +1,102 @@
+.portfolio-entry {
+  margin: 2em 0;
+  .portfolio-summary {
+    .portfolio-img {
+      vertical-align: middle;
+      padding: 10px;
+      @media #{$media_tiny}, #{$media_small}{
+        width:100%;
+        padding:0px;
+      }
+    }
+    .portfolio-profile {
+      @media #{$media_medium_and_up}{
+        display: inline-block;
+        max-width: calc( 50% - 2em - 20px);
+        vertical-align: middle;
+        margin: 1em;
+      }
+      @media #{$media_tiny}, #{$media_small}{
+        text-align: center;
+      }
+      .portfolio-title {
+        font-weight: bold;
+        font-size: $medium_font;
+        display: inline-block;
+      }
+      .portfolio-links {
+        // padding-left: .45em;
+        // color: $color_brown;
+        a {
+          @extend %clickable_internal;
+        }
+      }
+
+      .portfolio-description {
+        margin:1em 0;
+        font-size: $normal_font;
+      }
+
+      .portfolio-skills-container{
+        @media #{$media_medium_and_up}{
+          padding-bottom: 2em;
+        }
+        .portfolio-skill {
+          margin-left: .4em;
+          font-style: italic;
+
+          @include delimit(',');
+        }
+      }
+    }
+
+    .view-more{
+      display: none;
+      @media #{$media_medium_and_up} {
+        display: block;
+        position: absolute;
+        right: calc(50px + 1em);
+        margin-top: -2em;
+      }
+    }
+  }
+  .portfolio-more {
+    border-bottom: 1px solid $color_yellow;
+    padding: 20px;
+    text-align: center;
+    div {
+      padding: .5em 0;
+    }
+    > div > * {
+      text-align: center;
+      max-width: 100%;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    * {
+      margin: 0 auto;
+    }
+    ul {
+      text-align: left;
+    }
+  }
+  @include portfolio_color_pattern($color_yellow);
+
+  &:nth-child(2n){
+    @include portfolio_color_pattern($color_lightblue);
+  }
+}
+
+@include hide_in_closed_mobile_only(portfolio-img);
+@include hide_in_closed_mobile_only(portfolio-description);
+
+.portfolio-summary {
+  @extend %clickable_verysubtle;
+
+  .portfolio-skill,
+  .view-more {
+    @extend %clickable_underlined;
+  }
+}

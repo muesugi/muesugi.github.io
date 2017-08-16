@@ -1,0 +1,11 @@
+.timeline-legend {
+  font-size: $small_font*.8;
+  font-weight: normal;
+  @media #{$media_medium_and_up}{
+    margin-left: 100px;
+  }
+  float:right;
+  .legend-pair {
+    margin-left: 40px;
+  }
+}

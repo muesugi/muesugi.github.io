@@ -1,0 +1,17 @@
+div.skill-filter {
+    border-radius: 3px;
+   select {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    background: transparent;
+    height: 2em;
+
+    @media #{$media_tiny} , #{$media_small} {
+      width: 100%;
+      height: 3em;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

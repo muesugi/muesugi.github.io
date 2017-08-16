@@ -1,0 +1,32 @@
+.landing-content {
+  line-height: 1.5;
+  .profile {
+    .name {
+      @extend %name_styling;
+      font-size: $largest_font;
+      padding-bottom: 40px;
+    }
+    .about-item {
+      font-size: $normal_font;
+      color: $color_blue;
+      line-height: 1.875;
+      text-indent: -1em; //accounts for "commenting out"
+      margin-left:1em;
+    }
+    .about-item::before {
+      content: "// ";
+      color: $color_blue;
+    }
+  }
+
+
+    @media #{$media_medium_and_up}{
+      text-align: left;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      .profile {
+        padding-left: $largest_font;
+      }
+    }
+}

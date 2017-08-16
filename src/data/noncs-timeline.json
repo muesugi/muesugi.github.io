@@ -1,0 +1,86 @@
+{
+   "height":150,
+   "categories":{
+      "Education":"#d0d3c5",
+      "Professional Experience":"#984b43",
+      "Extracurricular":"#eac67a"
+   },
+   "data":[
+      {
+         "title":"Tachibana Traditional \nJapanese Dance Group",
+         "date":"2005 - 2015",
+         "larger":0,
+         "color":"#eac67a",
+         "selectable":0
+      },
+      {
+         "title":"Girls Write Now Mentee",
+         "date":"Fall 2012 - Spring 2015",
+         "larger":0,
+         "color":"#eac67a",
+         "selectable":0
+      },
+      {
+         "title":"Entered Brown Unversity",
+         "date":"Fall 2015",
+         "larger":0,
+         "color":"#d0d3c5",
+         "selectable":0
+      },
+      {
+         "title":"US-Japan Education and Family Research Lab",
+         "date":"2015 - 2016",
+         "selectable":1,
+         "larger":1,
+         "color":"#d0d3c5",
+         "subtitle":"Research Assistant",
+         "location":"Providence, RI",
+         "description": [
+           "Participated in weekly case meetings with the research team to discuss the greater implications of each family",
+           "Trained for parent and child interviews in both Japanese and English; Transcribed Japanese and English interviews"
+         ]
+      },
+      {
+         "title":"Aldus Journal of Translation",
+         "date":"Fall 2015 - Present",
+         "larger":1,
+         "color":"#eac67a",
+         "selectable":1,
+         "subtitle":"Web Developer Intern",
+         "location":"Providence, RI",
+         "description":[
+            "Use Brown’s notification system, Facebook, and email to promote the journal and get new editors and submissions",
+            "Meet weekly to review pieces of translation, discuss their merits, and decide their inclusion in our biyearly journal"
+         ]
+      },
+      {
+         "title":"St. Anthony Hall Literary Fraternity",
+         "date":"Spring 2016 - Present",
+         "larger":1,
+         "color":"#eac67a",
+         "selectable":1,
+         "subtitle":"Inclusivity Chair, President, and more",
+         "location":"Providence, RI",
+         "description":[
+            "Inclusivity Chair (Spring - Fall 2017), President (Fall 2017), Community Service Chair (Spring 2017), Tech Chair (Fall 2016, Spring 2017)",
+            "Attend weekly meetings and inclusivity chair meetings, help with publicity, and engage prospective members at events",
+            "Established a weekly newsletter to members with community service opportunities at Brown and within Providence"
+         ]
+      },
+      {
+         "title":"Uno Port Art Films",
+         "date":"Summers  2010 - 2013, \n2015, 2016",
+         "larger":1,
+         "color":"#984b43",
+         "selectable":1,
+         "subtitle":"Assistant to Directors",
+         "location":"Uno, Japan",
+         "description":["Participated in the translation and subtitling (Final Cut Pro 7, Adobe Premiere Pro) of over 40 films",
+            "Managed more than $2000 in box office purchases annually, kept digital records and graphs, designed tickets",
+            "Created and migrated to a new WordPress site in a week. Wrote full documentation of functionality for future upkeep",
+            "Curated the 2016 kids and youth programs entirely and participated in the curation of all other programs"
+         ],
+         "portfolioId":"upaf"
+      }
+   ]
+}

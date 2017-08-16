@@ -1,0 +1,12 @@
+.landing-page {
+  text-align: center;
+  width: 70%;
+  min-width: 50%;
+  height: 80%;
+  margin: 15% auto 5% auto;
+
+  a#pronounce-me {
+    font-style: italic;
+    @extend %clickable_subtle;
+  }
+}

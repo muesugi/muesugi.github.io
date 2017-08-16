@@ -1,0 +1,45 @@
+@mixin delimit($str){
+  &:after {
+    content: $str;
+  }
+  &:last-child:after {
+    content: "";
+  }
+}
+
+//========== portfolio ==============//
+//show element iff the portfolio-entry has been expanded
+@mixin hide_in_closed($selector){ //show in open
+  .portfolio-entry {
+    &.closed .#{$selector} {
+      display: none;
+    }
+    &.expanded .#{$selector} {
+      display: block;
+    }
+  }
+}
+// hide in closed/show in expanded in tiny and small sizes only
+@mixin hide_in_closed_mobile_only($selector) {
+  @media #{$media_tiny}, #{$media_small}{
+    @include hide_in_closed($selector);
+  }
+}
+@mixin portfolio_color_pattern($color){
+  .portfolio-summary {
+    border-top: 5px solid $color;
+
+    &:hover {
+      .portfolio-title{
+        color: $color;
+      }
+    }
+  }
+
+  &.closed .portfolio-summary {
+    border-bottom: 1px dotted $color;
+  }
+  .portfolio-more {
+    border-bottom: 1px solid $color;
+  }
+}

@@ -1,0 +1,13 @@
+.relevant-skill-lists .relevant-skill-list-container{
+  text-align: center;
+  @media #{$media_medium_and_up}{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.resume-skills-desc {
+  font-size: .9em;
+  font-weight: normal;
+  color: $color_brown;
+}

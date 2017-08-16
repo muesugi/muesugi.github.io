@@ -1,0 +1,67 @@
+.resume-page {
+  @media #{$media_tiny}{
+    .timeline, .timeline-legend {
+      display: none;
+    }
+  }
+  .icon-set {
+    margin-top:20px;
+    margin-left: -10px;
+    a {
+      @extend %clickable_subtle; 
+    }
+    @media #{$media_tiny}, #{$media_small}{
+      position: fixed;
+      bottom:0;
+      background-color: white;
+      margin-top: 0px;
+      padding: 10px 0;
+      border-top: 2px solid $color_blue;
+      width: 100%;
+      height:2.5em;
+      clear:both;
+      display: flex;
+      justify-content: space-around;
+      z-index: 20;
+
+      .icon-caption{
+        display:none;
+      }
+    }
+  }
+
+  .resume-header {
+    font-size: $normal_font;
+    font-weight: bold;
+    margin-top:24px;
+    margin-bottom: 20px;
+    // &:before {
+    //   content: " ";
+    //   display: block;
+    //   width: 150px;
+    //   border-top: 3px solid $color_brown;
+    // }
+  }
+  .resume-section{
+    margin: 24px 0;
+  }
+  .resume-subsection {
+    // width: 95%;
+    margin: 40px auto;
+
+  }
+
+  .resume-subheader {
+    font-size: $small_font;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+
+  .resume-subsubheader {
+    text-decoration: underline;
+  }
+  @media #{$media_tiny}, #{$media_small}{
+    margin-bottom: calc(2.5em + 20px);
+  }
+
+}
