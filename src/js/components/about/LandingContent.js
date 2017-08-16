@@ -1,7 +1,7 @@
 import React from 'react';
 import ProfileImage from '../ProfileImage';
 
-import testAudio from '../../../assets/test.mp3';
+import pronounceAudio from '../../../assets/pronounce.mp3';
 
 export default class LandingContent extends React.Component {
   constructor(props){
@@ -9,7 +9,7 @@ export default class LandingContent extends React.Component {
 
     this.state = Object.assign({
       pronounce: false,
-      audio: new Audio(testAudio)
+      audio: new Audio(pronounceAudio)
     });
   }
   togglePronounce(ev){
