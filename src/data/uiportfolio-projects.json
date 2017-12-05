@@ -1,0 +1,202 @@
+{
+   "projects":[
+
+      {
+         "title":"Adapt Translations",
+         "id": "adapt",
+         "image":"portfolio/adapt/adapt-translations-1.png",
+         "subtitle":"a course project for CS32 Software Engineering - Spring 2017",
+         "skills":[
+            "JavaScript", "Raphael.js, D3.js, Three.js", "Java"
+         ],
+         "description":"A web app that enables translators to align their original and translated documents for a seamless translation experience.",
+         "internalLink": "/ui-portfolio/adapt-translations",
+         "siteLink": "http://adapt-translations.herokuapp.com/",
+         "content": {
+           "component": "div",
+           "children":[
+             {
+               "component": "div",
+               "text": "Our four-person team started the creation process by reaching out to faculty and students in the Comparative Literature department. By surveying them about their current translation-related behaviors, we learned that most just open two separate windows for their two documents, as well as other windows for online translation resources, but wish they had a better workflow."
+            },
+             {
+               "component": "JsonImageLoader",
+               "text": "portfolio/adapt/adapt-translations-2.gif"
+             },
+            {
+              "component": "div",
+              "text":"We decided to create a visual application that would display how two documents aligned without the user having to manually remember or find these links between documents."
+            },
+            {
+              "component": "div",
+              "text":" As the only person on the team with front-end experience, I became the lead front-end developer on the project. Here are some of the most interesting features of the front-end that I implemented:"
+            },
+            {
+              "component": "ul",
+              "children": [
+                {
+                  "component": "li",
+                  "text": "Optional matched scrolling through the two documents; scroll on one side and scroll proportionately through the other"
+                },
+                {
+                  "component": "li",
+                  "text": "The ability to load documents from files, save and reload old projects"
+                },
+                {
+                  "component": "li",
+                  "text": "Integration with the popular TinyMCE text editor for a familiar interface"
+                },
+                {
+                  "component": "li",
+                  "text": "Integration with Google Open Authentication (OAuth 2.0) for user accounts"
+                }
+              ]
+            }
+           ]
+         }
+      },
+      {
+         "title":"Uno Port Inn",
+         "id": "upinn",
+         "image":"portfolio/unoportinn/unoportinn-rooms.png",
+         "subtitle":"a site for a B&B in Japan",
+         "internalLink": "/ui-portfolio/unoportinn",
+         "siteLink": "http://unoportinn.com",
+         "skills":[
+            "WordPress", "PHP"
+         ],
+         "description":"Built on WordPress, this website features a custom theme, multiple languages, and integration with the Sirvoy hotel management system.",
+         "content": {
+           "component": "div",
+           "children":[
+             {
+               "component": "div",
+               "text": "The creation of this website started with the research of over 35 payment gateways, including Stripe and PayPal as well as integration tools with hotel services. Combinations of these options were presented alongside the estimated cost to the client."
+             },
+             {
+               "component": "div",
+               "children": [
+                 {
+                   "component":"span",
+                   "text":"After the decision about the integration tool had been made, I mocked up the site, as shown "
+                  },
+                  {
+                    "component": "JsonLinkLoader",
+                    "children": [
+                      {
+                        "component": "span",
+                        "text": "/assets/upinn-mockup-home.png"
+                      },
+                      {
+                        "component": "span",
+                        "text": "here."
+                      }
+                    ]
+                  }
+                ]
+             },
+             {
+               "component": "div",
+               "text":"The following is a screen capture of the resulting website, after a few rounds of revision and additional content population:"
+            },
+             {
+               "component": "div",
+               "children":[
+                 {
+                   "component": "JsonImageLoader",
+                   "text": "portfolio/unoportinn/upinn-demo.gif"
+                 }
+               ]
+            }
+           ]
+         }
+      },
+      
+      {
+         "title":"Writers with Websites: Suzanne Collins Redesign",
+         "id": "suzannecollins",
+         "image":"portfolio/suzanne-collins/high-fidelity-homepage.png",
+        "internalLink": "/ui-portfolio/suzannecollins",
+         "subtitle":"a redesign for CS1300 User Interfaces and Experiences - Fall 2017",
+         "skills":[
+            "JavaScript"
+         ],
+         "description": "",
+         "content": {
+           "component": "div"
+         }
+       },
+       {
+         "title":"Uno Port Art Films",
+         "id": "upaf",
+         "image":"portfolio/unoportartfilms/upaf-home.png",
+         "siteLink": "http://unoportartfilms.org",
+        "internalLink": "/ui-portfolio/unoportartfilms",
+         "subtitle":"a site for a summer outdoor film festival in Japan",
+         "skills":[
+            "WordPress", "PHP"
+         ],
+         "description":"Built on WordPress for future upkeep, I configured this new site on a short timeline to fit the needs of the festival. The key technical aspect of this new site was a new taxonomy system for organizing exisiting data and data types specific to the film festival.",
+         "content": {
+           "component": "div",
+           "children":[
+             {
+               "component": "div",
+               "text": "This site transformed from a data dump of all of the past films shown to a navigateable site with descriptions, summaries, and help text."
+             },
+             {
+               "component": "div",
+               "text": "Compare the following, the old Uno Port Art Films homepage, to the new home page pictured above."
+             },
+             {
+               "component": "JsonImageLoader",
+               "text": "portfolio/unoportartfilms/old-home-scroll.gif"
+             },
+             {
+               "component": "div",
+               "text": "Overall, the new site is cleaner, more streamlined, and guided."
+              },
+             {
+               "component": "div",
+               "text": "From the ticket purchase page--"
+              },
+             {
+               "component": "JsonImageLoader",
+               "text": "portfolio/unoportartfilms/new-buy.png"
+             },
+             {
+               "component": "div",
+               "text": "--to the archives--"
+              },
+             {
+                 "component" :"JsonImageLoader",
+                 "text":"portfolio/unoportartfilms/new-through-archives-final.gif"
+              },
+              {
+                "component": "div",
+                "text": "everything was put together with the experience in mind, to make all of that great content actually accessible and managable."
+               },
+              {
+                "component" :"div",
+                "text":"The archives in particular were set up so that users could not only navigate easily to find what they were looking for but browse new films as well. In turn, the taxonomy system was built explicitly for non-technical site administrators, so that moving the films from the current year to the archives would take three clicks: one to move all tags under the current year, 2016 for example, to 'Archives', one to change the menu link to reflect the new year, and one to save all of this configuration."
+             }
+
+           ]
+         }
+      },
+        {
+         "title":"AB Testing and Eye Tracking",
+         "id": "abtesting",
+         "image":"portfolio/abtesting/heatmapb.png",
+        "internalLink": "/ui-portfolio/abtesting",
+         "subtitle":"AB Testing and Eye Tracking for CS1300 User Interfaces and Experiences - Fall 2017",
+         "skills":[
+            "JavaScript"
+         ],
+         "description": "",
+         "content": {
+           "component": "div"
+         }
+       }
+   ]
+}

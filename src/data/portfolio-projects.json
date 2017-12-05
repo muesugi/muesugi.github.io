@@ -10,6 +10,7 @@
             "JavaScript", "Raphael.js, D3.js, Three.js", "Java"
          ],
          "description":"A web app that enables translators to align their original and translated documents for a seamless translation experience.",
+         "internalLink": "/ui-portfolio/adapt-translations",
          "siteLink": "http://adapt-translations.herokuapp.com/",
          "content": {
            "component": "div",
@@ -59,6 +60,7 @@
          "id": "upinn",
          "image":"portfolio/unoportinn/unoportinn-rooms.png",
          "subtitle":"a site for a B&B in Japan",
+         "internalLink": "/ui-portfolio/unoportinn",
          "siteLink": "http://unoportinn.com",
          "skills":[
             "WordPress", "PHP"
@@ -114,6 +116,7 @@
          "id": "upaf",
          "image":"portfolio/unoportartfilms/upaf-home.png",
          "siteLink": "http://unoportartfilms.org",
+        "internalLink": "/ui-portfolio/unoportartfilms",
          "subtitle":"a site for a summer outdoor film festival in Japan",
          "skills":[
             "WordPress", "PHP"

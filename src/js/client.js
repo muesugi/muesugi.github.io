@@ -4,7 +4,14 @@ import {HashRouter, Switch, Route, Link} from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import ResumePage from './pages/ResumePage';
 import PortfolioPage from './pages/PortfolioPage';
+import UIPortfolioPage from './uiportfolio/UIPortfolioPage';
 import ContactPage from './pages/ContactPage';
+
+import AdaptTranslations from './uiportfolio/portfolio-entries/AdaptTranslations';
+import UnoPortInn from './uiportfolio/portfolio-entries/UnoPortInn';
+import UnoPortArtFilms from './uiportfolio/portfolio-entries/UnoPortArtFilms';
+import SuzanneCollins from './uiportfolio/portfolio-entries/SuzanneCollins';
+import ABtesting from './uiportfolio/portfolio-entries/ABtesting';
 
 ReactDOM.render(
   <HashRouter>
@@ -13,6 +20,12 @@ ReactDOM.render(
         <Route exact path='/' component={LandingPage}/>
         <Route path='/resume' component={ResumePage}/>
         <Route path='/portfolio' component={PortfolioPage}/>
+        <Route exact path='/ui-portfolio' component={UIPortfolioPage}/>
+        <Route path='/ui-portfolio/adapt-translations' component={AdaptTranslations}/>
+        <Route path='/ui-portfolio/unoportinn' component={UnoPortInn}/>
+        <Route path='/ui-portfolio/unoportartfilms' component={UnoPortArtFilms}/>
+        <Route path='/ui-portfolio/suzannecollins' component={SuzanneCollins}/>
+        <Route path='/ui-portfolio/abtesting' component={ABtesting}/>
         <Route path='/contact' component={ContactPage}/>
       </Switch>
     </main>
