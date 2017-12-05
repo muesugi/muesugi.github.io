@@ -1,0 +1,75 @@
+.skill-filter-container {
+  text-align: right;
+  margin-top:20px;
+}
+
+.uiprojects-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.ui-portfolio-summary {
+	width: 25%;
+	text-decoration: none ;
+	padding: 1.5em;
+	// margin: 1.5em;
+	margin: 1.5em 0;
+	border: 1px solid #ddd;
+	&.empty {
+		border:none;
+	}
+
+	.portfolio-img {
+		width: 100%;
+	}
+	.portfolio-title {
+		font-weight: 600;
+		font-size: 1.25em;
+		padding-top: 1em;
+	}
+
+	@media  #{$media_tiny}, #{$media_small} {
+		width: 100%;
+	}
+	.portfolio-skills-container{
+        @media #{$media_medium_and_up}{
+          padding-bottom: 2em;
+        }
+        .portfolio-skill {
+          margin-left: .4em;
+          font-style: italic;
+
+          @include delimit(',');
+        }
+      }
+	// border: 1px solid grey;
+}
+
+.ui-portfolio-full {
+	.portfolio-img-holder {
+		background-color: #ddd;
+		text-align: center;
+	}
+	.portfolio-img {
+		width: 100%;
+		max-width: 100vh;
+		max-height: 100vh;
+	}
+	.portfolio-title {
+		font-weight: 600;
+		font-size: 1.25em;
+		padding-top: 1em;
+	}
+	img {
+		max-width: 100%;
+	}
+	.flex {
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-start;
+	}
+	.portfolio-content {
+		padding-bottom: 2em;
+	}
+}
