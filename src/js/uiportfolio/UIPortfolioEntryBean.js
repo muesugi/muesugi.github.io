@@ -18,7 +18,6 @@ export default class UIPortfolioEntryBean extends React.Component {
         <div className="portfolio-title">
         {this.props.title}
         </div>
-
         <div className="portfolio-subtitle">{this.props.subtitle}</div>
         <span className="portfolio-links">
           {this.props.codeLink ? <a className="openPrevent" target="_blank" href={this.props.codeLink}>code</a> : ""}

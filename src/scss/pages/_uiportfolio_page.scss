@@ -50,11 +50,12 @@
 	.portfolio-img-holder {
 		background-color: #ddd;
 		text-align: center;
+		padding: 1em 0;
 	}
 	.portfolio-img {
-		width: 100%;
+		width: auto;
 		max-width: 100vh;
-		max-height: 100vh;
+		max-height: 70vh;
 	}
 	.portfolio-title {
 		font-weight: 600;
@@ -64,6 +65,9 @@
 	img {
 		max-width: 100%;
 	}
+	.content-image {
+		
+	}
 	.flex {
 		display: flex;
 		justify-content: space-around;
@@ -71,5 +75,22 @@
 	}
 	.portfolio-content {
 		padding-bottom: 2em;
+	}
+
+	.portfolio-header {
+		font-weight: 800;
+		font-size: 1.2em;
+		padding-top: 1.75em;
+		padding-bottom: .5em;
+	}
+
+	.portfolio-subheader {
+		font-weight: 600;
+		padding-top: 1.25em;
+		padding-bottom: .25em;
+	}
+
+	.highlight-text {
+		color: $color_red;
 	}
 }

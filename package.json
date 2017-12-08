@@ -13,10 +13,12 @@
     "react-burger-menu": "^2.1.4",
     "react-dom": "^15.6.1",
     "react-fullpage": "^0.1.18",
+    "react-images": "^0.5.13",
     "react-json-schema": "^1.0.1",
     "react-konva": "^1.1.4",
     "react-router-dom": "^4.1.2",
     "react-scroll-to-component": "^1.0.1",
+    "react-slideshow-image": "^0.1.2",
     "underscore": "^1.8.3",
     "webpack": "^3.4.1"
   },
