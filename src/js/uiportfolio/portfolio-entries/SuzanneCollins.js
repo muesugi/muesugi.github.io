@@ -1,7 +1,6 @@
 import React from 'react';
 
 import UIPortfolioEntryBean from '../UIPortfolioEntryBean';
-import Lightbox from 'react-images';
 
 import SelfLightbox from '../SelfLightbox';
 

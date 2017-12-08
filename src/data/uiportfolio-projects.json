@@ -185,11 +185,11 @@
          }
       },
         {
-         "title":"AB Testing and Eye Tracking",
+         "title":"Greo",
          "id": "abtesting",
-         "image":"portfolio/abtesting/heatmapb.png",
-        "internalLink": "/ui-portfolio/abtesting",
-         "subtitle":"AB Testing and Eye Tracking for CS1300 User Interfaces and Experiences - Fall 2017",
+         "image":"portfolio/greo/greo-half.png",
+        "internalLink": "/ui-portfolio/greo",
+         "subtitle":"An app design for CS1300 User Interfaces and Experiences - Fall 2017",
          "skills":[
             "JavaScript"
          ],

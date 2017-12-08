@@ -306,6 +306,29 @@ ul li {
   font-weight: normal;
   color: #88562d; }
 
+.self-lightbox {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background-color: #eac67a;
+  padding: .5em; }
+  .self-lightbox:after {
+    content: "click to view";
+    position: absolute;
+    background-color: #eac67a;
+    bottom: .4em;
+    right: .4em;
+    padding: 10px; }
+  .self-lightbox .lightbox-preview {
+    margin-right: 5px;
+    opacity: .7; }
+    .self-lightbox .lightbox-preview:last-of-type {
+      margin-right: 0px; }
+  .self-lightbox .hover-text {
+    height: 1em;
+    text-align: center;
+    display: none; }
+
 .portfolio-entry {
   margin: 2em 0; }
   .portfolio-entry .portfolio-summary .portfolio-img {
@@ -536,12 +559,13 @@ div.skill-filter {
 
 .ui-portfolio-full .portfolio-img-holder {
   background-color: #ddd;
-  text-align: center; }
+  text-align: center;
+  padding: 1em 0; }
 
 .ui-portfolio-full .portfolio-img {
-  width: 100%;
+  width: auto;
   max-width: 100vh;
-  max-height: 100vh; }
+  max-height: 70vh; }
 
 .ui-portfolio-full .portfolio-title {
   font-weight: 600;
@@ -558,3 +582,17 @@ div.skill-filter {
 
 .ui-portfolio-full .portfolio-content {
   padding-bottom: 2em; }
+
+.ui-portfolio-full .portfolio-header {
+  font-weight: 800;
+  font-size: 1.2em;
+  padding-top: 1.75em;
+  padding-bottom: .5em; }
+
+.ui-portfolio-full .portfolio-subheader {
+  font-weight: 600;
+  padding-top: 1.25em;
+  padding-bottom: .25em; }
+
+.ui-portfolio-full .highlight-text {
+  color: #984b43; }
