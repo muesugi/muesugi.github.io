@@ -66,7 +66,7 @@ export default class UIPortfolioPage extends React.Component {
 
     return (
       <div>
-        <MainNavigation />
+        <MainNavigation uiPortfolio={true}/>
         <div className="skill-filter-container">
           <SkillFilter skills={possibleSkills}
             filterSkill={this.state.filterSkill}

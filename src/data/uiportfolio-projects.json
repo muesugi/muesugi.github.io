@@ -4,7 +4,7 @@
       {
          "title":"Adapt Translations",
          "id": "adapt",
-         "image":"portfolio/adapt/adapt-translations-1.png",
+         "image":"portfolio/adapt/adapt-on-mac.png",
          "subtitle":"a course project for CS32 Software Engineering - Spring 2017",
          "skills":[
             "JavaScript", "Raphael.js, D3.js, Three.js", "Java"
@@ -56,9 +56,23 @@
          }
       },
       {
+         "title":"Writers with Websites: Suzanne Collins Redesign",
+         "id": "suzannecollins",
+         "image":"portfolio/suzanne-collins/suzanne-many-devices.png",
+        "internalLink": "/ui-portfolio/suzannecollins",
+         "subtitle":"a redesign for CS1300 User Interfaces and Experiences - Fall 2017",
+         "skills":[
+            "JavaScript"
+         ],
+         "description": "",
+         "content": {
+           "component": "div"
+         }
+       },
+      {
          "title":"Uno Port Inn",
          "id": "upinn",
-         "image":"portfolio/unoportinn/unoportinn-rooms.png",
+         "image":"portfolio/unoportinn/upinn-on-ipad.png",
          "subtitle":"a site for a B&B in Japan",
          "internalLink": "/ui-portfolio/unoportinn",
          "siteLink": "http://unoportinn.com",
@@ -112,82 +126,11 @@
          }
       },
       
-      {
-         "title":"Writers with Websites: Suzanne Collins Redesign",
-         "id": "suzannecollins",
-         "image":"portfolio/suzanne-collins/high-fidelity-homepage.png",
-        "internalLink": "/ui-portfolio/suzannecollins",
-         "subtitle":"a redesign for CS1300 User Interfaces and Experiences - Fall 2017",
-         "skills":[
-            "JavaScript"
-         ],
-         "description": "",
-         "content": {
-           "component": "div"
-         }
-       },
-       {
-         "title":"Uno Port Art Films",
-         "id": "upaf",
-         "image":"portfolio/unoportartfilms/upaf-home.png",
-         "siteLink": "http://unoportartfilms.org",
-        "internalLink": "/ui-portfolio/unoportartfilms",
-         "subtitle":"a site for a summer outdoor film festival in Japan",
-         "skills":[
-            "WordPress", "PHP"
-         ],
-         "description":"Built on WordPress for future upkeep, I configured this new site on a short timeline to fit the needs of the festival. The key technical aspect of this new site was a new taxonomy system for organizing exisiting data and data types specific to the film festival.",
-         "content": {
-           "component": "div",
-           "children":[
-             {
-               "component": "div",
-               "text": "This site transformed from a data dump of all of the past films shown to a navigateable site with descriptions, summaries, and help text."
-             },
-             {
-               "component": "div",
-               "text": "Compare the following, the old Uno Port Art Films homepage, to the new home page pictured above."
-             },
-             {
-               "component": "JsonImageLoader",
-               "text": "portfolio/unoportartfilms/old-home-scroll.gif"
-             },
-             {
-               "component": "div",
-               "text": "Overall, the new site is cleaner, more streamlined, and guided."
-              },
-             {
-               "component": "div",
-               "text": "From the ticket purchase page--"
-              },
-             {
-               "component": "JsonImageLoader",
-               "text": "portfolio/unoportartfilms/new-buy.png"
-             },
-             {
-               "component": "div",
-               "text": "--to the archives--"
-              },
-             {
-                 "component" :"JsonImageLoader",
-                 "text":"portfolio/unoportartfilms/new-through-archives-final.gif"
-              },
-              {
-                "component": "div",
-                "text": "everything was put together with the experience in mind, to make all of that great content actually accessible and managable."
-               },
-              {
-                "component" :"div",
-                "text":"The archives in particular were set up so that users could not only navigate easily to find what they were looking for but browse new films as well. In turn, the taxonomy system was built explicitly for non-technical site administrators, so that moving the films from the current year to the archives would take three clicks: one to move all tags under the current year, 2016 for example, to 'Archives', one to change the menu link to reflect the new year, and one to save all of this configuration."
-             }
-
-           ]
-         }
-      },
+      
         {
          "title":"Greo",
          "id": "abtesting",
-         "image":"portfolio/greo/greo-half.png",
+         "image":"portfolio/greo/greo-on-iphone.png",
         "internalLink": "/ui-portfolio/greo",
          "subtitle":"An app design for CS1300 User Interfaces and Experiences - Fall 2017",
          "skills":[

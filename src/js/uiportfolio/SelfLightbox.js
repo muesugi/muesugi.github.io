@@ -37,6 +37,7 @@ export default class SelfLightbox extends React.Component {
                   return ( <img className="lightbox-preview" src={img.src} key={i} height={this.props.previewHeight} onClick={this.toggleLightbox.bind(this)}/>)
                 })}
         </div>
+        <span className="click-to-view">click to view {(this.props.images.length > 1) ? "(" + this.props.images.length + ")" : ""}</span>
         <Lightbox
           images={this.props.images}
           isOpen={this.state.isLightboxOpen}

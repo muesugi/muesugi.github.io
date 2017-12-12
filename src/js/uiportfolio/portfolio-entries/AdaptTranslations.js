@@ -7,7 +7,7 @@ export default class AdaptTranslations extends React.Component {
   render(){
     return (
 
-      <UIPortfolioEntryBean image='portfolio/adapt/adapt-translations-1.png'
+      <UIPortfolioEntryBean image='portfolio/adapt/adapt-on-mac.png'
         subtitle="a course project for CS32 Software Engineering - Spring 2017"
         title="Adapt Translations"
         id="adapt"

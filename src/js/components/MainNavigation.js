@@ -16,7 +16,8 @@ export default class MainNavigation extends React.Component {
         <nav className="nav-right desktop-nav">
           <Link to='/' className="main-nav-link">about</Link>
           <NavLink to='/resume' className="main-nav-link">resume</NavLink>
-          <NavLink to='/portfolio' className="main-nav-link">portfolio</NavLink>
+          {(this.props.uiPortfolio) ? <NavLink to='/ui-portfolio' className='main-nav-link'>portfolio</NavLink> : 
+            <NavLink to='/portfolio' className='main-nav-link'>portfolio</NavLink>}
           <NavLink to='/contact' className="main-nav-link">contact</NavLink>
         </nav>
         <div id="hamburger-container">

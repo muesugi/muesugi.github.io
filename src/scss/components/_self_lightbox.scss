@@ -2,8 +2,7 @@
 	cursor: pointer;
 	display:inline-block;
 	position:relative;
-	&:after {
-		content: "click to view";
+	.click-to-view {
 		position: absolute;
 		background-color: $color_yellow;
 		bottom: .4em;

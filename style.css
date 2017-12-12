@@ -11,15 +11,15 @@
 .portfolio-summary {
   cursor: pointer; }
 
-.resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a, nav a, .main-footer a, .landing-page a#pronounce-me, .resume-page .icon-set a, .contact-page .content a {
+.resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a, .ui-portfolio-full .portfolio-links a, nav a, .main-footer a, .landing-page a#pronounce-me, .resume-page .icon-set a, .contact-page .content a {
   cursor: pointer;
   text-decoration: none; }
-  .resume-entry .resume-portfolio-link:hover, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a:hover, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a:hover, nav a:hover, .main-footer a:hover, .landing-page a#pronounce-me:hover, .resume-page .icon-set a:hover, .contact-page .content a:hover {
+  .resume-entry .resume-portfolio-link:hover, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a:hover, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a:hover, .ui-portfolio-full .portfolio-links a:hover, nav a:hover, .main-footer a:hover, .landing-page a#pronounce-me:hover, .resume-page .icon-set a:hover, .contact-page .content a:hover {
     text-decoration: underline; }
 
-.resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a {
+.resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a, .ui-portfolio-full .portfolio-links a {
   color: #88562d; }
-  .resume-entry .resume-portfolio-link:after, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a:after, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a:after {
+  .resume-entry .resume-portfolio-link:after, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a:after, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a:after, .ui-portfolio-full .portfolio-links a:after {
     content: " \203A"; }
 
 a, .portfolio-summary .portfolio-skill,
@@ -530,13 +530,15 @@ div.skill-filter {
   justify-content: space-between; }
 
 .ui-portfolio-summary {
-  width: 25%;
+  width: 31%;
   text-decoration: none;
-  padding: 1.5em;
   margin: 1.5em 0;
-  border: 1px solid #ddd; }
+  border: 1px solid #ddd;
+  border-top: 5px solid #eac67a; }
   .ui-portfolio-summary.empty {
     border: none; }
+  .ui-portfolio-summary > div {
+    padding: 0 20px; }
   .ui-portfolio-summary .portfolio-img {
     width: 100%; }
   .ui-portfolio-summary .portfolio-title {
@@ -563,7 +565,7 @@ div.skill-filter {
   padding: 1em 0; }
 
 .ui-portfolio-full .portfolio-img {
-  width: auto;
+  width: 100%;
   max-width: 100vh;
   max-height: 70vh; }
 
