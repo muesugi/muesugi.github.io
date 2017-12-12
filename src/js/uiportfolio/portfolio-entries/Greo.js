@@ -2,7 +2,6 @@ import React from 'react';
 
 import SelfLightbox from '../SelfLightbox';
 import UIPortfolioEntryBean from '../UIPortfolioEntryBean';
-import report from '../../../assets/portfolio/abtesting/writeup.pdf'
 
 export default class Greo extends React.Component {
   render(){

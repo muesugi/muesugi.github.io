@@ -5,7 +5,6 @@ import UIPortfolioEntryBean from '../UIPortfolioEntryBean';
 
 import OldHomeImage from '../../../assets/portfolio/unoportartfilms/old-home-scroll.gif';
 import NewBuyImage from '../../../assets/portfolio/unoportartfilms/new-buy.png';
-import NewArchives from '../../../assets/portfolio/unoportartfilms/new-through-archives-final.gif';
 
 export default class UnoPortArtFilms extends React.Component {
   render(){

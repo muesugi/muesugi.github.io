@@ -11,7 +11,6 @@ import AdaptTranslations from './uiportfolio/portfolio-entries/AdaptTranslations
 import UnoPortInn from './uiportfolio/portfolio-entries/UnoPortInn';
 import UnoPortArtFilms from './uiportfolio/portfolio-entries/UnoPortArtFilms';
 import SuzanneCollins from './uiportfolio/portfolio-entries/SuzanneCollins';
-import ABtesting from './uiportfolio/portfolio-entries/ABtesting';
 import Greo from './uiportfolio/portfolio-entries/Greo';
 
 ReactDOM.render(
