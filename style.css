@@ -312,8 +312,7 @@ ul li {
   position: relative;
   background-color: #eac67a;
   padding: .5em; }
-  .self-lightbox:after {
-    content: "click to view";
+  .self-lightbox .click-to-view {
     position: absolute;
     background-color: #eac67a;
     bottom: .4em;
@@ -550,7 +549,8 @@ div.skill-filter {
       width: 100%; } }
   @media screen and (min-width: 768px) and (max-width: 971px), screen and (min-width: 972px) and (max-width: 1399px), screen and (min-width: 1400px) {
     .ui-portfolio-summary .portfolio-skills-container {
-      padding-bottom: 2em; } }
+      padding-top: .5em;
+      padding-bottom: .5em; } }
   .ui-portfolio-summary .portfolio-skills-container .portfolio-skill {
     margin-left: .4em;
     font-style: italic; }
@@ -558,6 +558,10 @@ div.skill-filter {
       content: ","; }
     .ui-portfolio-summary .portfolio-skills-container .portfolio-skill:last-child:after {
       content: ""; }
+  .ui-portfolio-summary .portfolio-date {
+    color: #444;
+    font-size: .9em;
+    padding-bottom: 1em; }
 
 .ui-portfolio-full .portfolio-img-holder {
   background-color: #ddd;
