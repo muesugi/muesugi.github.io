@@ -57,7 +57,7 @@ export default class UIPortfolioPage extends React.Component {
   }
   render(){
     const possibleSkills = [];
-    require('json-loader!../../data/cs-skills.json').map((skillList) => {
+    require('json-loader!../../data/ui-cs-skills.json').map((skillList) => {
       skillList.skills.map((skill) => {
         if (skill.name.length > 0 && skill.link_portfolio)
           possibleSkills.push(skill);

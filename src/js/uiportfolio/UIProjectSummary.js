@@ -20,6 +20,7 @@ export default class UIProjectSummary extends React.Component {
                 );
               })}
             </div>
+         {(this.props.date) ? <div className="portfolio-date">{this.props.date}</div> : ""}
       </Link>
     );
   }

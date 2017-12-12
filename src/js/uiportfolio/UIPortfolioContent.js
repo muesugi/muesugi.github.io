@@ -27,6 +27,7 @@ export default class UIPortfolioContent extends React.Component {
             && proj.skills.indexOf(this.props.filterSkill) != -1)
             ){
           return (<UIProjectSummary key={i} title={proj.title} id={proj.id}
+            date={proj.date}
             internalLink={proj.internalLink ? proj.internalLink : ""}
             siteLink={proj.siteLink}
             codeLink={proj.codeLink}

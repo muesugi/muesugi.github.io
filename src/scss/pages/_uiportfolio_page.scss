@@ -42,7 +42,8 @@
 	}
 	.portfolio-skills-container{
         @media #{$media_medium_and_up}{
-          padding-bottom: 2em;
+          padding-top: .5em;
+          padding-bottom: .5em;
         }
         .portfolio-skill {
           margin-left: .4em;
@@ -50,6 +51,12 @@
 
           @include delimit(',');
         }
+      }
+      .portfolio-date {
+      	color: #444;
+      	font-size: .9em;
+	    padding-bottom: 1em;
+
       }
 	// border: 1px solid grey;
 }
