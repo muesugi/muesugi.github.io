@@ -143,20 +143,12 @@
               },
              {
                "component": "div",
-               "text": "From the ticket purchase page--"
+               "text": "From the ticket purchase page to the archives --"
               },
              {
                "component": "JsonImageLoader",
                "text": "portfolio/unoportartfilms/new-buy.png"
              },
-             {
-               "component": "div",
-               "text": "--to the archives--"
-              },
-             {
-                 "component" :"JsonImageLoader",
-                 "text":"portfolio/unoportartfilms/new-through-archives-final.gif"
-              },
               {
                 "component": "div",
                 "text": "everything was put together with the experience in mind, to make all of that great content actually accessible and managable."
