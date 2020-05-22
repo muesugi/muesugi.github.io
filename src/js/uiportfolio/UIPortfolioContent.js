@@ -11,7 +11,7 @@ import ProfileImage from '../components/ProfileImage';
 export default class UIPortfolioContent extends React.Component {
   render(){
     const projects =
-      require('json-loader!../../data/uiportfolio-projects.json').projects;
+      require('../../data/uiportfolio-projects.json').projects;
     const view = new ReactJsonSchema();
     view.setComponentMap({ ProfileImage , JsonLinkLoader, JsonImageLoader});
 
@@ -21,7 +21,7 @@ export default class UIPortfolioContent extends React.Component {
     return (
       <div className="uiprojects-list">
         {projects.map((proj, i) => {
-          if ((this.props.filterSkill == "") || 
+          if ((this.props.filterSkill == "") ||
             (typeof proj.skills != "undefined" && proj.skills != null
             && proj.skills.length > 0
             && proj.skills.indexOf(this.props.filterSkill) != -1)
@@ -40,7 +40,7 @@ export default class UIPortfolioContent extends React.Component {
         {extras.map((a, i) => {
           console.log(i)
             return (<div className="ui-portfolio-summary empty" key={i}></div>);
-          } 
+          }
         )}
       </div>
     );

@@ -6,9 +6,9 @@ export default class NonTechnicalSection extends React.Component {
     return (
       <ResumeSection title="Me, Literarily (Significant Non-Technical Experiences)"
         experienceTitle="Leadership and Community Experience"
-        timelineData={require('json-loader!../../data/noncs-timeline.json')}
+        timelineData={require('../../data/noncs-timeline.json')}
         skillsTitle="Relevant Skills"
-        skillsData={require('json-loader!../../data/noncs-skills.json')} />
+        skillsData={require('../../data/noncs-skills.json')} />
     );
   }
 }

@@ -7,13 +7,13 @@ import MainFooter from '../components/MainFooter';
 export default class UIPortfolioEntryBean extends React.Component {
         // <Link to="/ui-portfolio" className="back-to-portfolio">|| Back to Portfolio ||</Link>
   render(){
-    const image = require('../../assets/' + this.props.image);
+    // const image = require('../../assets/' + this.props.image);
     return (
       <div className="ui-portfolio-full">
         <MainNavigation uiPortfolio={true}/>
         <div className="portfolio-content">
         <div className="portfolio-img-holder">
-          <img className="portfolio-img" src={image}
+          <img className="portfolio-img" src={'../../assets/' + this.props.image}
             width={(this.props.width) ? this.props.width : "50%"}
             height={(this.props.height) ? this.props.height : "auto"}/>
         </div>

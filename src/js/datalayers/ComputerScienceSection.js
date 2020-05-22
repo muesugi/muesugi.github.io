@@ -6,11 +6,10 @@ export default class ComputerScienceSection extends React.Component {
     return (
       <ResumeSection title="Me, Technically"
         experienceTitle="Professional Experience"
-        timelineData={require('json-loader!../../data/cs-timeline.json')}
-        // courseData={require('json-loader!../../data/cs-courses.json')}
+        timelineData={require('../../data/cs-timeline.json')}
         skillsTitle="Relevant Skills"
         skillsDescription="Click the highlighted skills below to see relevant portfolio projects."
-        skillsData={require('json-loader!../../data/cs-skills.json')} />
+        skillsData={require('../../data/cs-skills.json')} />
     );
   }
 }

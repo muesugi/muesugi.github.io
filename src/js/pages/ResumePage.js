@@ -5,14 +5,14 @@ import HoverableIcon from '../components/HoverableIcon';
 import EducationSection from '../datalayers/EducationSection';
 import ComputerScienceSection from '../datalayers/ComputerScienceSection';
 import NonTechnicalSection from '../datalayers/NonTechnicalSection';
-// import {SectionsContainer, ScrollToTopOnMount, Section} from 'react-fullpage';
+import { IMAGE_DIR_PREFIX } from '../helpers/images';
 
 //icon images
-import MailIcon from '../../assets/icon-mail.png';
-import LinkedInIcon from '../../assets/icon-linkedin.png';
-import GithubIcon from '../../assets/icon-github.png';
-import DownloadIcon from '../../assets/icon-download.png';
-import ResumePdf from '../../assets/moie_uesugi-resume.pdf';
+const mailIcon = IMAGE_DIR_PREFIX + 'icon-mail.png';
+const linkedInIcon = IMAGE_DIR_PREFIX + 'icon-linkedin.png';
+const githubIcon = IMAGE_DIR_PREFIX + 'icon-github.png';
+const downloadIcon = IMAGE_DIR_PREFIX + 'icon-download.png';
+const resumePdf = IMAGE_DIR_PREFIX + 'moie_uesugi-resume.pdf';
 
 export default class ResumePage extends React.Component {
   render(){
@@ -21,23 +21,22 @@ export default class ResumePage extends React.Component {
         <MainNavigation />
 
         <div className="icon-set">
-          <HoverableIcon icon={MailIcon} text="Send me an email!"
-            link="mailto:moie_uesugi@brown.edu"/>
-          <HoverableIcon icon={LinkedInIcon} text="Connect with me!"
+          <HoverableIcon icon={mailIcon} text="Send me an email!"
+            link="mailto:moie.uesugi@gmail.com"/>
+          <HoverableIcon icon={linkedInIcon} text="Connect with me!"
             link="https://www.linkedin.com/in/moieu/"/>
-          <HoverableIcon icon={GithubIcon} text="Check out my GitHub!"
+          <HoverableIcon icon={githubIcon} text="Check out my GitHub!"
             link="https://github.com/muesugi"/>
-          <a href={ResumePdf} className="float-right" download>
+          <a href={resumePdf} className="float-right" download>
             <span className="icon-caption">download</span>
-            <img className="icon" src={DownloadIcon} />
+            <img className="icon" src={downloadIcon} />
           </a>
         </div>
         <EducationSection />
         <ComputerScienceSection />
         <NonTechnicalSection />
 
-
-      <MainFooter next="portfolio"/>
+        <MainFooter next="portfolio"/>
       </div>
     );
   }

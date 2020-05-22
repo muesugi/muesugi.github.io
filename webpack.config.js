@@ -1,7 +1,7 @@
-var HTMLWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var webpack = require('webpack');
-var path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: {
@@ -26,18 +26,24 @@ module.exports = {
       {
         test: /\.(mp3|pdf|jpg|png|svg|gif)$/i,
         use: {
-          loader: "file-loader?name=assets/[name].[ext]"
+          loader: "file-loader",
+          options: {
+            name: 'assets/[hash].[ext]',
+          },
         },
-        include:  __dirname + '/src/assets'
+        include:  __dirname + '/src/assets',
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader']
-        }),
-      }
-    ]
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+        sideEffects: true,
+      },
+    ],
   },
 
   plugins: [
@@ -46,9 +52,8 @@ module.exports = {
       filename: 'index.html',
       inject: 'body'
     }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'style.css',
-      disable: false,
-      allChunks: true
-    })]
+    }),
+  ]
 };

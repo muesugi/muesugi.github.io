@@ -11,13 +11,13 @@ import ProfileImage from '../components/ProfileImage';
 export default class PortfolioContent extends React.Component {
   render(){
     const projects =
-      require('json-loader!../../data/portfolio-projects.json').projects;
+      require('../../data/portfolio-projects.json').projects;
     const view = new ReactJsonSchema();
     view.setComponentMap({ ProfileImage , JsonLinkLoader, JsonImageLoader});
 
     return (
       <div>
-        {require('json-loader!../../data/portfolio-projects.json').projects.map((proj, i) => {
+        {require('../../data/portfolio-projects.json').projects.map((proj, i) => {
           return (<PortfolioEntry key={i} title={proj.title} id={proj.id}
             siteLink={proj.siteLink}
             codeLink={proj.codeLink}

@@ -1,4 +1,6 @@
 import React from "react";
+import { IMAGE_DIR_PREFIX } from "../../helpers/images";
+
 export default class PortfolioEntry extends React.Component {
   constructor(props){
     super(props);
@@ -10,7 +12,6 @@ export default class PortfolioEntry extends React.Component {
       this.setState({showMore: !this.state.showMore});
   }
   render(){
-    const image = require('../../../assets/' + this.props.image);
     if ((this.props.filterSkill == "")
       || (typeof this.props.skills != "undefined"
           && this.props.skills != null
@@ -20,7 +21,7 @@ export default class PortfolioEntry extends React.Component {
       <div id={this.props.id}
         className={`portfolio-entry ${(this.state.showMore) ? "expanded" : "closed"}`} >
         <div className="portfolio-summary" onClick={this.clickSummary.bind(this)}>
-          <img className="portfolio-img" src={image}
+          <img className="portfolio-img" src={IMAGE_DIR_PREFIX + this.props.image}
             width={(this.props.width) ? this.props.width : "50%"}
             height={(this.props.height) ? this.props.height : "auto"}/>
           <div className="portfolio-profile">

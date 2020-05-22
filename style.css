@@ -20,7 +20,7 @@
 .resume-entry .resume-portfolio-link, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a, .ui-portfolio-full .portfolio-links a {
   color: #88562d; }
   .resume-entry .resume-portfolio-link:after, .relevant-skill-list table.skill-table tr.skill-entry td.skill-name a:after, .portfolio-entry .portfolio-summary .portfolio-profile .portfolio-links a:after, .ui-portfolio-full .portfolio-links a:after {
-    content: " \203A"; }
+    content: " ›"; }
 
 a, .portfolio-summary .portfolio-skill,
 .portfolio-summary .view-more {
@@ -602,3 +602,4 @@ div.skill-filter {
 
 .ui-portfolio-full .highlight-text {
   color: #984b43; }
+
