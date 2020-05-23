@@ -1,1 +1,1 @@
-export const IMAGE_DIR_PREFIX = '/src/assets/'
+export const IMAGE_DIR_PREFIX = "/src/assets/";

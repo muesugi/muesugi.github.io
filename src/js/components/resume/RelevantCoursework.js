@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 export default class RelevantCoursework extends React.Component {
-  render(){
+  render() {
     return (
       <div className="relevant-coursework resume-subsection">
         <div className="resume-subheader">Relevant Coursework</div>
@@ -11,7 +11,7 @@ export default class RelevantCoursework extends React.Component {
               <ul key={i}>
                 <li className="resume-subsubheader">{this.props.headers[i]}</li>
                 {this.props.data[i].map((course, key) => {
-                  return (<li key={i + "-" + key}>{course}</li>);
+                  return <li key={i + "-" + key}>{course}</li>;
                 })}
               </ul>
             );

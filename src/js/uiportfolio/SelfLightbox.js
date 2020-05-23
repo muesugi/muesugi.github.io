@@ -1,43 +1,64 @@
-import React from 'react';
-import Lightbox from 'react-images';
+import React from "react";
+import Lightbox from "react-images";
 
 export default class SelfLightbox extends React.Component {
-  constructor(props){
-  	super(props);
-  	this.state = Object.assign({
-  		isLightboxOpen: false,
-      currentImage: 0
-  	});
+  constructor(props) {
+    super(props);
+    this.state = Object.assign({
+      isLightboxOpen: false,
+      currentImage: 0,
+    });
   }
-  gotoNext(){
-    this.setState({currentImage: this.state.currentImage + 1});
+  gotoNext() {
+    this.setState({ currentImage: this.state.currentImage + 1 });
   }
-  gotoPrevious(){
-    this.setState({currentImage: this.state.currentImage - 1});
+  gotoPrevious() {
+    this.setState({ currentImage: this.state.currentImage - 1 });
   }
-  toggleLightbox(){
-  	this.setState({isLightboxOpen: !this.state.isLightboxOpen})
+  toggleLightbox() {
+    this.setState({ isLightboxOpen: !this.state.isLightboxOpen });
   }
 
-  showHoverText(){
-    this.setState({showHoverText: true})
+  showHoverText() {
+    this.setState({ showHoverText: true });
   }
-  hideHoverText(){
-    this.setState({showHoverText: false})
+  hideHoverText() {
+    this.setState({ showHoverText: false });
   }
-  render(){
-  	 return (
+  render() {
+    return (
       <div className="self-lightbox">
         <div className="self-lightbox-preview">
-        {(this.props.previewImages) ? 
-          this.props.previewImages.map((img, i) => {
-                  return ( <img className="lightbox-preview" src={img} key={i} height={this.props.previewHeight} onClick={this.toggleLightbox.bind(this)}/>)
-                }) :
-          this.props.images.map((img, i) => {
-                  return ( <img className="lightbox-preview" src={img.src} key={i} height={this.props.previewHeight} onClick={this.toggleLightbox.bind(this)}/>)
-                })}
+          {this.props.previewImages
+            ? this.props.previewImages.map((img, i) => {
+                return (
+                  <img
+                    className="lightbox-preview"
+                    src={img}
+                    key={i}
+                    height={this.props.previewHeight}
+                    onClick={this.toggleLightbox.bind(this)}
+                  />
+                );
+              })
+            : this.props.images.map((img, i) => {
+                return (
+                  <img
+                    className="lightbox-preview"
+                    src={img.src}
+                    key={i}
+                    height={this.props.previewHeight}
+                    onClick={this.toggleLightbox.bind(this)}
+                  />
+                );
+              })}
         </div>
-        <span className="click-to-view">click to view {(this.props.images.length > 1) ? "(" + this.props.images.length + ")" : ""}</span>
+        <span className="click-to-view">
+          click to view{" "}
+          {this.props.images.length > 1
+            ? "(" + this.props.images.length + ")"
+            : ""}
+        </span>
         <Lightbox
           images={this.props.images}
           isOpen={this.state.isLightboxOpen}
