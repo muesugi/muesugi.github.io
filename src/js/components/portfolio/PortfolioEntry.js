@@ -1,107 +1,98 @@
 import React from "react";
 import { IMAGE_DIR_PREFIX } from "../../helpers/images";
+import { DEFAULT_SELECTED_SKILL, SkillsContext } from "../../helpers/portfolio";
 
-export default class PortfolioEntry extends React.Component {
-  constructor(props) {
-    super(props);
+const PortfolioEntry = ({
+  id,
+  image,
+  width,
+  height,
+  title,
+  subtitle,
+  description,
+  skills,
+  codeLink,
+  siteLink,
+  children,
+}) => {
+  const [showMore, setShowMore] = React.useState(false);
+  const { selectedSkill, onFilterChange } = React.useContext(SkillsContext);
 
-    this.state = Object.assign({ showMore: false });
-  }
-  clickSummary(ev) {
-    if (!ev.target.classList.contains("openPrevent"))
-      this.setState({ showMore: !this.state.showMore });
-  }
-  render() {
-    if (
-      this.props.filterSkill == "" ||
-      (typeof this.props.skills != "undefined" &&
-        this.props.skills != null &&
-        this.props.skills.length > 0 &&
-        this.props.skills.indexOf(this.props.filterSkill) != -1)
-    ) {
-      return (
-        <div
-          id={this.props.id}
-          className={`portfolio-entry ${
-            this.state.showMore ? "expanded" : "closed"
-          }`}
-        >
+  const handleClickSummary = (event) => {
+    if (!event.target.classList.contains("openPrevent")) {
+      setShowMore(!showMore);
+    }
+  };
+
+  // The portfolio entry should be visible if there is no current filter
+  // or one of the portfolio entry's skills matches the filtered skill.
+  const isVisible =
+    selectedSkill === DEFAULT_SELECTED_SKILL ||
+    (skills && skills.includes(selectedSkill));
+
+  if (!isVisible) return null;
+
+  return (
+    <div
+      id={id}
+      className={`portfolio-entry ${showMore ? "expanded" : "closed"}`}
+    >
+      <div className="portfolio-summary" onClick={(e) => handleClickSummary(e)}>
+        <img
+          className="portfolio-img"
+          src={IMAGE_DIR_PREFIX + image}
+          width={width ? width : "50%"}
+          height={height ? height : "auto"}
+        />
+        <div className="portfolio-profile">
           <div
-            className="portfolio-summary"
-            onClick={this.clickSummary.bind(this)}
+            className="portfolio-title"
+            onClick={(e) => handleClickSummary(e)}
           >
-            <img
-              className="portfolio-img"
-              src={IMAGE_DIR_PREFIX + this.props.image}
-              width={this.props.width ? this.props.width : "50%"}
-              height={this.props.height ? this.props.height : "auto"}
-            />
-            <div className="portfolio-profile">
-              <div
-                className="portfolio-title"
-                onClick={this.clickSummary.bind(this)}
-              >
-                {this.props.title}
-              </div>
-              <div className="portfolio-subtitle">{this.props.subtitle}</div>
-              <span className="portfolio-links">
-                {this.props.codeLink ? (
-                  <a
-                    className="openPrevent"
-                    target="_blank"
-                    href={this.props.codeLink}
-                  >
-                    code
-                  </a>
-                ) : (
-                  ""
-                )}
-                {this.props.siteLink && this.props.codeLink ? <br /> : ""}
-                {this.props.siteLink ? (
-                  <a
-                    className="openPrevent"
-                    target="_blank"
-                    href={this.props.siteLink}
-                  >
-                    site
-                  </a>
-                ) : (
-                  ""
-                )}
-              </span>
-
-              <div className="portfolio-description">
-                {this.props.description}
-              </div>
-              <div className="portfolio-skills-container">
-                Skills used:
-                {this.props.skills.map((skill, i) => {
-                  return (
-                    <span
-                      key={i}
-                      className="portfolio-skill openPrevent"
-                      onClick={this.props.onFilter.bind(this, skill)}
-                    >
-                      {skill}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="view-more" onClick={this.clickSummary.bind(this)}>
-              {!this.state.showMore ? "view more" : "hide details"}
-            </div>
+            {title}
           </div>
-          <div
-            className={`portfolio-more
-          ${!this.state.showMore ? "hidden" : ""}`}
-          >
-            {this.props.children}
+          <div className="portfolio-subtitle">{subtitle}</div>
+          <span className="portfolio-links">
+            {codeLink && (
+              <a className="openPrevent" target="_blank" href={codeLink}>
+                code
+              </a>
+            )}
+            {siteLink && codeLink && <br />}
+            {siteLink && (
+              <a className="openPrevent" target="_blank" href={siteLink}>
+                site
+              </a>
+            )}
+          </span>
+
+          <div className="portfolio-description">{description}</div>
+          <div className="portfolio-skills-container">
+            Skills used:
+            {skills.map((skill, i) => {
+              return (
+                <span
+                  key={i}
+                  className="portfolio-skill openPrevent"
+                  onClick={() => {
+                    onFilterChange(skill);
+                  }}
+                >
+                  {skill}
+                </span>
+              );
+            })}
           </div>
         </div>
-      );
-    } else {
-      return null;
-    }
-  }
-}
+        <div className="view-more" onClick={(e) => handleClickSummary(e)}>
+          {!showMore ? "view more" : "hide details"}
+        </div>
+      </div>
+      <div className={`portfolio-more ${!showMore && "hidden"}`}>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default PortfolioEntry;

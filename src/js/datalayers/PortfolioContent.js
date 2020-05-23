@@ -8,36 +8,33 @@ import JsonImageLoader from "../components/JsonImageLoader";
 import JsonLinkLoader from "../components/JsonLinkLoader";
 import ProfileImage from "../components/ProfileImage";
 
-export default class PortfolioContent extends React.Component {
-  render() {
-    const projects = require("../../data/portfolio-projects.json").projects;
-    const view = new ReactJsonSchema();
-    view.setComponentMap({ ProfileImage, JsonLinkLoader, JsonImageLoader });
+const projects = require("../../data/portfolio-projects.json").projects;
+const projectIdToContent = {};
 
-    return (
-      <div>
-        {require("../../data/portfolio-projects.json").projects.map(
-          (proj, i) => {
-            return (
-              <PortfolioEntry
-                key={i}
-                title={proj.title}
-                id={proj.id}
-                siteLink={proj.siteLink}
-                codeLink={proj.codeLink}
-                subtitle={proj.subtitle}
-                description={proj.description}
-                skills={proj.skills}
-                image={proj.image}
-                filterSkill={this.props.filterSkill}
-                onFilter={this.props.onFilter}
-              >
-                {view.parseSchema(proj.content)}
-              </PortfolioEntry>
-            );
-          }
-        )}
-      </div>
-    );
-  }
-}
+const view = new ReactJsonSchema();
+view.setComponentMap({ ProfileImage, JsonLinkLoader, JsonImageLoader });
+projects.forEach((project) => {
+  projectIdToContent[project.id] = view.parseSchema(project.content);
+});
+
+const PortfolioContent = () => (
+  <React.Fragment>
+    {projects.map((project) => (
+      <PortfolioEntry
+        key={project.id}
+        title={project.title}
+        id={project.id}
+        siteLink={project.siteLink}
+        codeLink={project.codeLink}
+        subtitle={project.subtitle}
+        description={project.description}
+        skills={project.skills}
+        image={project.image}
+      >
+        {projectIdToContent[project.id]}
+      </PortfolioEntry>
+    ))}
+  </React.Fragment>
+);
+
+export default PortfolioContent;

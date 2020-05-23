@@ -1,24 +1,22 @@
 import React from "react";
 import ProfileImage from "../ProfileImage";
 
-import pronounceAudio from "../../../assets/pronounce.mp3";
 import audioIcon from "../../../assets/audio-icon.png";
+import pronounceAudio from "../../../assets/pronounce.mp3";
 
 export default class LandingContent extends React.Component {
   constructor(props) {
     super(props);
 
-    //create new audio and add ended callback
-    const pronounceMe = new Audio(pronounceAudio);
-    pronounceMe.addEventListener("ended", () => {
+    this.pronounceMe = new Audio(pronounceAudio);
+    this.pronounceMe.addEventListener("ended", () => {
       this.setState({
-        pronounce: false,
+        isPronouncing: false,
       });
     });
 
     this.state = Object.assign({
-      pronounce: false,
-      audio: pronounceMe,
+      isPronouncing: false,
       showAudioIcon: false,
     });
 
@@ -29,22 +27,24 @@ export default class LandingContent extends React.Component {
   togglePronounce(ev) {
     ev.preventDefault();
 
-    this.setState({ pronounce: !this.state.pronounce }, function () {
-      if (this.state.pronounce) {
-        console.log(this.state.audio);
-        this.state.audio.play();
+    this.setState({ isPronouncing: !this.state.isPronouncing }, function () {
+      if (this.state.isPronouncing) {
+        this.pronounceMe.play();
       } else {
-        this.state.audio.pause();
-        this.state.audio.currentTime = 0;
+        this.pronounceMe.pause();
+        this.pronounceMe.currentTime = 0;
       }
     });
   }
+
   showAudioIcon() {
     this.setState({ showAudioIcon: true });
   }
+
   hideAudioIcon() {
     this.setState({ showAudioIcon: false });
   }
+
   render() {
     return (
       <div className="landing-content animated zoomIn">
@@ -63,14 +63,14 @@ export default class LandingContent extends React.Component {
             <a
               href="#"
               id="pronounce-me"
-              className={`${this.state.pronounce ? "to-stop" : "to-play"}`}
+              className={`${this.state.isPronouncing ? "to-stop" : "to-play"}`}
               onClick={this.togglePronounce.bind(this)}
               onMouseEnter={this.showAudioIcon}
               onMouseLeave={this.hideAudioIcon}
             >
-              {!this.state.pronounce ? "this" : "Moh-yay OOH-eh-SOO-gee"}
+              {!this.state.isPronouncing ? "this" : "Moh-yay OOH-eh-SOO-gee"}
             </a>
-            {(this.state.showAudioIcon || this.state.pronounce) && (
+            {(this.state.showAudioIcon || this.state.isPronouncing) && (
               <img id="audio-icon" src={audioIcon} />
             )}
           </div>

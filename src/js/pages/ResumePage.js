@@ -14,39 +14,38 @@ const githubIcon = IMAGE_DIR_PREFIX + "icon-github.png";
 const downloadIcon = IMAGE_DIR_PREFIX + "icon-download.png";
 const resumePdf = IMAGE_DIR_PREFIX + "moie_uesugi-resume.pdf";
 
-export default class ResumePage extends React.Component {
-  render() {
-    return (
-      <div className="resume-page">
-        <MainNavigation />
+const ResumePage = () => (
+  <div className="resume-page">
+    <MainNavigation />
 
-        <div className="icon-set">
-          <HoverableIcon
-            icon={mailIcon}
-            text="Send me an email!"
-            link="mailto:moie.uesugi@gmail.com"
-          />
-          <HoverableIcon
-            icon={linkedInIcon}
-            text="Connect with me!"
-            link="https://www.linkedin.com/in/moieu/"
-          />
-          <HoverableIcon
-            icon={githubIcon}
-            text="Check out my GitHub!"
-            link="https://github.com/muesugi"
-          />
-          <a href={resumePdf} className="float-right" download>
-            <span className="icon-caption">download</span>
-            <img className="icon" src={downloadIcon} />
-          </a>
-        </div>
-        <EducationSection />
-        <ComputerScienceSection />
-        <NonTechnicalSection />
+    <div className="icon-set">
+      <HoverableIcon
+        icon={mailIcon}
+        text="Send me an email!"
+        link="mailto:moie.uesugi@gmail.com"
+      />
+      <HoverableIcon
+        icon={linkedInIcon}
+        text="Connect with me!"
+        link="https://www.linkedin.com/in/moieu/"
+      />
+      <HoverableIcon
+        icon={githubIcon}
+        text="Check out my GitHub!"
+        link="https://github.com/muesugi"
+      />
+      <a href={resumePdf} className="float-right" download>
+        <span className="icon-caption">download</span>
+        <img className="icon" src={downloadIcon} />
+      </a>
+    </div>
 
-        <MainFooter next="portfolio" />
-      </div>
-    );
-  }
-}
+    <EducationSection />
+    <ComputerScienceSection />
+    <NonTechnicalSection />
+
+    <MainFooter next="portfolio" />
+  </div>
+);
+
+export default ResumePage;

@@ -7,7 +7,7 @@
     "konva": "^6.0.0",
     "path": "^0.12.7",
     "query-string": "^5.1.1",
-    "react": "^16.4.1",
+    "react": "^16.13.1",
     "react-burger-menu": "^2.5.2",
     "react-dom": "^16.4.1",
     "react-images": "^0.5.19",
@@ -17,9 +17,9 @@
     "react-scroll-to-component": "^1.0.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
@@ -38,6 +38,9 @@
     "start": "webpack-dev-server",
     "prettier": "prettier --write 'src/js/**/*.js'"
   },
+  "pre-commit": [
+    "prettier"
+  ],
   "author": "",
   "license": "ISC"
 }
