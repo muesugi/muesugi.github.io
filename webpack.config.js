@@ -8,8 +8,8 @@ module.exports = {
     app: ['./src/scss/main.scss', './src/js/client.js']
   },
   output: {
-    filename: 'client.min.js',
-    path: __dirname
+    filename: 'js/bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
