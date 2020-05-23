@@ -8,53 +8,44 @@ import JsonImageLoader from "../components/JsonImageLoader";
 import JsonLinkLoader from "../components/JsonLinkLoader";
 import ProfileImage from "../components/ProfileImage";
 
-export default class UIPortfolioContent extends React.Component {
-  render() {
-    const projects = require("../../data/uiportfolio-projects.json").projects;
-    const view = new ReactJsonSchema();
-    view.setComponentMap({ ProfileImage, JsonLinkLoader, JsonImageLoader });
+const projects = require("../../data/uiportfolio-projects.json").projects;
+const projectIdToContent = {};
 
-    const extras = new Array(
-      projects.length % 3 == 0 ? 0 : 3 - (projects.length % 3)
-    ).fill(undefined);
-    console.log(extras.length);
+const view = new ReactJsonSchema();
+view.setComponentMap({ ProfileImage, JsonLinkLoader, JsonImageLoader });
+projects.forEach((project) => {
+  projectIdToContent[project.id] = view.parseSchema(project.content);
+});
 
-    return (
-      <div className="uiprojects-list">
-        {projects.map((proj, i) => {
-          if (
-            this.props.filterSkill == "" ||
-            (typeof proj.skills != "undefined" &&
-              proj.skills != null &&
-              proj.skills.length > 0 &&
-              proj.skills.indexOf(this.props.filterSkill) != -1)
-          ) {
-            return (
-              <UIProjectSummary
-                key={i}
-                title={proj.title}
-                id={proj.id}
-                date={proj.date}
-                internalLink={proj.internalLink ? proj.internalLink : ""}
-                siteLink={proj.siteLink}
-                codeLink={proj.codeLink}
-                subtitle={proj.subtitle}
-                description={proj.description}
-                skills={proj.skills}
-                image={proj.image}
-                filterSkill={this.props.filterSkill}
-                onFilter={this.props.onFilter}
-              >
-                {view.parseSchema(proj.content)}
-              </UIProjectSummary>
-            );
-          }
-        })}
-        {extras.map((a, i) => {
-          console.log(i);
-          return <div className="ui-portfolio-summary empty" key={i}></div>;
-        })}
-      </div>
-    );
-  }
-}
+const UIPortfolioContent = () => {
+  const extras = new Array(
+    projects.length % 2 == 0 ? 0 : 2 - (projects.length % 2)
+  ).fill(undefined);
+
+  return (
+    <div className="uiprojects-list">
+      {projects.map((project, i) => (
+        <UIProjectSummary
+          key={i}
+          title={project.title}
+          id={project.id}
+          date={project.date}
+          internalLink={project.internalLink ? project.internalLink : ""}
+          siteLink={project.siteLink}
+          codeLink={project.codeLink}
+          subtitle={project.subtitle}
+          description={project.description}
+          skills={project.skills}
+          image={project.image}
+        >
+          {projectIdToContent[project.id]}
+        </UIProjectSummary>
+      ))}
+      {extras.map((a, i) => {
+        return <div className="ui-portfolio-summary empty" key={i}></div>;
+      })}
+    </div>
+  );
+};
+
+export default UIPortfolioContent;

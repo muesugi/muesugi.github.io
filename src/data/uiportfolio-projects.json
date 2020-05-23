@@ -57,21 +57,6 @@
          }
       },
       {
-         "title":"Writers with Websites: Suzanne Collins Redesign",
-         "id": "suzannecollins",
-         "image":"portfolio/suzanne-collins/suzanne-many-devices.png",
-        "internalLink": "/ui-portfolio/suzannecollins",
-         "subtitle":"a redesign for CS1300 User Interfaces and Experiences",
-         "date": "Fall 2017",
-         "skills":[
-            "JavaScript"
-         ],
-         "description": "",
-         "content": {
-           "component": "div"
-         }
-       },
-      {
          "title":"Uno Port Inn",
          "id": "upinn",
          "image":"portfolio/unoportinn/upinn-on-ipad.png",
@@ -187,7 +172,7 @@
            ]
          }
       },
-      
+
         {
          "title":"Greo",
          "id": "abtesting",

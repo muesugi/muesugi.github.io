@@ -30,34 +30,29 @@ export default class SelfLightbox extends React.Component {
       <div className="self-lightbox">
         <div className="self-lightbox-preview">
           {this.props.previewImages
-            ? this.props.previewImages.map((img, i) => {
-                return (
-                  <img
-                    className="lightbox-preview"
-                    src={img}
-                    key={i}
-                    height={this.props.previewHeight}
-                    onClick={this.toggleLightbox.bind(this)}
-                  />
-                );
-              })
-            : this.props.images.map((img, i) => {
-                return (
-                  <img
-                    className="lightbox-preview"
-                    src={img.src}
-                    key={i}
-                    height={this.props.previewHeight}
-                    onClick={this.toggleLightbox.bind(this)}
-                  />
-                );
-              })}
+            ? this.props.previewImages.map((img, i) => (
+                <img
+                  className="lightbox-preview"
+                  src={img}
+                  key={i}
+                  height={this.props.previewHeight}
+                  onClick={this.toggleLightbox.bind(this)}
+                />
+              ))
+            : this.props.images.map((img, i) => (
+                <img
+                  className="lightbox-preview"
+                  src={img.src}
+                  key={i}
+                  height={this.props.previewHeight}
+                  onClick={this.toggleLightbox.bind(this)}
+                />
+              ))}
         </div>
         <span className="click-to-view">
-          click to view{" "}
-          {this.props.images.length > 1
-            ? "(" + this.props.images.length + ")"
-            : ""}
+          click to view
+          {this.props.images.length > 1 &&
+            " (" + this.props.images.length + ")"}
         </span>
         <Lightbox
           images={this.props.images}

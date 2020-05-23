@@ -10,7 +10,6 @@ import ContactPage from "./pages/ContactPage";
 import AdaptTranslations from "./uiportfolio/portfolio-entries/AdaptTranslations";
 import UnoPortInn from "./uiportfolio/portfolio-entries/UnoPortInn";
 import UnoPortArtFilms from "./uiportfolio/portfolio-entries/UnoPortArtFilms";
-import SuzanneCollins from "./uiportfolio/portfolio-entries/SuzanneCollins";
 import Greo from "./uiportfolio/portfolio-entries/Greo";
 
 ReactDOM.render(
@@ -30,7 +29,6 @@ ReactDOM.render(
           path="/ui-portfolio/unoportartfilms"
           component={UnoPortArtFilms}
         />
-        <Route path="/ui-portfolio/suzannecollins" component={SuzanneCollins} />
         <Route path="/ui-portfolio/greo" component={Greo} />
         <Route path="/contact" component={ContactPage} />
       </Switch>

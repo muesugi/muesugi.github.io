@@ -10,7 +10,7 @@
 }
 
 .ui-portfolio-summary {
-	width: 31%;
+	width: 48%;
 	text-decoration: none ;
 	// margin: 1.5em;
 	margin: 1.5em 0;
@@ -90,7 +90,7 @@
 	img {
 		max-width: 100%;
 	}
-	
+
 	.portfolio-links a {
 		@extend %clickable_internal;
 	}

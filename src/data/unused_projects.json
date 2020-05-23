@@ -8,3 +8,19 @@
    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
    "content":"<div>I am content</div>"
 }
+
+{
+ "title":"Writers with Websites: Suzanne Collins Redesign",
+ "id": "suzannecollins",
+ "image":"portfolio/suzanne-collins/suzanne-many-devices.png",
+"internalLink": "/ui-portfolio/suzannecollins",
+ "subtitle":"a redesign for CS1300 User Interfaces and Experiences",
+ "date": "Fall 2017",
+ "skills":[
+    "JavaScript"
+ ],
+ "description": "",
+ "content": {
+   "component": "div"
+ }
+},
