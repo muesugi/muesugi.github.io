@@ -8,7 +8,7 @@ const LandingNavigation = () => (
       <Link className="landing-menu-item" to="/resume">
         resume
       </Link>
-      <Link className="landing-menu-item" to="/uiportfolio">
+      <Link className="landing-menu-item" to="/portfolio">
         portfolio
       </Link>
       <Link className="landing-menu-item" to="/contact">
