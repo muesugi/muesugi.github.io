@@ -1,51 +1,47 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Switch, Route, Link } from "react-router-dom";
-import Loadable from 'react-loadable';
+import Loadable from "react-loadable";
 
 import LandingPage from "./pages/LandingPage";
 import ContactPage from "./pages/ContactPage";
 
-export const Loading = () => (
-  <div></div>
-);
+export const Loading = () => <div></div>;
 
 const ResumePageLoadable = Loadable({
-  loader: () => import('./pages/ResumePage'),
+  loader: () => import("./pages/ResumePage"),
   loading: Loading,
 });
 
 const PortfolioPageLoadable = Loadable({
-  loader: () => import('./pages/PortfolioPage'),
+  loader: () => import("./pages/PortfolioPage"),
   loading: Loading,
 });
 
-
 const UIPortfolioPageLoadable = Loadable({
-  loader: () => import('./uiportfolio/UIPortfolioPage'),
+  loader: () => import("./uiportfolio/UIPortfolioPage"),
   loading: Loading,
 });
 
 const AdaptTranslationsLoadable = Loadable({
-  loader: () => import('./uiportfolio/portfolio-entries/AdaptTranslations'),
+  loader: () => import("./uiportfolio/portfolio-entries/AdaptTranslations"),
   loading: Loading,
 });
 
 const UnoPortInnLoadable = Loadable({
-  loader: () => import('./uiportfolio/portfolio-entries/UnoPortInn'),
+  loader: () => import("./uiportfolio/portfolio-entries/UnoPortInn"),
   loading: Loading,
 });
 
 const UnoPortArtFilmsLoadable = Loadable({
-  loader: () => import('./uiportfolio/portfolio-entries/UnoPortArtFilms'),
+  loader: () => import("./uiportfolio/portfolio-entries/UnoPortArtFilms"),
   loading: Loading,
 });
 
 const GreoLoadable = Loadable({
-  loader: () => import('./uiportfolio/portfolio-entries/Greo'),
+  loader: () => import("./uiportfolio/portfolio-entries/Greo"),
   loading: Loading,
 });
-
 
 ReactDOM.render(
   <HashRouter>
